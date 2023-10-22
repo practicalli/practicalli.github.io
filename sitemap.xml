@@ -2,42 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/blog/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/assets/images/social/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/10/21/deeper-understanding-of-clojure-cli/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/05/17/accessing-aws-with-clojure-from-scratch-simple-approach/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/2022/05/16/freedesktoporg-xdg-standard-for-clojure-development-tools/</loc>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/10/21/build-emacs-from-source-on-debian-linux/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2023/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/archive/2022/</loc>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure-cli/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/emacs/</loc>
-         <lastmod>2023-10-21</lastmod>
+         <lastmod>2023-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/category/debian/</loc>
+         <lastmod>2023-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
