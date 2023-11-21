@@ -1,2 +1,3 @@
-*.makefile linguist-detectable=false
-*.md linguist-detectable=true
+# Configure Languages for GitHub repository using Linguist
+* linguist-vendored
+*.md linguist-vendored=false
