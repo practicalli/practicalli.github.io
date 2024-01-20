@@ -447,6 +447,8 @@
       
         
       
+        
+      
     
     
     
@@ -540,6 +542,29 @@
   
   <span class="md-ellipsis">
     emacs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git
   </span>
   
 
@@ -652,6 +677,25 @@
               </div>
             </div>
             
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Practicalli Johnny
+                        
+                      </strong>
+                      <br>
+                      Founder
+                    </span>
+                  </div>
+                
+              </div>
+            
             <ul class="md-post__meta md-nav__list">
               <li class="md-nav__item md-nav__item--section">
                 <div class="md-post__title">
@@ -669,6 +713,16 @@
                     </li>
                     
                     
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/git/">git</a></span>
+                        </div>
+                      </li>
+                    
                     
                       
                       <li class="md-nav__item">
@@ -676,7 +730,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -741,7 +795,7 @@
 <li>Sign commits and annotated tags via SSH or GPG keys</li>
 </ul>
 <p>Signing commits and tags with SSH keys is the approach covered in the rest of the article.</p>
-<p><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits">Enable vigilant mode</a> to show a verification status badge against all commits.</p>
+<p><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Enable vigilant mode</a> to show a verification status badge against all commits.</p>
 <h2 id="spoof-a-commit">Spoof a commit<a class="headerlink" href="#spoof-a-commit" title="Permanent link">λ︎</a></h2>
 <p>With write access to a shared git repository, spoofing commits is trivial.</p>
 <p>Use <code>git log</code> to look through the commit history of the repository and copy information from the <code>Author</code> field. </p>
@@ -763,7 +817,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;name@domain.tld&quot;</span>
 </code></pre></div>
 </div>
-<p><a class="md-button" href="https://practical.li/engineering-playbook/source-control/git-configuration/#ssh-key" target="_blank">SSH Key generation - Practicalli Engineering Playbook</a> </p>
+<p><a class="md-button" href="https://practical.li/engineering-playbook/source-control/git-configuration/#ssh-key" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> SSH Key generation - Practicalli Engineering Playbook</a> </p>
 <h2 id="sign-commits-and-tags">Sign commits and tags<a class="headerlink" href="#sign-commits-and-tags" title="Permanent link">λ︎</a></h2>
 <p>Configure the local Git client to automtically sign every commit or annotated tag, using either an SSH or GPG key.</p>
 <div class="admonition example">
@@ -793,6 +847,7 @@
 <img alt="Neogit Neovim commit details showing good git signature for SSH signed commit" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/screenshots/neovim-neogit-commit-signed-good-signature-dark.png?raw=true#only-dark" /></p>
 <p>When the signed commit or tag is pushed to GitHub, the signature is checked against the public key registered with the user account and the change marked as verified if they match.</p>
 <p><img alt="GitHub commits history showing verified status" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/github/github-commits-history-verified-status.png?raw=true" /></p>
+<p><a class="md-button" href="https://practical.li/engineering-playbook/source-control/git-configuration/#commit-signing-with-ssh-key" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Commit signing with SSH Key - Practicalli Engineering Playbook</a> </p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
 <p>As long as the private SSH key is not shared with others, then SSH key signing is a very strong approach to verifying the source of all contributions.</p>
 

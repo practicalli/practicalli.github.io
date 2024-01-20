@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/blog/category/git/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/blog/category/clojure-cli/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
