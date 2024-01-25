@@ -2,112 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/blog/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/assets/images/social/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/10/21/deeper-understanding-of-clojure-cli/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/05/17/accessing-aws-with-clojure-from-scratch---simple-approach/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2022/05/16/freedesktoporg-xdg-standard-for-clojure-development-tools/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2019/12/01/advent-of-parens-2019---feast-on-clojure-this-holiday-season/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2021/08/28/automate-cryogen-clojure-blog-with-github-actions/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2022/10/30/build-and-run-clojure-with-multi-stage-dockerfile/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/2022/05/16/building-emacs-28-on-ubuntu-linux/</loc>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2023/10/21/build-emacs-from-source-on-debian-linux/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/2019/12/02/clojure-advent-of-code---a-fun-way-to-learn/</loc>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/2024/01/20/safeguard-agains-git-commit-spoofing/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2024/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2023/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2022/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2021/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2019/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/git/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure-cli/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/emacs/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/docker/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/debian/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/cryogen/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure/</loc>
-         <lastmod>2024-01-24</lastmod>
+         <lastmod>2024-01-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/category/code-challenge/</loc>
+         <lastmod>2024-01-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
