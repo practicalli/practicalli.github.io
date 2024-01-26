@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/blog/2020/03/13/web-scraping-with-clojure---scraping-hacker-news/</loc>
+         <lastmod>2024-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/blog/archive/2024/</loc>
          <lastmod>2024-01-26</lastmod>
          <changefreq>daily</changefreq>
@@ -77,6 +82,11 @@
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2021/</loc>
+         <lastmod>2024-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/archive/2020/</loc>
          <lastmod>2024-01-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -117,6 +127,11 @@
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure/</loc>
+         <lastmod>2024-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/page/2/</loc>
          <lastmod>2024-01-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
