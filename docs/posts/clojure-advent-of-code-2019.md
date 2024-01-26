@@ -5,6 +5,7 @@ authors:
   - practicalli
 categories:
   - clojure
+tags:
   - code-challenge
 ---
 
