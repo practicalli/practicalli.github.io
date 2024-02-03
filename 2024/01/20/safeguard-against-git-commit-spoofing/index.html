@@ -12,7 +12,7 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/blog/2024/01/20/safeguard-agains-git-commit-spoofing/">
+        <link rel="canonical" href="https://practical.li/blog/2024/01/20/safeguard-against-git-commit-spoofing/">
       
       
         <link rel="prev" href="../../../../2023/10/21/deeper-understanding-of-clojure-cli/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Safeguard agains Git Commit Spoofing - Practicalli Software Development</title>
+        <title>Safeguard against Git Commit Spoofing - Practicalli Software Development</title>
       
     
     
@@ -71,7 +71,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Safeguard agains Git Commit Spoofing - Practicalli Software Development" >
+        <meta  property="og:title"  content="Safeguard against Git Commit Spoofing - Practicalli Software Development" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -83,11 +83,11 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/blog/2024/01/20/safeguard-agains-git-commit-spoofing/" >
+        <meta  property="og:url"  content="https://practical.li/blog/2024/01/20/safeguard-against-git-commit-spoofing/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Safeguard agains Git Commit Spoofing - Practicalli Software Development" >
+        <meta  name="twitter:title"  content="Safeguard against Git Commit Spoofing - Practicalli Software Development" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -114,7 +114,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#safeguard-options" class="md-skip">
+        <a href="#spoof-a-commit" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Safeguard agains Git Commit Spoofing
+              Safeguard against Git Commit Spoofing
             
           </span>
         </div>
@@ -780,15 +780,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#safeguard-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Safeguard Options
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#spoof-a-commit" class="md-nav__link">
     <span class="md-ellipsis">
       Spoof a commit
@@ -798,18 +789,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh-keys" class="md-nav__link">
+  <a href="#safeguard-github-account" class="md-nav__link">
     <span class="md-ellipsis">
-      SSH Keys
+      Safeguard GitHub account
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sign-commits-and-tags" class="md-nav__link">
+  <a href="#safeguard-git-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Sign commits and tags
+      Safeguard Git Repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate SSH Key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-ssh-keys-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add SSH keys to GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-git-to-sign-commits-and-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Git to Sign commits and tags
     </span>
   </a>
   
@@ -902,7 +920,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -951,7 +969,7 @@
   
 
 
-  <h1>Safeguard agains Git Commit Spoofing</h1>
+  <h1>Safeguard against Git Commit Spoofing</h1>
 
 <p><img align="right" alt="alternative text" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/github-logo-name.png?raw=true" style="width:240px" /></p>
 <p>Git Commit Spoofing is where a person uses the Git identity of another person to modify commits pushed to GitHub, assuming they can obtain write permission to a branch or via a PR.</p>
@@ -960,14 +978,6 @@
 <p>All Practicalli commits are now signed using a passphrase protected SSH key, registered as a signing key with the GitHub account.  All contributions via pull request should be also be signed, either with GPG or SSH keys.</p>
 <!-- more -->
 
-<h2 id="safeguard-options">Safeguard Options<a class="headerlink" href="#safeguard-options" title="Permanent link">λ︎</a></h2>
-<ul>
-<li>Limit user accounts with write access to the repository</li>
-<li>Mandate authentication keys on all GitHub accounts, SSH keys with passphrase</li>
-<li>Sign commits and annotated tags via SSH or GPG keys</li>
-</ul>
-<p>Signing commits and tags with SSH keys is the approach covered in the rest of the article.</p>
-<p><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Enable vigilant mode</a> to show a verification status badge against all commits.</p>
 <h2 id="spoof-a-commit">Spoof a commit<a class="headerlink" href="#spoof-a-commit" title="Permanent link">λ︎</a></h2>
 <p>With write access to a shared git repository, spoofing commits is trivial.</p>
 <p>Use <code>git log</code> to look through the commit history of the repository and copy information from the <code>Author</code> field. </p>
@@ -981,20 +991,48 @@
 <p>Creating a malicious change, stage and create a commit. The Author field on the new commit will be the same as that of the existing commit.</p>
 <p>Amending an existing commit is a more likely approach to masking a malicious change than creating a new commit.</p>
 <p>Stage the change and then use the <code>--amend</code> option to create an updated commit which will still have the existing authors information. </p>
-<p>To avoid changing identity each time a spoof is made, <a href="https://practical.li/engineering-playbook/source-control/git-configuration/#multiple-git-identities" target="_blank">multiple git identities</a> can be configured using <code>includeIf</code> based on path, so repositories to be spoofed would be kept in the same parent directory.</p>
-<h2 id="ssh-keys">SSH Keys<a class="headerlink" href="#ssh-keys" title="Permanent link">λ︎</a></h2>
-<p>Generate an SSH key using the ED25310 type, using a verified email address added to the GitHub user account. The SSH key should be created by a passphrase for greater security, saving the passphrase to the operating system key ring for convienience.</p>
+<p>To avoid changing identity each time a spoof is made, <a href="https://practical.li/engineering-playbook/source-control/git-configuration/#multiple-git-identities" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> multiple git identities</a> can be configured using <code>includeIf</code> based on path, so repositories to be spoofed would be kept in the same parent directory.</p>
+<h2 id="safeguard-github-account">Safeguard GitHub account<a class="headerlink" href="#safeguard-github-account" title="Permanent link">λ︎</a></h2>
+<p><img align="right" alt="Yubikey" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/FIDO2_USB_token.png/800px-FIDO2_USB_token.png" style="width:250px" /></p>
+<p>Add two Yubikey hardware Security keys as Two-Factor authentication for your GitHub account. One Yubikey for daily work and one kept securely as a backup.</p>
+<p>A hardware security key provides greater account protection than Time-based One Time Password (TOTP), i.e. <a href="https://authy.com/download/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Authy app</a> or Google Authenticator.</p>
+<div class="admonition hint">
+<p class="admonition-title">Use TOTP for initial Two-Factor authentication on GitHub</p>
+<p>GitHub required an existing form of Two-factor authentication before being able to add a hardware security key, e.g. Yubikey.</p>
+<p>Remove the TOTP authentication once Hardware Security keys have been added for increased account security.</p>
+</div>
+<h2 id="safeguard-git-repository">Safeguard Git Repository<a class="headerlink" href="#safeguard-git-repository" title="Permanent link">λ︎</a></h2>
+<ul>
+<li>Limit the number of accounts with write access to the repository</li>
+<li>Sign commits and annotated tags via SSH or PGP keys</li>
+</ul>
+<p>Signing commits and tags with SSH keys is the approach covered in the rest of the article.</p>
+<div class="admonition hint">
+<p class="admonition-title">GitHub vigilant mode</p>
+<p><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Enable GitHub vigilant mode</a> to show a verification status badge against all commits, which helps highlight unverified commits.</p>
+</div>
+<h2 id="generate-ssh-key">Generate SSH Key<a class="headerlink" href="#generate-ssh-key" title="Permanent link">λ︎</a></h2>
+<p>Generate an SSH key using the ED25310 type, using a verified email address added to the GitHub user account. </p>
+<p>The SSH key should be created by a passphrase for greater security, saving the passphrase to the operating system key ring for convienience.</p>
 <div class="admonition note">
-<p class="admonition-title">Generate an SSH Key</p>
+<p class="admonition-title">Generate an SSH Key using ED25310</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;name@domain.tld&quot;</span>
 </code></pre></div>
 </div>
+<blockquote>
+<p>Ensure the the email account used to create the SSH key is registered and verified in the GitHub user account.</p>
+</blockquote>
+<h2 id="add-ssh-keys-to-github">Add SSH keys to GitHub<a class="headerlink" href="#add-ssh-keys-to-github" title="Permanent link">λ︎</a></h2>
+<p>Add the public SSH key as an authentication key to push changes to GitHub repositories the account has write access too.</p>
+<p>Add the public SSH key as a Signing Key to validate locally signed commits when pushed to GitHub repositories.</p>
+<p><a class="md-button" href="https://github.com/settings/keys" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> SSH Keys for GitHub account</a> </p>
 <p><a class="md-button" href="https://practical.li/engineering-playbook/source-control/git-configuration/#ssh-key" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> SSH Key generation - Practicalli Engineering Playbook</a> </p>
-<h2 id="sign-commits-and-tags">Sign commits and tags<a class="headerlink" href="#sign-commits-and-tags" title="Permanent link">λ︎</a></h2>
-<p>Configure the local Git client to automtically sign every commit or annotated tag, using either an SSH or GPG key.</p>
+<h2 id="configure-git-to-sign-commits-and-tags">Configure Git to Sign commits and tags<a class="headerlink" href="#configure-git-to-sign-commits-and-tags" title="Permanent link">λ︎</a></h2>
+<p>Configure the local Git client to automtically sign every commit or annotated tag using an SSH key. e.g. <code>~/.config/git/config</code> file.</p>
+<p>Create an <code>allowed-signatures</code> file and add the public SSH key to the file, prefixing the key with the email address used to create the key.</p>
 <div class="admonition example">
 <p class="admonition-title">Commit and tag automatic signing with SSH key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">## ------ Git Behaviour ------ ##</span>
+<div class="highlight"><span class="filename">~/.config/git/config</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">## ------ Git Behaviour ------ ##</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">[</span>commit<span class="o">]</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1"># Automatically sign every commit</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">gpgsign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
@@ -1012,9 +1050,8 @@
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nv">allowedSignersFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>~/.config/git/allowed-signatures
 </code></pre></div>
 </div>
-<p>Add the SSH or GPG public key as a signing key on GitHub.</p>
-<p>Ensure the the email account used to create the SSH key is registered and verified in the GitHub user account.</p>
-<p>The private SSH key is used to sign each commit and annotated tag.</p>
+<p>The private SSH key is automatically used to sign each commit and annotated tag.</p>
+<p>With the public SSH key in the <code>allowedSignersFile</code> any GitHub client should show that the local commit is signed, i.e. Good "git" signature message.</p>
 <p><img alt="Neogit Neovim commit details showing good git signature for SSH signed commit" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/screenshots/neovim-neogit-commit-signed-good-signature-light.png?raw=true#only-light" />
 <img alt="Neogit Neovim commit details showing good git signature for SSH signed commit" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/editors/neovim/screenshots/neovim-neogit-commit-signed-good-signature-dark.png?raw=true#only-dark" /></p>
 <p>When the signed commit or tag is pushed to GitHub, the signature is checked against the public key registered with the user account and the change marked as verified if they match.</p>
@@ -1022,6 +1059,13 @@
 <p><a class="md-button" href="https://practical.li/engineering-playbook/source-control/git-configuration/#commit-signing-with-ssh-key" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Commit signing with SSH Key - Practicalli Engineering Playbook</a> </p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
 <p>As long as the private SSH key is not shared with others, then SSH key signing is a very strong approach to verifying the source of all contributions.</p>
+<hr />
+<p>Thank you.</p>
+<p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a> </p>
+<p><a class="md-button" href="https://github.com/practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Practical.li GitHub Org</a> 
+<a class="md-button" href="https://github.com/practicalli-johnny" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> practicalli-johnny profile</a></p>
+<p><a class="md-button" href="https://clj.social/@practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg></span> @practicalli@clj.social</a>
+<a class="md-button" href="https://twitter.com/practcial_li" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></span> @practical_li</a></p>
 
 
 
