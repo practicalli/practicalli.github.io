@@ -1,5 +1,5 @@
 ---
-draft: false 
+draft: true 
 title: "Deeper understanding of Clojure CLI"
 date: 2023-10-21
 authors:
@@ -11,6 +11,8 @@ tags:
 ---
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-cli-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
+
+!!! WARNING "Rewrite required"
 
 CLI tools make Clojure very accessible and simple to install as they are a essentially a wrapper for running Clojure code using the `java` command and use additional libraries to manage dependencies, class paths, create projects and build java archive (jar) files.
 
@@ -229,5 +231,9 @@ java -cp simple.jar clojure.main -m simple.core
 
 <https://github.com/clojure/clojure/commit/653b8465845a78ef7543e0a250078eea2d56b659>
 
+---
 Thank you.
-[:fontawesome-brands-github: practicalli-johnny](https://github.com/practicalli-johnny)
+
+[:globe_with_meridians: Practical.li GitHub profile](https://practical.li){target=_blank .md-button} 
+[:fontawesome-brands-github: practicalli-johnny](https://github.com/practicalli-johnny){target=_blank .md-button}
+[@practical_li](https://twitter.com/practcial_li){target=_blank .md-button}
