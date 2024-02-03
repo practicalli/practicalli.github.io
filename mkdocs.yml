@@ -79,6 +79,9 @@ markdown_extensions:
 plugins:
   - blog:
       blog_dir: .
+      draft: false
+      draft_on_serve: true
+      draft_if_future_date: true
   - search
   # Generate Social Cards via CI only
   # in assets/images/social
