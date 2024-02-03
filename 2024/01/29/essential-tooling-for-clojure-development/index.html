@@ -12,13 +12,11 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/blog/2022/05/16/freedesktoporg-xdg-standard-for-clojure-development-tools/">
+        <link rel="canonical" href="https://practical.li/blog/2024/01/29/essential-tooling-for-clojure-development/">
       
       
-        <link rel="prev" href="../building-emacs-28-on-ubuntu-linux/">
+        <link rel="prev" href="../../20/safeguard-agains-git-commit-spoofing/">
       
-      
-        <link rel="next" href="../../../10/30/build-and-run-clojure-with-multi-stage-dockerfile/">
       
       
       <link rel="icon" href="../../../../assets/favicon.svg">
@@ -26,7 +24,7 @@
     
     
       
-        <title>FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development</title>
+        <title>Essential tooling for Clojure development - Practicalli Software Development</title>
       
     
     
@@ -71,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development" >
+        <meta  property="og:title"  content="Essential tooling for Clojure development - Practicalli Software Development" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
-        <meta  property="og:image"  content="https://practical.li/blog/assets/images/social/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.png" >
+        <meta  property="og:image"  content="https://practical.li/blog/assets/images/social/posts/essential-tooling-for-clojure-development.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -83,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/blog/2022/05/16/freedesktoporg-xdg-standard-for-clojure-development-tools/" >
+        <meta  property="og:url"  content="https://practical.li/blog/2024/01/29/essential-tooling-for-clojure-development/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development" >
+        <meta  name="twitter:title"  content="Essential tooling for Clojure development - Practicalli Software Development" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
-        <meta  name="twitter:image"  content="https://practical.li/blog/assets/images/social/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.png" >
+        <meta  name="twitter:image"  content="https://practical.li/blog/assets/images/social/posts/essential-tooling-for-clojure-development.png" >
       
     
     
@@ -114,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#freedesktop-xdg-standards" class="md-skip">
+        <a href="#repl-connnection" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FreeDesktop.org XDG standard for Clojure development tools
+              Essential tooling for Clojure development
             
           </span>
         </div>
@@ -760,183 +758,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#freedesktop-xdg-standards" class="md-nav__link">
+  <a href="#repl-connnection" class="md-nav__link">
     <span class="md-ellipsis">
-      FreeDesktop XDG Standards
+      REPL connnection
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#xdg-environment-variables" class="md-nav__link">
+  <a href="#customise-repl-starup" class="md-nav__link">
     <span class="md-ellipsis">
-      XDG Environment variables
+      Customise REPL starup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-linux-unix-operating-system" class="md-nav__link">
+  <a href="#evaluate-clojure" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring Linux / Unix operating system
+      Evaluate Clojure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-to-set-environment-variables" class="md-nav__link">
+  <a href="#structural-editing" class="md-nav__link">
     <span class="md-ellipsis">
-      Where to Set environment variables
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Where to Set environment variables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#command-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zsh-prezto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zsh - prezto
+      Structural Editing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#neovim" class="md-nav__link">
+  <a href="#maintain-repl-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Neovim
+      Maintain REPL State
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#emacs-and-spacemacs-configuration" class="md-nav__link">
+  <a href="#inspecting-navigating-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Emacs and Spacemacs Configuration
+      Inspecting / Navigating Data
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authinfo-secure-credentials" class="md-nav__link">
+  <a href="#creating-projects" class="md-nav__link">
     <span class="md-ellipsis">
-      authinfo secure credentials
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#doom-emacs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Doom Emacs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clojure-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clojure CLI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maven-and-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maven and dependencies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maven and dependencies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#clojure-gitlibs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clojure Gitlibs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clojure-lsp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Clojure LSP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intellij-idea-and-cursive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Intellij Idea and Cursive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#leiningen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Leiningen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs-code-and-calva" class="md-nav__link">
-    <span class="md-ellipsis">
-      VS Code and Calva
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
+      Creating projects
     </span>
   </a>
   
@@ -998,7 +876,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2022-05-16 00:00:00" class="md-ellipsis">May 16, 2022</time>
+                        <time datetime="2024-01-29 00:00:00" class="md-ellipsis">January 29, 2024</time>
                       </div>
                     </li>
                     
@@ -1009,7 +887,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/debian/">debian</a></span>
+                              <a href="../../../../category/clojure/">clojure</a></span>
                         </div>
                       </li>
                     
@@ -1020,7 +898,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              9 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -1046,32 +924,14 @@
     
     
     
-      <span class="md-tag">debian</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">emacs</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">neovim</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">clojure-cli</span>
+      <span class="md-tag">clojure</span>
     
   
 </nav>
 
 
   
-    <a href="https://github.com/practicalli/blog/edit/main/docs/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/blog/edit/main/docs/posts/essential-tooling-for-clojure-development.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1080,214 +940,164 @@
     
       
     
-    <a href="https://github.com/practicalli/blog/raw/main/docs/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/blog/raw/main/docs/posts/essential-tooling-for-clojure-development.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>FreeDesktop.org XDG standard for Clojure development tools</h1>
+  <h1>Essential tooling for Clojure development</h1>
 
-<p><img align="right" alt="Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px" /></p>
-<p>The <a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> FreeDesktop.org XDG basedir standard</a> defines specific locations to store all user configuration, data files and caches.</p>
-<p>Without the XDG standard, these files and directories are often mixed together and stored in the <code>$HOME</code>  of the users account, making it more challenging to backup or version control.</p>
-<p>Development tools such as NeoVim, Emacs, Clojure CLI  and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.  There are simple approaches to work-around the limitations of tools that don't conform.</p>
+<p><img align="right" alt="alternative text" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></p>
+<p>Clojure development benefits from great tooling focused around an editor (or IDE).</p>
+<p>Practicalli uses many features of a Clojure aware editor with a bias towards highly effective interaction with the REPL, user actions driven exclusively via the keyboard and an uncluttered user interface.</p>
+<p>Practicalli Clojure provides <a href="https://practicalli/clojure/clojure-editors/">an overview of Clojure editors</a> and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  </p>
+<details class="hint">
+<summary>Practicalli preferred editors</summary>
+<p>LightTable was the editor used in the early years of learning Clojure as it was simple to use and provided instant feedback as code was typed.</p>
+<p>Once Spacemacs was release, Emacs with CIDER became the predominant editor for many years.</p>
+<p>Treemacs and LSP have matured so <a href="https://practical.li/neovim/">Neovim and Conjure</a> has been adopted to provide a fast editing environment with streamlined key bindings for Clojure development.</p>
+</details>
 <!-- more -->
 
-<h2 id="freedesktop-xdg-standards">FreeDesktop XDG Standards<a class="headerlink" href="#freedesktop-xdg-standards" title="Permanent link">λ︎</a></h2>
-<p><a href="https://www.freedesktop.org/wiki/">FreeDesktop.org</a> produces <a href="https://www.freedesktop.org/wiki/Specifications/">standards under the Cross-Desktop Group</a>, referred to as XDG.</p>
-<p>Two of the most relevant specifications for users are:</p>
+<h2 id="repl-connnection">REPL connnection<a class="headerlink" href="#repl-connnection" title="Permanent link">λ︎</a></h2>
+<p><img align="right" alt="Practicalli Clojure REPL concept logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/repl-process.png?raw=true" style="height:150px;width:150px" /></p>
+<p>Interaction with the REPL is the foundation of highly effective Clojure development. An editor connects to a REPL process via a network repl (nREPL) server process.</p>
+<p>Practicalli starts a REPL process in a terminal using the Clojure CLI tool.  </p>
+<p><code>:repl/rebel</code> alias is used to run Rebel Readline to provide a rich terminal UI REPL prompt and starts an nREPL server to support an editor connection.</p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+</code></pre></div>
+</div>
+<p><img alt="Practicalli Rebel Readline rich terminal REPL" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png?raw=true" /></p>
+<div class="admonition info">
+<p class="admonition-title">Jack-in or Connect</p>
+<p>The REPL and nREPL processes are started by an editor jack-in command, providing the relevant dependencies and command line options to the Clojure CLI.  The editor automatically connects to the nREPL process.</p>
+<p>The same command can be run in a terminal and once nREPL server is running the editor can be connected.</p>
+<p>Practicalli uses a terminal REPL prompt for longer running processes or as a way to separate logs from evaluation events, e.g. starting components such as web servers.</p>
+<p>Starting the REPL process outside of the editor provides a useful separation of editor and REPL, also allows for a range of editors and other tooling to share the REPL state </p>
+</div>
+<p><img align="left" alt="Practicalli Clojure REPL Workflow" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" /></p>
+<h2 id="customise-repl-starup">Customise REPL starup<a class="headerlink" href="#customise-repl-starup" title="Permanent link">λ︎</a></h2>
+<p>The <code>user</code> namespace is always loaded during REPL startup, allowing tools and libraries to be included via a <code>user.clj</code> file when on the class path.</p>
+<p>Clojure development workflows and tools may vary across projects, so customising the REPL starup is highly valuable.</p>
+<div class="admonition info">
+<p class="admonition-title">Aliases for development tools</p>
+<p>Clojure CLI aliases from project and user level deps.edn to support different configurations and tools when starting the REPL process</p>
+</div>
+<p>The <code>:dev/env</code> and <code>:repl/reloaded</code> aliases from <a href="https://practical.li/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> add the <code>dev</code> directory to the class path, loading a custom <code>user</code> namespace defined in <code>dev/user.clj</code>.  </p>
+<p>A <a href="https://practical.li/clojure/clojure-cli/repl-startup/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> custom <code>user</code> namespace</a> supports the <a href="https://practical.li/clojure/clojure-cli/repl-reloaded/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli REPL Reloaded workflow</a>, launching Portal data inspector listening to all evaluation results and Mulog Tap Publisher sending log events to Portal.</p>
+<h2 id="evaluate-clojure">Evaluate Clojure<a class="headerlink" href="#evaluate-clojure" title="Permanent link">λ︎</a></h2>
+<p>Evaluates expressions as they are written, providing qualative feedback on the expected behaviour.</p>
+<p>Expressions are evaluated in Source code window with results inline, keeping focus on the code and avoiding the need to switch namespaces in the REPL.  Larger data structures can be sent to a data inspector (Portal, Cider Inspector)</p>
+<p>Cleaning up the REPL state </p>
 <ul>
-<li><a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/">Desktop base directories (basedir)</a>: defining the location of application configuration and data files</li>
-<li><a href="https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/">Desktop entries (.desktop)</a>: to define executable, application name, icon and description, used by application launchers and desktop menus</li>
+<li>Un-evaluate a var to avoid running stale code and tests, e.g. remove def, defn, deftest names from the REPL process</li>
 </ul>
-<p>This article will focus on the basedir configuration and document the XDG locations for a range of common developer tools</p>
-<h2 id="xdg-environment-variables">XDG Environment variables<a class="headerlink" href="#xdg-environment-variables" title="Permanent link">λ︎</a></h2>
-<p>The XDG Base Directory Specification defines specific environment variables to define each locations, usually set in the configuration file of the operating system shell, e.g. zsh, bash, fish.</p>
-<p>Each location contains application specific files within a directory of the same name as that application, e.g. <code>XDG_CONFIG_HOME/git</code> for Git version control client.</p>
+<p><img alt="Practicalli Clojure REPL connected editor" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png?raw=true" /></p>
+<h2 id="structural-editing">Structural Editing<a class="headerlink" href="#structural-editing" title="Permanent link">λ︎</a></h2>
+<p>Clojure has a highly structured syntax compared to many other languages thanks to its LISP heritage.  Functions are defined and called in expressions using parenthesis, <code>()</code>.</p>
+<p>Writing and code refactor is enhanced when the editor ensures parenthesis remain balanced, i.e. every opening paren has a closing paren.</p>
+<p><a href="http://paredit.org/" target="_blank">paredit</a> ensurce balanced parens along with structural refactor commands to change the structure, e.g.</p>
 <ul>
-<li><code>XDG_CONFIG_HOME</code> user-specific configuration files, default <code>$HOME/.config</code></li>
-<li><code>XDG_DATA_HOME</code> user-specific data files. default <code>$HOME/.local/share</code></li>
-<li><code>XDG_STATE_HOME</code> user-specific state data <code>$HOME/.local/state</code></li>
-<li><code>XDG_CACHE_HOME</code> user-specific non-essential (cached) data, default <code>$HOME/.cache</code></li>
-<li><code>XDG_RUNTIME_DIR</code> runtime files bound to the login status of the user</li>
+<li>slurp pulls expressions into the current expression</li>
+<li>barf pushes the current expression out of the surrounding expression</li>
 </ul>
-<p><code>XDG_CONFIG_DIRS</code> and <code>XDG_DATA_DIRS</code> can be used to define an ordered set of directories to search for their respective files, rather than just a single directory.</p>
-<blockquote>
-<p>Environment variables must be set to an absolute path to be consider valid.  Values can include other environment variables, e.g. HOME, as long as the path resolves as absolute.</p>
-</blockquote>
-<p>A detailed description is covered in <a href="https://specifications.freedesktop.org/basedir-spec/latest/ar01s03.html">the freedesktop.org basedir specification</a>.</p>
-<details>
-<summary>MacOSX FreeDesktop.org XDG Standard Paths</summary>
-<p>According to Apple documentation, the XDG Base directory specifications should use these locations</p>
+<p><a href="https://shaunlebron.github.io/parinfer/" target="_blank">parinfer</a> provides structural editing based on indentation, automatically ensuring parens are ballanced as code is added or changed.  Parinfer doesnt require any commands or key bindings and so can feel more natural.</p>
+<p><img alt="Parinfer example" loading="lazy" src="https://storage.googleapis.com/zenn-user-upload/5a7508d12f68-20221206.gif" /></p>
+<h2 id="maintain-repl-state">Maintain REPL State<a class="headerlink" href="#maintain-repl-state" title="Permanent link">λ︎</a></h2>
+<p>A Clojure REPL can be very long lived thanks to the stability of the Java Virtual Machine (JVM).  Removing state vars can help avoid a REPL restart, as tools that refresh namespaces and start/stop/restart a Clojure system components.</p>
 <ul>
-<li><code>XDG_CONFIG_HOME</code> -︎ <code>~/Library/Preferences/</code> using reverse domain name notation: <code>com.apple.AppStore.appname</code></li>
-<li><code>XDG_DATA_HOME</code> -︎ <code>~/Library/</code></li>
-<li><code>XDG_CACHE_HOME</code> -︎ <code>~/Library/Caches/</code></li>
+<li>refresh changed namespaces of the project in the REPL process, optionally with hook to restart components</li>
 </ul>
-<p>See the <a href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFileSystem/Articles/WhereToPutFiles.html">Mac OS X Reference Library: Where to Put Application Files</a> and <a href="https://developer.apple.com/library/archive/qa/qa1170/">Mac OS X Reference Library: Important Java Directories on Mac OS X</a></p>
-</details>
-<h2 id="configuring-linux-unix-operating-system">Configuring Linux / Unix operating system<a class="headerlink" href="#configuring-linux-unix-operating-system" title="Permanent link">λ︎</a></h2>
-<p>The XDG basedir specification is used by many Unix distributions, although the <code>XDG_CONFIG_HOME</code> is rarely set as it may break older applications.  Instead the OS uses the default locations in the specifications and expects applications to do the same.</p>
-<p>Some tools already use the default location of <code>XDG_CONFIG_HOME</code>. Most maintained tools will use the XDG locations if the environment variables are set.</p>
-<p>Defining <code>XDG_CONFIG_HOME</code> before installing development tools and applications helps ensure that the right locations are used.</p>
-<p>Existing configurations are easily migrated to the <code>XDG_CONFIG_HOME</code> directory, either all at once or application by application.  If the configuration is not found in <code>XDG_CONFIG_HOME</code> the application should look for the configuration in the <code>HOME</code> directory.</p>
-<h2 id="where-to-set-environment-variables">Where to Set environment variables<a class="headerlink" href="#where-to-set-environment-variables" title="Permanent link">λ︎</a></h2>
-<p>For desktop launchers, edit the <code>.profile</code> file and export a value for <code>XDG_CONFIG_HOME</code>, which should then be used by all applications launched in this way.</p>
-<p>For example, the <code>XDG_CONFIG_HOME</code> is defined for all applications and <code>SPACEMACSDIR</code> is defined specifically for Spacemacs configuration for Emacs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>export XDG_CONFIG_HOME=$HOME/.config
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># Application specific
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>export SPACEMACSDIR=$XDG_CONFIG_HOME/spacemacs
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a># Recommended locations
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>export XDG_DATA_HOME=$HOME/.local/share
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>export XDG_CACHE_HOME=$HOME/.cache
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>export XDG_STATE_HOME=$HOME/.local/state
-</code></pre></div>
-<p>To apply these environment variables, logout of the desktop environment, then login again.  Now the environment variables are set.</p>
-<p>To test before logout/login, in a terminal run the command <code>source ~/.profile</code> and the environment variables will be available in that terminal session.</p>
-<h3 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">λ︎</a></h3>
-<p>The shell and all command line tools will use environment variables in <code>~/.profile</code>.  Or they can be set in the respective resource files for the terminal shell to add environment variables</p>
+<p>For simpler applications, Practicalli loads <code>clojure.tools.namespace.repl</code> at REPL starup via a custom <code>user</code> namespace to <code>refresh</code> stale namespaces in the project and <code>set-refresh-dirs</code> to define the directory paths that should be checked for changes (excluding <code>dev</code> from the path to avoid reloading tools).</p>
+<p>For web services and Clojure projects composed of system components, the <a href="https://practical.li/clojure-web-services/service-repl-workflow/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Service REPL workflow</a> is used. The Service REPL workflow uses either <a href="https://practical.li/clojure-web-services/service-repl-workflow/donut-system/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> donut-party/system</a> or <a href="https://practical.li/clojure-web-services/service-repl-workflow/integrant/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Integrant &amp; Integrant REPL</a> to manage restarting of components and reloading changed namespaces into the REPL state.</p>
+<p><a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Service REPL workflow</a></p>
+<p><a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/donut-system/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> donut-party/system</a>
+<a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/integrant/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Integrant &amp; Integrant REPL</a></p>
+<h2 id="inspecting-navigating-data">Inspecting / Navigating Data<a class="headerlink" href="#inspecting-navigating-data" title="Permanent link">λ︎</a></h2>
+<p><img align="right" alt="Practicalli Portal data inspector logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true" style="height:150px;width:150px" /></p>
+<p>Many results of evaluating Clojure produce interesting and potentially complex data structures.  Tools for navigating data aid in the understanding of results produced by Clojure code.</p>
+<p>Being able to present the results in different ways can add greater meaning and easier consumption of the results, e.g. visual charts to support data science.</p>
 <ul>
-<li>bash - use <code>~/.bashrc</code></li>
-<li>zsh - use <code>~/.zprofile</code> or <code>.zshenv</code></li>
+<li>navigate data, especially nested data</li>
+<li>paginate through large data sets without slowing down the tooling </li>
+<li>inspect results of an evaluation and follow updates after each evaluation</li>
 </ul>
-<p>For example, in <code>~/.zprofile</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>export XDG_CONFIG_HOME=&quot;$XDG_CONFIG_HOME=$HOME/.config&quot;
-</code></pre></div>
-<h2 id="zsh-prezto">Zsh - prezto<a class="headerlink" href="#zsh-prezto" title="Permanent link">λ︎</a></h2>
-<p><a href="https://github.com/sorin-ionescu/prezto">Prezto</a> is an rich configuration for Zsh that provides aliases, functions, auto completion and prompt themes (including the popular <a href="https://github.com/romkatv/powerlevel10k">Powerline10k theme</a>). Prezto includes a wide range of optional modules such as git status, autosuggestions (fish shell completion), GPG, etc.</p>
-<p><img alt="Prezto themes - Sorin theme example" src="https://i.imgur.com/nrGV6pg.png" /></p>
-<p>Install prezto in the <code>XDG_CONFIG_HOME/zsh</code> directory.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sorin-ionescu/prezto.git<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="si">}</span><span class="s2">/prezto&quot;</span>
-</code></pre></div>
-<p>Prezto requires <code>~/.zshenv</code> to bootstrap the location of prezto configuration.  The <code>~/.zshenv</code> file can be a symbolic link to <code>XDG_CONFIG_HOME/zsh/.zshenv</code></p>
-<p>Set the <code>XDG_CONFIG_HOME</code> location to <code>HOME/.config</code> for all applications if not set in <code>~/.profile</code></p>
-<p>Set the <code>ZDOTDIR</code> location so Zsh can find the Prezto configuration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>export XDG_CONFIG_HOME=&quot;${XDG_CONFIG_HOME:=$HOME/.config}&quot;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>export ZDOTDIR=&quot;${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}&quot;
-</code></pre></div>
-<p>Other application specific environment variables should be added to <code>.zshevn</code> file as well, e.g. <code>SPACEMACSDIR</code> for Spacemacs configuration.</p>
-<blockquote>
-<p>TIP: Once installed, any prezto configuration files that will be added can be copied from the <code>.zprezto/runcoms</code> directory to <code>XDG_CONFIG_HOME/zsh</code>, rather than linking as the documentation suggests. This approach minimises the need to merge changes when updating prezto.</p>
-</blockquote>
-<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
-<p>Neovim supports the XDG basedir specification and will use <code>~/.config/nvim</code> directory by default.</p>
-<p>All the packages installed, such as the excellent <a href="https://github.com/Olical/conjure">Conjure</a> for Clojure development (and many other fun languages), will therefore be part of the <code>~/.config/neovim</code> configuration.</p>
-<p>Vim does not support the basedir.  However, when Neovim is installed as a .deb package it will be used for the vim command (set via <code>/etc/alternatives/vim</code>)</p>
-<blockquote>
-<p><a href="https://practical.li/neovim/">Practicalli Neovim</a> is the start of a new book on setting up Neovim with Clojure, LSP, Treesitter and many other packages, using fennel (a lisp dialect) for its configuration.  More details coming soon.</p>
-</blockquote>
-<h2 id="emacs-and-spacemacs-configuration">Emacs and Spacemacs Configuration<a class="headerlink" href="#emacs-and-spacemacs-configuration" title="Permanent link">λ︎</a></h2>
-<p>Emacs will use <code>XDG_CONFIG_HOME/emacs</code> location if it contains an <code>init.el</code> file.</p>
-<p><code>SPACEMACSDIR</code> environment variable is used by Spacemacs to set the <code>dotspacemacs-directory</code>, defining where to look for the Spacemacs specific <code>init.el</code> file.</p>
-<p>Set <code>SPACEMACSDIR</code> to <code>XDG_CONFIG_HOME/spacemacs</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>export XDG_CONFIG_HOME=&quot;$HOME/.config&quot;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a># Ensure Emacs can find the location of Spacemacs configuration
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># when using a desktop launcher
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>export SPACEMACSDIR=&quot;$XDG_CONFIG_HOME/spacemacs&quot;
-</code></pre></div>
-<p>Move the <code>.spacemacs</code> file to <code>XDG_CONFIG_HOME/spacemacs/init.el</code>.  Or if using <code>~/.spacemacs.d/</code> then move that directory to be the <code>XDG_CONFIG_HOME/spacemacs/</code> directory.</p>
-<h2 id="authinfo-secure-credentials">authinfo secure credentials<a class="headerlink" href="#authinfo-secure-credentials" title="Permanent link">λ︎</a></h2>
-<p>Connection credentials that include sensitive data (passwords, developer tokens) can be stored in <code>authinfo.pgp</code>, a PGP encrypted file. This providing an extra level of security for sensitive data.</p>
-<p>For example, Magit Forge uses authinfo.gpg to define a connection to GitHub or GitLab that includes a developer token.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  ;; Use XDG_CONFIG_HOME location or HOME
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  (setq auth-sources (list
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                      (concat (getenv &quot;XDG_CONFIG_HOME&quot;) &quot;/authinfo.gpg&quot;)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                      &quot;~/.authinfo.gpg&quot;))
-</code></pre></div>
-<h2 id="doom-emacs">Doom Emacs<a class="headerlink" href="#doom-emacs" title="Permanent link">λ︎</a></h2>
-<p>If Emacs configuration is detected in <code>$HOME/.config/emacs</code> then Doom will install its configuration in <code>$HOME/.config/doom</code>, so long as <code>DOOMDIR</code> has not already been configured to a different location by the user.</p>
-<h2 id="git">Git<a class="headerlink" href="#git" title="Permanent link">λ︎</a></h2>
-<p>Git will write to and read from <code>XDG_CONFIG_HOME/git/config</code> as its configuration, if that file exists and <code>~/.gitconfg</code> does not exist.  Otherwise <code>~/.gitconfg</code> is used.</p>
-<p>Before running any <code>git</code> commands, create a config file in the XDG location</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git/config
-</code></pre></div>
-<p><code>git config</code> commands will now update the XDG configuration file, e.g. setting the user identity and configure diff to use the diff3 (shared parent) for merge conflicts</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;John Practicalli&quot;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;******+account-name@users.noreply.github.com&quot;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.conflictstyle<span class="w"> </span>diff3
-</code></pre></div>
-<p>Add an ignore-global file to the <code>XDG_CONFIG_HOME/git</code> directory. Example excludes files can be found at <a href="https://github.com/github/gitignore">github/gitignore repository</a> or at <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a></p>
-<p>Add an excludes file to the Git config file containing the patterns used across all the users projects.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git config --global core.excludesFile ~/.config/git/ignore-global
-</code></pre></div>
-<blockquote>
-<p>The git ignore file should be defined with the full path so tools like projectile can find that ignore file.</p>
-</blockquote>
-<p><code>XDG_CONFIG_HOME/git/template</code> is a common location for scripts and hooks that should be added to a newly created Git repository, in the <code>.git</code> directory.  The template location is set by <code>init.templatedir</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir  $XDG_CONFIG_HOME/git/template
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git config --global init.templatedir template
-</code></pre></div>
-<h2 id="clojure-cli">Clojure CLI<a class="headerlink" href="#clojure-cli" title="Permanent link">λ︎</a></h2>
-<p>The <code>XDG_CONFIG_HOME/clojure</code> directory is the location for the Clojure CLI user level configuration files (e.g. <code>deps.edn</code>, <code>tools/tools.edn</code>).</p>
-<p>If <code>XDG_CONFIG_HOME</code> is not set or that location is not found, then <code>HOME/.clojure</code> is used instead.</p>
-<p>If <code>CLJ_CONFIG</code> is set to a value, then Clojure CLI commands will use that instead.</p>
-<blockquote>
-<p>Also see Maven and dependencies to manage the <code>$HOME/.m2/repository</code> directory</p>
-</blockquote>
-<h2 id="maven-and-dependencies">Maven and dependencies<a class="headerlink" href="#maven-and-dependencies" title="Permanent link">λ︎</a></h2>
-<p>Clojure CLI and Leiningen use the Maven configuration directory to store Jar files from project (and tooling) dependencies, by default this is located in <code>$HOME/.m2/repository</code>.</p>
-<p>Jar files from dependencies are considered non-essential (to the Clojure CLI tool) so should be written to the $XDG_CACHE_HOME location, typically <code>$HOME/.cache</code></p>
-<p>Add the <code>:mvn/local-repo</code> top-level key in the user level deps.edn file to set a location for the Maven repository.  The value should be the full directory path.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="ss">:mvn/local-repo</span><span class="w"> </span><span class="s">&quot;/home/practicalli/.cache/maven/repository&quot;</span>
-</code></pre></div>
-<p>The <code>:mvn/local-repo</code> can also be used in a project deps.edn file or on the command line, i.e. <code>clojure -Sdeps '{:mvn/local-repo ".cache/temp-deps"}'</code> if the Maven dependencies should be kept separate from all other projects (this scenario is not common).</p>
-<p>The Maven <code>$HOME/.m2</code> directory also <a href="https://maven.apache.org/configure.html">contains several configuration files</a>, <code>maven.config</code>, <code>jvm.config</code> and <code>extensions.xml</code>, so unfortunately conflates configuration files with data files.  Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.</p>
-<h3 id="clojure-gitlibs">Clojure Gitlibs<a class="headerlink" href="#clojure-gitlibs" title="Permanent link">λ︎</a></h3>
-<p>Clojure CLI can used dependencies from Git repositories.  To do so, the repository is downloaded into a <code>$HOME/.gitlibs</code> directory, unless the <code>GITLIBS</code> environment variable is set.  As the <code>gitlibs</code> directory contains data for the application, then ideally this would be placed in <code>XDG_CACHE_HOME</code>, under a <code>clojure-gitlibs</code> directory</p>
-<p>Set the <code>GITLIBS</code> environment variable to determine the location of the local cache directory used to clone dependencies that are Git repositories.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>export $GITLIBS=$XDG_CACHE_HOME/clojure-libs
-</code></pre></div>
-<p>Optionally move the existing <code>$HOME/.gitlibs</code> to the Cache home.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mv $HOME/.gitlibs $XDG_CACHE_HOME/clojure-gitlibs
-</code></pre></div>
-<h2 id="clojure-lsp">Clojure LSP<a class="headerlink" href="#clojure-lsp" title="Permanent link">λ︎</a></h2>
-<p><code>XDG_CONFIG_HOME/clojure-lsp</code> directory is used as the location for Clojure LSP configuration if <code>XDG_CONFIG_HOME</code> is set.  Otherwise, <code>$HOME/.clojure-lsp</code> is used as the configuration.</p>
-<blockquote>
-<p>If Clojure LSP was used for for a while, configuration may be in the deprecated <code>~/.lsp</code> directory.</p>
-</blockquote>
-<h2 id="intellij-idea-and-cursive">Intellij Idea and Cursive<a class="headerlink" href="#intellij-idea-and-cursive" title="Permanent link">λ︎</a></h2>
-<p>Intellij Idea from version 2020.1 uses the XDG basdir specification locations without the need to set XDG_CONFIG_HOME.</p>
-<p>Configuration is organised under the ~/.config/JetBrains/ directory with product and version sub-directories, for example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~/.config/JetBrains/IntelliJIdea2022.1
-</code></pre></div>
-<p><a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory">Intellij IDEA 2020.1 documentation - configuration directories</a></p>
-<h2 id="leiningen">Leiningen<a class="headerlink" href="#leiningen" title="Permanent link">λ︎</a></h2>
-<p>Leiningen does not support configuration in <code>XDG_CONFIG_HOME</code>, although there is an <a href="https://github.com/technomancy/leiningen/issues/2087">outstanding issue to add this as an enhancement from 2016</a>.</p>
-<p>Once Leiningen is installed, a temporary work-around would be to move the <code>~/.lein</code> directory to <code>XDG_CONFIG_HOME/leiningen</code> and create a symbolic link called <code>~/.lein</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mv ~/.lein $XDG_CONFIG_HOME/leiningen
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>ln -s $XDG_CONFIG_HOME/leiningen ~/.lein
-</code></pre></div>
-<blockquote>
-<p>The <code>lein</code> script uses <code>LEIN_HOME</code> variable, although this is hard-coded in the script to <code>$HOME/.lein</code> and therefore is not usable to set as an operating system environment variable to change the configuration directory location.</p>
-</blockquote>
-<h2 id="vs-code-and-calva">VS Code and Calva<a class="headerlink" href="#vs-code-and-calva" title="Permanent link">λ︎</a></h2>
-<p>Unfortunately XDG basedir specification is not currently supported by VS Code and therefore Calva (although I assume the Clojure LSP tooling in Calva will use XDG_CONFIG_HOME)</p>
-<p>There is an outstanding issue on the VS Code, also from 2016, to <a href="https://github.com/microsoft/vscode/issues/3884">revisit the configuration structure and support XDG_CONFIG_HOME</a>.</p>
-<p>Using the symbolic link workaround, as with Leiningen, should work for VS Code too.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mv $HOME/.vscode $XDG_CONFIG_HOME/vscode
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ln -s $XDG_CONFIG_HOME/vscode $HOME/.vscode
-</code></pre></div>
-<blockquote>
-<p>It is advisable to close VS Code before moving the configuration, to ensure the configuration has been saved.</p>
-</blockquote>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
-<p>The XDG basedir specification makes it simple to back up and version a users configuration files as they are all under the one directory, i.e. <code>$HOME/.config</code></p>
-<p>As data and cache files are in different locations, then few if any ignore files are required to version the configuration files.</p>
-<p>Migrating is relatively quick and painless and applications can be migrated over time if required.</p>
-<p>Thank you</p>
-<p><a href="https://github.com/practicalli">practicalli GitHub profile</a> I <a href="https://twitter.com/practcial_li">@practical_li</a></p>
+<p>Emacs Cider Inspector is very powerful for paging through large data sets effectively and navigating a complex structure.</p>
+<p>Portal can also navigate data and can show data in a range of views to add more meaning support, e.g. http responses for API development, tables &amp; charts for data science, etc...</p>
+<p>Practicalli configures Portal to listen over nREPL to all Clojure code evaluations, which will work with all of the Clojure editors.</p>
+<p><a class="md-button" href="https://practical.li/clojure/data-inspector/portal/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Portal Data Inspector - Practicalli Clojure</a> </p>
+<h2 id="creating-projects">Creating projects<a class="headerlink" href="#creating-projects" title="Permanent link">λ︎</a></h2>
+<p>Creating a  a clojure project from templates can save time and provide a consistent base for an organisation.  Extending project templates with options allows for diversity whist still providing common a approach.</p>
+<p>Projects from template are typically created via a shell command, so an editor with shell support is valuable.</p>
+<p><a href="https://practical.li/clojure/clojure-cli/projects/templates/practicalli/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Project Templates</a> simplifies Clojure project creation with a growing number of templates, derived from commercial and community experiences.</p>
+<hr />
+<p>Thank you.</p>
+<p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a> </p>
+<p><a class="md-button" href="https://github.com/practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Practical.li GitHub Org</a> 
+<a class="md-button" href="https://github.com/practicalli-johnny" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> practicalli-johnny profile</a></p>
+<p><a class="md-button" href="https://clj.social/@practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg></span> @practicalli@clj.social</a>
+<a class="md-button" href="https://twitter.com/practcial_li" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></span> @practical_li</a></p>
+<!-- 
+
+
+#### Debugging tools
+* instrument function(s) with break points
+* step through functions
+* display / inspect local values
+* step over calls  
+
+#### Code manipulation features
+* Vim style editing (a bias of mine, but definitely worth having)
+* Structural Editing (smartparents, paredit - manually driven approach)
+* Refactor code (rename, add requires, extract to function / let, 
+* Multi-replacement (e.g. Emacs iedit)
+  * select all matches in scope, jump between matches, toggle matches and simultaneously edit them
+* Narrowing (e.g Emacs narrowing) - view over part of a file, limiting scope of changes
+* Multiple cursors
+
+#### Unit Testing
+* Support REPL based test runner (e.g. cider-test)
+* Support externally running test runner (e.g. kaocha)
+* Enable watch for changes to trigger re-run of tests
+* Run all tests / namespace tests / single test / only failing test
+* support test selectors to run group of tests
+* easy to understand test reports 
+
+#### Code archaeology features
+* Incoming / outgoing call stack
+* Navigate to definition (project, dependency and Java sources where relevant)
+* Indicate uses (e.g. number of functions calling a function)
+* Indicate unit tests (optional)
+* Navigate to errors 
+
+#### Live collaboration
+* sharing live code view (Vs code live, floor it's, etc.)
+  - VS Code Live is excellent and significant code changes could be done in a separate editor if vscode/calva unfamiliar 
+
+#### General features
+
+* Git client (ideally as rich as Emacs Magit or VS Code edamagit)
+* Option to use 100% Keyboard driven interaction (mouse-less operation of tooling) 
+* vim-style multi-modal editing
+* Clojure LSP support (ideally with customisable client lsp UI elements)
+
+
+- evaluate a namespace to load all expressions the current namespace and required namespaces, except expressions in `comment` form or `#_`
+- evaluate a top-level expression or nested expression (e.g. eval last s-expression)
+- option to eval expression within `(comment ...)` and after `#_`
+
+Evaluation to investigate the behaviour of the code
+
+- pretty print the evaluation result or sent to an inspector, i.e. to navigate more interesting data structures
+- print evaluation as a comment, preferably with a pretty print option, to demonstrate aspects of a function or support software archaeology
+- replace expression with result of evaluation to better understand that part of the code
+- macro-expand expression to see what code the macro produces
+
+
+-->
 
 
 
@@ -1334,7 +1144,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../building-emacs-28-on-ubuntu-linux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building Emacs 28 on Ubuntu Linux">
+          <a href="../../20/safeguard-agains-git-commit-spoofing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Safeguard agains Git Commit Spoofing">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1344,27 +1154,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Building Emacs 28 on Ubuntu Linux
+                Safeguard agains Git Commit Spoofing
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../../10/30/build-and-run-clojure-with-multi-stage-dockerfile/" class="md-footer__link md-footer__link--next" aria-label="Next: Build and run Clojure with Multi-stage Dockerfile">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Build and run Clojure with Multi-stage Dockerfile
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
