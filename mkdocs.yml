@@ -84,7 +84,7 @@ plugins:
       draft_if_future_date: true
   - rss:
       enabled: !ENV [CI, false]
-      match_path: blog/posts/.*
+      match_path: posts/.*
       date_from_meta:
         as_creation: date
       categories:
