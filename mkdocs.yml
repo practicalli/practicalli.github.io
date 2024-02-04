@@ -82,6 +82,14 @@ plugins:
       draft: false
       draft_on_serve: true
       draft_if_future_date: true
+  - rss:
+      enabled: !ENV [CI, false]
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
   - search
   # Generate Social Cards via CI only
   # in assets/images/social
