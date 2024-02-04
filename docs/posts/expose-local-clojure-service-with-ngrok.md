@@ -10,6 +10,8 @@ tags:
   - ngrok
 ---
 
+![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
+
 Exposing a local running services can be valuable when writing apps and web-hooks for Cloud API products, e.g. Slack, Atlassian Confluence, Hasura, Salesforce, etc.
 
 ngrok exposes local networked services behinds NATs and firewalls to the public internet over a secure tunnel.
