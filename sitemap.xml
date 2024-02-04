@@ -16,62 +16,67 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2023/05/17/accessing-aws-with-clojure-from-scratch---simple-approach/</loc>
+         <loc>https://practical.li/blog/accessing-aws-with-clojure-from-scratch---simple-approach/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2022/05/16/freedesktoporg-xdg-standard-for-clojure-development-tools/</loc>
+         <loc>https://practical.li/blog/freedesktoporg-xdg-standard-for-clojure-development-tools/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2019/12/01/advent-of-parens-2019---feast-on-clojure-this-holiday-season/</loc>
+         <loc>https://practical.li/blog/advent-of-parens-2019---feast-on-clojure-this-holiday-season/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2021/08/28/automate-cryogen-clojure-blog-with-github-actions/</loc>
+         <loc>https://practical.li/blog/automate-cryogen-clojure-blog-with-github-actions/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2022/10/30/build-and-run-clojure-with-multi-stage-dockerfile/</loc>
+         <loc>https://practical.li/blog/build-and-run-clojure-with-multi-stage-dockerfile/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2022/05/16/building-emacs-28-on-ubuntu-linux/</loc>
+         <loc>https://practical.li/blog/building-emacs-28-on-ubuntu-linux/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2023/10/21/build-emacs-from-source-on-debian-linux/</loc>
+         <loc>https://practical.li/blog/build-emacs-from-source-on-debian-linux/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2019/12/02/clojure-advent-of-code---a-fun-way-to-learn/</loc>
+         <loc>https://practical.li/blog/clojure-advent-of-code---a-fun-way-to-learn/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2024/01/29/essential-tooling-for-clojure-development/</loc>
+         <loc>https://practical.li/blog/essential-tooling-for-clojure-development/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2023/08/24/expose-clojure-service-using-ngrok/</loc>
+         <loc>https://practical.li/blog/expose-clojure-service-using-ngrok/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2024/01/20/safeguard-against-git-commit-spoofing/</loc>
+         <loc>https://practical.li/blog/safeguard-against-git-commit-spoofing/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/blog/2020/03/13/web-scraping-with-clojure---scraping-hacker-news/</loc>
+         <loc>https://practical.li/blog/pin-emacs-packages-to-manage-issues/</loc>
+         <lastmod>2024-02-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/web-scraping-with-clojure---scraping-hacker-news/</loc>
          <lastmod>2024-02-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
