@@ -12,8 +12,7 @@ All sponsorship recieved is used to maintain and further develop the [Practicall
 
 Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors){target=_blank} from the Clojure community for your continued support
 
-
-[Powered by Material for MkDocs](https://squidfunk.github.io/mkdocs-material/setup/setting-up-a-blog/){target=_blank .md-button}
+[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
 
 ---
 
