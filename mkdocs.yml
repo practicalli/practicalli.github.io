@@ -79,6 +79,7 @@ markdown_extensions:
 plugins:
   - blog:
       blog_dir: .
+      post_url_format: "{slug}"
       draft: false
       draft_on_serve: true
       draft_if_future_date: true
