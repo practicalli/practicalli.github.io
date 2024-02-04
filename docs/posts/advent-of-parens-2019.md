@@ -108,3 +108,15 @@ I listen to these podcasts when I go for a walk in the park or shopping for fres
 I hope you enjoy the rich content available in the Clojure community and have a very merry Clojure holiday season.
 
 If there are any topics or tips you need help with, please get in touch via the [Clojurians Slack community](https://clojurians.slack.com/messages/practicalli){target=_blank}.
+
+
+---
+Thank you.
+
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
+
+[:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
+[:fontawesome-brands-twitter: @practical_li](https://twitter.com/practcial_li){target=_blank .md-button}

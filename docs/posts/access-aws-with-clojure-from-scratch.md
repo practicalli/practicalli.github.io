@@ -279,6 +279,14 @@ There are lots of services to explore on AWS and with a working account and cred
 
 Please to keep a considered eye on how much of AWS you are using.  Even though a free plan was used, it can be quite easy to leave things running and exceed quotas.  Its not clear as yet if AWS will stop the service or simply send a bill.  Taking a look at the quotas allowed for a service is a valuable step to ensure you can remain within the free plan.
 
-Thank you
 
-[:fontawesome-brands-github: practicalli GitHub profile](https://github.com/practicalli) I [@practical_li](https://twitter.com/practcial_li)
+---
+Thank you.
+
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
+
+[:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
+[:fontawesome-brands-twitter: @practical_li](https://twitter.com/practcial_li){target=_blank .md-button}

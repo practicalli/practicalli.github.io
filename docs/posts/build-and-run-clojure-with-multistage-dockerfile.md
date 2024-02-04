@@ -312,6 +312,13 @@ Organising the commands in the `Dockerfile` to maximise the use of docker cache 
 
 Consider creating a `docker-compose.yaml` file to orchestrate services that are required for development of the project and local system integration testing.
 
-Thank you
+---
+Thank you.
 
-[practicalli GitHub profile](https://github.com/practicalli) I [@practical_li](https://twitter.com/practcial_li)
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
+
+[:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
+[:fontawesome-brands-twitter: @practical_li](https://twitter.com/practcial_li){target=_blank .md-button}
