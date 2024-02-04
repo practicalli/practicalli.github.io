@@ -7,11 +7,10 @@ authors:
 categories:
   - emacs
 tags:
-  - ubuntu
+  - debian
   - spacemacs
   - emacs
 ---
-
 
 ![Practicalli Emacs Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/emacs-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
@@ -26,48 +25,62 @@ Building from source is a convenient way to try Emacs features in advance, espec
 
 ## Building steps for the impatient
 
-Add Ubuntu packages for building Emacs
+Open a terminal and switch to the adminstrator account
 
 ```shell
-sudo apt build-dep emacs && \
-sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-bin libtree-sitter-dev
+su -
+```
+
+Add debian packages to support building Emacs
+
+```shell
+apt build-dep emacs && \
+apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-bin libtree-sitter-dev
 ```
 
 [Clone Emacs 29 source code](https://git.savannah.gnu.org/cgit/emacs.git), configure and build emacs and then install (in /usr/local/bin/)
 
 ```shell
-git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29 && cd emacs-29 && \
-export CC=/usr/bin/gcc-10  && export CXX=/usr/bin/gcc-10 && ./autogen.sh && ./configure --with-native-compilation=aot && \
-make -j$(proc)  && /
-sudo make install
+git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29 && \
+cd emacs-29 && \
+export CC=/usr/bin/gcc-10 && \
+export CXX=/usr/bin/gcc-10 && \ 
+./autogen.sh && \
+./configure --with-native-compilation=aot && \
+make -j$(proc)  && \
+make install
 ```
 
-> Skip the branch for the very latest commits to Emacs which will effectively become Emacs 30 some time in the next year or so
+> Skip the `--branch` argument for the very latest commits to Emacs which will effectively become Emacs 30 some time in the next year or so
 
 Read the rest of the article for a detailed description of this workflow
 
 
-## Prepare Ubuntu
+## Prepare Debian
 
-Open `Software & Updates` and ensure the Source Code source is enabled and reload the package list (or run `sudo apt update` in a terminal after adding Source Code)
-
-![Ubuntu Software & Updates - Download from Source Code](https://raw.githubusercontent.com/practicalli/graphic-design/live/ubuntu/screenshots/ubuntu-sofware-updates-download-from-source-code.png)
-
-Ask Ubuntu to install the packages required to build Emacs (there will be quite a few packages if this is the first software built with GCC on the operating system)
+Open a terminal and switch to the adminstrator account
 
 ```shell
-sudo apt build-dep -y emacs
+su -
 ```
 
-> The previous approach was to use `sudo apt-get install build-essential gcc git-core`. Using build-deps manages the set of packages required as Emacs evolves.
+Use the Debian package manager to install the build dependencies for the Emacs package. 
 
-Install some additional libraries to support the newest features of Emacs, native compilation of Emacs packages (`libgccjit`), fast JSON processing (`libjansson`) and tree-sitter support.  These really boost performance, so are important to add.
+Debian installs the packages required to build Emacs, there will be many package to install if this is the first software is being built with GCC on the operating system.
+
+```shell
+apt build-dep -y emacs
+```
+
+> Using build-deps manages the set of packages required as Emacs evolves.
+
+Install library packages to support the newest features of Emacs, e.g. native compilation of Emacs packages (`libgccjit`), fast JSON processing (`libjansson`) and tree-sitter support.  These features can significantly boost performance.
 
 ```shell
 sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev libtree-sitter-dev
 ```
 
-> On Ubuntu 20.04 `sudo apt-get install gnutls-bin` removes a potential issue from an older certificates library
+> `sudo apt-get install gnutls-bin` removes a potential issue from an older certificates library install
 
 
 ## Preparing Emacs source code
@@ -139,7 +152,7 @@ If Emacs runs then it is ready to install.
 Install `emacs` and `emacsclient` to `/usr/local/bin` along with supporting libraries and man pages using the Makefile
 
 ```shell
-sudo make install
+make install
 ```
 
 To install in a different location, pass the full path using the `--prefix` option to make, e.g `make install --prefix /opt/emacs`
@@ -155,7 +168,10 @@ In a terminal, run the emacs command
 emacs
 ```
 
-If using Emacs 28 with Spacemacs for the first time, all Spacemacs packages in your configuration will be downloaded and compiled.  This may take 5-15 minutes and Emacs may make full use of your CPU (spawning several emacs processes on multi-core computers)
+??? HINT "Spacemacs installs packages for a version of Emacs"
+    Using a different version of Emacs with Spacemacs for the first time will download and compile all the pages in the Spacemacs configuration.  
+
+When native compliation is enabled, many minutes are required to navitvely compile each and every Emacs package.
 
 Leave Emacs for a few minutes running until the CPU activity has subsided and then consider restarting Emacs to ensure the packages have been loaded in the correct order.
 
@@ -167,7 +183,7 @@ Leave Emacs for a few minutes running until the CPU activity has subsided and th
 In the Emacs source code directory where Emacs was built, use the Makefile to remove the Emacs binaries, libraries and man pages.
 
 ```shell
-sudo make uninstall
+make uninstall
 ```
 
 
@@ -360,7 +376,13 @@ Optional Packages:
 * [Emacs Wiki - Building Emacs](https://www.emacswiki.org/emacs/BuildingEmacs) - base instructions for building Emacs
 * [Ubuntu Emacs LISP team PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) - nightly builds from the latest Emacs commits
 
-Thank you
+---
+Thank you.
 
-[practicalli GitHub profile](https://github.com/practicalli) I [@practical_li](https://twitter.com/practcial_li)
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
+
+[:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
+[:fontawesome-brands-twitter: @practical_li](https://twitter.com/practcial_li){target=_blank .md-button}
