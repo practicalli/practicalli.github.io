@@ -134,7 +134,9 @@ nav:
   - Contribute: contributing.md
   - About Practicalli: practicalli-team.md
   - Video Guides: video-guides.md
+  - Practicalli Books: books.md
   - Commercial Experiences: commercial-projects.md
+  - Community Support: clojure-community.md
   - Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
