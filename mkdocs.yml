@@ -127,6 +127,7 @@ nav:
   - index.md
   - practicalli-team.md
   - Contribute: contributing.md
+  - Commercial Experiences: commercial-projects.md
   - Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
