@@ -125,8 +125,8 @@ extra:
 # Navigation
 nav:
   - index.md
-  - practicalli-team.md
   - Contribute: contributing.md
+  - About Practicalli: practicalli-team.md
   - Commercial Experiences: commercial-projects.md
   - Blog:
       - blog/index.md
