@@ -98,6 +98,11 @@ plugins:
       cards: !ENV [MKDOCS_SOCIAL_CARDS_GENERATE, true]
   - tags
 
+  # Redirect pages when moved or changed
+  - redirects:
+      redirect_maps:
+        feed_rss_created.xml: blog/feed_rss_created.xml
+
 # Footer / Social Media
 extra:
   analytics:
