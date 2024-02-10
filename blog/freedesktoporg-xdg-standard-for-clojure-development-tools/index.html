@@ -1,0 +1,1096 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development">
+      
+      
+        <meta name="author" content="Practicalli">
+      
+      
+        <link rel="canonical" href="https://practical.li/blog/freedesktoporg-xdg-standard-for-clojure-development-tools/">
+      
+      
+        <link rel="prev" href="../building-emacs-28-on-ubuntu-linux/">
+      
+      
+        <link rel="next" href="../build-and-run-clojure-with-multi-stage-dockerfile/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-7WHCX3FBZ7"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-7WHCX3FBZ7",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-7WHCX3FBZ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development" >
+      
+        <meta  property="og:description"  content="Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development" >
+      
+        <meta  property="og:image"  content="https://practical.li/assets/images/social/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://practical.li/blog/freedesktoporg-xdg-standard-for-clojure-development-tools/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="FreeDesktop.org XDG standard for Clojure development tools - Practicalli Software Development" >
+      
+        <meta  name="twitter:description"  content="Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development" >
+      
+        <meta  name="twitter:image"  content="https://practical.li/assets/images/social/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#freedesktop-xdg-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Practicalli Software Development" class="md-header__button md-logo" aria-label="Practicalli Software Development" data-md-component="logo">
+      
+  <img src="../../assets/images/practicalli-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Practicalli Software Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FreeDesktop.org XDG standard for Clojure development tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/practicalli/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Practicalli Software Development" class="md-nav__button md-logo" aria-label="Practicalli Software Development" data-md-component="logo">
+      
+  <img src="../../assets/images/practicalli-logo.png" alt="logo">
+
+    </a>
+    Practicalli Software Development
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/practicalli/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practicalli Software Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practicalli-team/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practicall Team
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feed_rss_created.xml" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSS feed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#freedesktop-xdg-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      FreeDesktop XDG Standards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xdg-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      XDG Environment variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-linux-unix-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Linux / Unix operating system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-set-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where to Set environment variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where to Set environment variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zsh-prezto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zsh - prezto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neovim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emacs-and-spacemacs-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emacs and Spacemacs Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authinfo-secure-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      authinfo secure credentials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doom-emacs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Doom Emacs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clojure-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clojure CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven-and-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maven and dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maven and dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clojure-gitlibs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clojure Gitlibs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clojure-lsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clojure LSP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intellij-idea-and-cursive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intellij Idea and Cursive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leiningen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leiningen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-and-calva" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code and Calva
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Practicalli Johnny
+                        
+                      </strong>
+                      <br>
+                      Founder
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2022-05-16 00:00:00" class="md-ellipsis">May 16, 2022</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/debian/">debian</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              9 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">debian</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">emacs</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">neovim</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">clojure-cli</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/practicalli/edit/main/docs/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/practicalli/raw/main/docs/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>FreeDesktop.org XDG standard for Clojure development tools</h1>
+
+<p><img align="right" alt="Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px" /></p>
+<p>The <a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> FreeDesktop.org XDG basedir standard</a> defines specific locations to store all user configuration, data files and caches.</p>
+<p>Without the XDG standard, these files and directories are often mixed together and stored in the <code>$HOME</code>  of the users account, making it more challenging to backup or version control.</p>
+<p>Development tools such as NeoVim, Emacs, Clojure CLI  and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.  There are simple approaches to work-around the limitations of tools that don't conform.</p>
+<!-- more -->
+
+<h2 id="freedesktop-xdg-standards">FreeDesktop XDG Standards<a class="headerlink" href="#freedesktop-xdg-standards" title="Permanent link">λ︎</a></h2>
+<p><a href="https://www.freedesktop.org/wiki/">FreeDesktop.org</a> produces <a href="https://www.freedesktop.org/wiki/Specifications/">standards under the Cross-Desktop Group</a>, referred to as XDG.</p>
+<p>Two of the most relevant specifications for users are:</p>
+<ul>
+<li><a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/">Desktop base directories (basedir)</a>: defining the location of application configuration and data files</li>
+<li><a href="https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/">Desktop entries (.desktop)</a>: to define executable, application name, icon and description, used by application launchers and desktop menus</li>
+</ul>
+<p>This article will focus on the basedir configuration and document the XDG locations for a range of common developer tools</p>
+<h2 id="xdg-environment-variables">XDG Environment variables<a class="headerlink" href="#xdg-environment-variables" title="Permanent link">λ︎</a></h2>
+<p>The XDG Base Directory Specification defines specific environment variables to define each locations, usually set in the configuration file of the operating system shell, e.g. zsh, bash, fish.</p>
+<p>Each location contains application specific files within a directory of the same name as that application, e.g. <code>XDG_CONFIG_HOME/git</code> for Git version control client.</p>
+<ul>
+<li><code>XDG_CONFIG_HOME</code> user-specific configuration files, default <code>$HOME/.config</code></li>
+<li><code>XDG_DATA_HOME</code> user-specific data files. default <code>$HOME/.local/share</code></li>
+<li><code>XDG_STATE_HOME</code> user-specific state data <code>$HOME/.local/state</code></li>
+<li><code>XDG_CACHE_HOME</code> user-specific non-essential (cached) data, default <code>$HOME/.cache</code></li>
+<li><code>XDG_RUNTIME_DIR</code> runtime files bound to the login status of the user</li>
+</ul>
+<p><code>XDG_CONFIG_DIRS</code> and <code>XDG_DATA_DIRS</code> can be used to define an ordered set of directories to search for their respective files, rather than just a single directory.</p>
+<blockquote>
+<p>Environment variables must be set to an absolute path to be consider valid.  Values can include other environment variables, e.g. HOME, as long as the path resolves as absolute.</p>
+</blockquote>
+<p>A detailed description is covered in <a href="https://specifications.freedesktop.org/basedir-spec/latest/ar01s03.html">the freedesktop.org basedir specification</a>.</p>
+<details>
+<summary>MacOSX FreeDesktop.org XDG Standard Paths</summary>
+<p>According to Apple documentation, the XDG Base directory specifications should use these locations</p>
+<ul>
+<li><code>XDG_CONFIG_HOME</code> -︎ <code>~/Library/Preferences/</code> using reverse domain name notation: <code>com.apple.AppStore.appname</code></li>
+<li><code>XDG_DATA_HOME</code> -︎ <code>~/Library/</code></li>
+<li><code>XDG_CACHE_HOME</code> -︎ <code>~/Library/Caches/</code></li>
+</ul>
+<p>See the <a href="http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFileSystem/Articles/WhereToPutFiles.html">Mac OS X Reference Library: Where to Put Application Files</a> and <a href="https://developer.apple.com/library/archive/qa/qa1170/">Mac OS X Reference Library: Important Java Directories on Mac OS X</a></p>
+</details>
+<h2 id="configuring-linux-unix-operating-system">Configuring Linux / Unix operating system<a class="headerlink" href="#configuring-linux-unix-operating-system" title="Permanent link">λ︎</a></h2>
+<p>The XDG basedir specification is used by many Unix distributions, although the <code>XDG_CONFIG_HOME</code> is rarely set as it may break older applications.  Instead the OS uses the default locations in the specifications and expects applications to do the same.</p>
+<p>Some tools already use the default location of <code>XDG_CONFIG_HOME</code>. Most maintained tools will use the XDG locations if the environment variables are set.</p>
+<p>Defining <code>XDG_CONFIG_HOME</code> before installing development tools and applications helps ensure that the right locations are used.</p>
+<p>Existing configurations are easily migrated to the <code>XDG_CONFIG_HOME</code> directory, either all at once or application by application.  If the configuration is not found in <code>XDG_CONFIG_HOME</code> the application should look for the configuration in the <code>HOME</code> directory.</p>
+<h2 id="where-to-set-environment-variables">Where to Set environment variables<a class="headerlink" href="#where-to-set-environment-variables" title="Permanent link">λ︎</a></h2>
+<p>For desktop launchers, edit the <code>.profile</code> file and export a value for <code>XDG_CONFIG_HOME</code>, which should then be used by all applications launched in this way.</p>
+<p>For example, the <code>XDG_CONFIG_HOME</code> is defined for all applications and <code>SPACEMACSDIR</code> is defined specifically for Spacemacs configuration for Emacs.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>export XDG_CONFIG_HOME=$HOME/.config
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># Application specific
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>export SPACEMACSDIR=$XDG_CONFIG_HOME/spacemacs
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a># Recommended locations
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>export XDG_DATA_HOME=$HOME/.local/share
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>export XDG_CACHE_HOME=$HOME/.cache
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>export XDG_STATE_HOME=$HOME/.local/state
+</code></pre></div>
+<p>To apply these environment variables, logout of the desktop environment, then login again.  Now the environment variables are set.</p>
+<p>To test before logout/login, in a terminal run the command <code>source ~/.profile</code> and the environment variables will be available in that terminal session.</p>
+<h3 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">λ︎</a></h3>
+<p>The shell and all command line tools will use environment variables in <code>~/.profile</code>.  Or they can be set in the respective resource files for the terminal shell to add environment variables</p>
+<ul>
+<li>bash - use <code>~/.bashrc</code></li>
+<li>zsh - use <code>~/.zprofile</code> or <code>.zshenv</code></li>
+</ul>
+<p>For example, in <code>~/.zprofile</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>export XDG_CONFIG_HOME=&quot;$XDG_CONFIG_HOME=$HOME/.config&quot;
+</code></pre></div>
+<h2 id="zsh-prezto">Zsh - prezto<a class="headerlink" href="#zsh-prezto" title="Permanent link">λ︎</a></h2>
+<p><a href="https://github.com/sorin-ionescu/prezto">Prezto</a> is an rich configuration for Zsh that provides aliases, functions, auto completion and prompt themes (including the popular <a href="https://github.com/romkatv/powerlevel10k">Powerline10k theme</a>). Prezto includes a wide range of optional modules such as git status, autosuggestions (fish shell completion), GPG, etc.</p>
+<p><img alt="Prezto themes - Sorin theme example" src="https://i.imgur.com/nrGV6pg.png" /></p>
+<p>Install prezto in the <code>XDG_CONFIG_HOME/zsh</code> directory.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sorin-ionescu/prezto.git<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="si">}</span><span class="s2">/prezto&quot;</span>
+</code></pre></div>
+<p>Prezto requires <code>~/.zshenv</code> to bootstrap the location of prezto configuration.  The <code>~/.zshenv</code> file can be a symbolic link to <code>XDG_CONFIG_HOME/zsh/.zshenv</code></p>
+<p>Set the <code>XDG_CONFIG_HOME</code> location to <code>HOME/.config</code> for all applications if not set in <code>~/.profile</code></p>
+<p>Set the <code>ZDOTDIR</code> location so Zsh can find the Prezto configuration.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>export XDG_CONFIG_HOME=&quot;${XDG_CONFIG_HOME:=$HOME/.config}&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>export ZDOTDIR=&quot;${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}&quot;
+</code></pre></div>
+<p>Other application specific environment variables should be added to <code>.zshevn</code> file as well, e.g. <code>SPACEMACSDIR</code> for Spacemacs configuration.</p>
+<blockquote>
+<p>TIP: Once installed, any prezto configuration files that will be added can be copied from the <code>.zprezto/runcoms</code> directory to <code>XDG_CONFIG_HOME/zsh</code>, rather than linking as the documentation suggests. This approach minimises the need to merge changes when updating prezto.</p>
+</blockquote>
+<h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
+<p>Neovim supports the XDG basedir specification and will use <code>~/.config/nvim</code> directory by default.</p>
+<p>All the packages installed, such as the excellent <a href="https://github.com/Olical/conjure">Conjure</a> for Clojure development (and many other fun languages), will therefore be part of the <code>~/.config/neovim</code> configuration.</p>
+<p>Vim does not support the basedir.  However, when Neovim is installed as a .deb package it will be used for the vim command (set via <code>/etc/alternatives/vim</code>)</p>
+<blockquote>
+<p><a href="https://practical.li/neovim/">Practicalli Neovim</a> is the start of a new book on setting up Neovim with Clojure, LSP, Treesitter and many other packages, using fennel (a lisp dialect) for its configuration.  More details coming soon.</p>
+</blockquote>
+<h2 id="emacs-and-spacemacs-configuration">Emacs and Spacemacs Configuration<a class="headerlink" href="#emacs-and-spacemacs-configuration" title="Permanent link">λ︎</a></h2>
+<p>Emacs will use <code>XDG_CONFIG_HOME/emacs</code> location if it contains an <code>init.el</code> file.</p>
+<p><code>SPACEMACSDIR</code> environment variable is used by Spacemacs to set the <code>dotspacemacs-directory</code>, defining where to look for the Spacemacs specific <code>init.el</code> file.</p>
+<p>Set <code>SPACEMACSDIR</code> to <code>XDG_CONFIG_HOME/spacemacs</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>export XDG_CONFIG_HOME=&quot;$HOME/.config&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a># Ensure Emacs can find the location of Spacemacs configuration
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># when using a desktop launcher
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>export SPACEMACSDIR=&quot;$XDG_CONFIG_HOME/spacemacs&quot;
+</code></pre></div>
+<p>Move the <code>.spacemacs</code> file to <code>XDG_CONFIG_HOME/spacemacs/init.el</code>.  Or if using <code>~/.spacemacs.d/</code> then move that directory to be the <code>XDG_CONFIG_HOME/spacemacs/</code> directory.</p>
+<h2 id="authinfo-secure-credentials">authinfo secure credentials<a class="headerlink" href="#authinfo-secure-credentials" title="Permanent link">λ︎</a></h2>
+<p>Connection credentials that include sensitive data (passwords, developer tokens) can be stored in <code>authinfo.pgp</code>, a PGP encrypted file. This providing an extra level of security for sensitive data.</p>
+<p>For example, Magit Forge uses authinfo.gpg to define a connection to GitHub or GitLab that includes a developer token.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  ;; Use XDG_CONFIG_HOME location or HOME
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  (setq auth-sources (list
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                      (concat (getenv &quot;XDG_CONFIG_HOME&quot;) &quot;/authinfo.gpg&quot;)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                      &quot;~/.authinfo.gpg&quot;))
+</code></pre></div>
+<h2 id="doom-emacs">Doom Emacs<a class="headerlink" href="#doom-emacs" title="Permanent link">λ︎</a></h2>
+<p>If Emacs configuration is detected in <code>$HOME/.config/emacs</code> then Doom will install its configuration in <code>$HOME/.config/doom</code>, so long as <code>DOOMDIR</code> has not already been configured to a different location by the user.</p>
+<h2 id="git">Git<a class="headerlink" href="#git" title="Permanent link">λ︎</a></h2>
+<p>Git will write to and read from <code>XDG_CONFIG_HOME/git/config</code> as its configuration, if that file exists and <code>~/.gitconfg</code> does not exist.  Otherwise <code>~/.gitconfg</code> is used.</p>
+<p>Before running any <code>git</code> commands, create a config file in the XDG location</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git/config
+</code></pre></div>
+<p><code>git config</code> commands will now update the XDG configuration file, e.g. setting the user identity and configure diff to use the diff3 (shared parent) for merge conflicts</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;John Practicalli&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;******+account-name@users.noreply.github.com&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.conflictstyle<span class="w"> </span>diff3
+</code></pre></div>
+<p>Add an ignore-global file to the <code>XDG_CONFIG_HOME/git</code> directory. Example excludes files can be found at <a href="https://github.com/github/gitignore">github/gitignore repository</a> or at <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a></p>
+<p>Add an excludes file to the Git config file containing the patterns used across all the users projects.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git config --global core.excludesFile ~/.config/git/ignore-global
+</code></pre></div>
+<blockquote>
+<p>The git ignore file should be defined with the full path so tools like projectile can find that ignore file.</p>
+</blockquote>
+<p><code>XDG_CONFIG_HOME/git/template</code> is a common location for scripts and hooks that should be added to a newly created Git repository, in the <code>.git</code> directory.  The template location is set by <code>init.templatedir</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir  $XDG_CONFIG_HOME/git/template
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git config --global init.templatedir template
+</code></pre></div>
+<h2 id="clojure-cli">Clojure CLI<a class="headerlink" href="#clojure-cli" title="Permanent link">λ︎</a></h2>
+<p>The <code>XDG_CONFIG_HOME/clojure</code> directory is the location for the Clojure CLI user level configuration files (e.g. <code>deps.edn</code>, <code>tools/tools.edn</code>).</p>
+<p>If <code>XDG_CONFIG_HOME</code> is not set or that location is not found, then <code>HOME/.clojure</code> is used instead.</p>
+<p>If <code>CLJ_CONFIG</code> is set to a value, then Clojure CLI commands will use that instead.</p>
+<blockquote>
+<p>Also see Maven and dependencies to manage the <code>$HOME/.m2/repository</code> directory</p>
+</blockquote>
+<h2 id="maven-and-dependencies">Maven and dependencies<a class="headerlink" href="#maven-and-dependencies" title="Permanent link">λ︎</a></h2>
+<p>Clojure CLI and Leiningen use the Maven configuration directory to store Jar files from project (and tooling) dependencies, by default this is located in <code>$HOME/.m2/repository</code>.</p>
+<p>Jar files from dependencies are considered non-essential (to the Clojure CLI tool) so should be written to the $XDG_CACHE_HOME location, typically <code>$HOME/.cache</code></p>
+<p>Add the <code>:mvn/local-repo</code> top-level key in the user level deps.edn file to set a location for the Maven repository.  The value should be the full directory path.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="ss">:mvn/local-repo</span><span class="w"> </span><span class="s">&quot;/home/practicalli/.cache/maven/repository&quot;</span>
+</code></pre></div>
+<p>The <code>:mvn/local-repo</code> can also be used in a project deps.edn file or on the command line, i.e. <code>clojure -Sdeps '{:mvn/local-repo ".cache/temp-deps"}'</code> if the Maven dependencies should be kept separate from all other projects (this scenario is not common).</p>
+<p>The Maven <code>$HOME/.m2</code> directory also <a href="https://maven.apache.org/configure.html">contains several configuration files</a>, <code>maven.config</code>, <code>jvm.config</code> and <code>extensions.xml</code>, so unfortunately conflates configuration files with data files.  Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.</p>
+<h3 id="clojure-gitlibs">Clojure Gitlibs<a class="headerlink" href="#clojure-gitlibs" title="Permanent link">λ︎</a></h3>
+<p>Clojure CLI can used dependencies from Git repositories.  To do so, the repository is downloaded into a <code>$HOME/.gitlibs</code> directory, unless the <code>GITLIBS</code> environment variable is set.  As the <code>gitlibs</code> directory contains data for the application, then ideally this would be placed in <code>XDG_CACHE_HOME</code>, under a <code>clojure-gitlibs</code> directory</p>
+<p>Set the <code>GITLIBS</code> environment variable to determine the location of the local cache directory used to clone dependencies that are Git repositories.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>export $GITLIBS=$XDG_CACHE_HOME/clojure-libs
+</code></pre></div>
+<p>Optionally move the existing <code>$HOME/.gitlibs</code> to the Cache home.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mv $HOME/.gitlibs $XDG_CACHE_HOME/clojure-gitlibs
+</code></pre></div>
+<h2 id="clojure-lsp">Clojure LSP<a class="headerlink" href="#clojure-lsp" title="Permanent link">λ︎</a></h2>
+<p><code>XDG_CONFIG_HOME/clojure-lsp</code> directory is used as the location for Clojure LSP configuration if <code>XDG_CONFIG_HOME</code> is set.  Otherwise, <code>$HOME/.clojure-lsp</code> is used as the configuration.</p>
+<blockquote>
+<p>If Clojure LSP was used for for a while, configuration may be in the deprecated <code>~/.lsp</code> directory.</p>
+</blockquote>
+<h2 id="intellij-idea-and-cursive">Intellij Idea and Cursive<a class="headerlink" href="#intellij-idea-and-cursive" title="Permanent link">λ︎</a></h2>
+<p>Intellij Idea from version 2020.1 uses the XDG basdir specification locations without the need to set XDG_CONFIG_HOME.</p>
+<p>Configuration is organised under the ~/.config/JetBrains/ directory with product and version sub-directories, for example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~/.config/JetBrains/IntelliJIdea2022.1
+</code></pre></div>
+<p><a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory">Intellij IDEA 2020.1 documentation - configuration directories</a></p>
+<h2 id="leiningen">Leiningen<a class="headerlink" href="#leiningen" title="Permanent link">λ︎</a></h2>
+<p>Leiningen does not support configuration in <code>XDG_CONFIG_HOME</code>, although there is an <a href="https://github.com/technomancy/leiningen/issues/2087">outstanding issue to add this as an enhancement from 2016</a>.</p>
+<p>Once Leiningen is installed, a temporary work-around would be to move the <code>~/.lein</code> directory to <code>XDG_CONFIG_HOME/leiningen</code> and create a symbolic link called <code>~/.lein</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mv ~/.lein $XDG_CONFIG_HOME/leiningen
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>ln -s $XDG_CONFIG_HOME/leiningen ~/.lein
+</code></pre></div>
+<blockquote>
+<p>The <code>lein</code> script uses <code>LEIN_HOME</code> variable, although this is hard-coded in the script to <code>$HOME/.lein</code> and therefore is not usable to set as an operating system environment variable to change the configuration directory location.</p>
+</blockquote>
+<h2 id="vs-code-and-calva">VS Code and Calva<a class="headerlink" href="#vs-code-and-calva" title="Permanent link">λ︎</a></h2>
+<p>Unfortunately XDG basedir specification is not currently supported by VS Code and therefore Calva (although I assume the Clojure LSP tooling in Calva will use XDG_CONFIG_HOME)</p>
+<p>There is an outstanding issue on the VS Code, also from 2016, to <a href="https://github.com/microsoft/vscode/issues/3884">revisit the configuration structure and support XDG_CONFIG_HOME</a>.</p>
+<p>Using the symbolic link workaround, as with Leiningen, should work for VS Code too.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mv $HOME/.vscode $XDG_CONFIG_HOME/vscode
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ln -s $XDG_CONFIG_HOME/vscode $HOME/.vscode
+</code></pre></div>
+<blockquote>
+<p>It is advisable to close VS Code before moving the configuration, to ensure the configuration has been saved.</p>
+</blockquote>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
+<p>The XDG basedir specification makes it simple to back up and version a users configuration files as they are all under the one directory, i.e. <code>$HOME/.config</code></p>
+<p>As data and cache files are in different locations, then few if any ignore files are required to version the configuration files.</p>
+<p>Migrating is relatively quick and painless and applications can be migrated over time if required.</p>
+<hr />
+<p>Thank you.</p>
+<p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a> </p>
+<p><a class="md-button" href="https://github.com/practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Practical.li GitHub Org</a> 
+<a class="md-button" href="https://github.com/practicalli-johnny" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> practicalli-johnny profile</a></p>
+<p><a class="md-button" href="https://clj.social/@practicalli" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg></span> @practicalli@clj.social</a>
+<a class="md-button" href="https://twitter.com/practcial_li" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></span> @practical_li</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../building-emacs-28-on-ubuntu-linux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Building Emacs 28 on Ubuntu Linux">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Building Emacs 28 on Ubuntu Linux
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../build-and-run-clojure-with-multi-stage-dockerfile/" class="md-footer__link md-footer__link--next" aria-label="Next: Build and run Clojure with Multi-stage Dockerfile">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Build and run Clojure with Multi-stage Dockerfile
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://practical.li/" target="_blank" rel="noopener" title="practical.li" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/jr0cket/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://clojurians.slack.com/messages/practicalli" target="_blank" rel="noopener" title="clojurians.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/practical_li" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/practicalli" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/u/practicalli" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.sections"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
