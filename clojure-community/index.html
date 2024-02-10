@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1138,7 +1147,7 @@
 </blockquote>
 <h2 id="askclojureorg">ask.clojure.org<a class="headerlink" href="#askclojureorg" title="Permanent link">λ︎</a></h2>
 <p>An official place to ask questions about Clojure, ClojureScript, ClojureCLR, Clojure contrib libraries and any other Clojure topic.  This forum is used by the Clojure maintainer team and so discussions can shape the direction of Clojure.</p>
-<p><img alt="ask.clojure.org front page" src="/images/ask-clojure-org-front-page.png" /></p>
+<p><a class="glightbox" href="/images/ask-clojure-org-front-page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ask.clojure.org front page" src="/images/ask-clojure-org-front-page.png" /></a></p>
 <p>Questions must have one or more of the fixed categories, enabling discussions to be simpler to find and engage with.  Questions can also have tags which are an extensible set of attributes, with several special tags</p>
 <ul>
 <li><code>problem</code> - problem in the language or library</li>
@@ -1168,7 +1177,7 @@
 <p>Post only in one specific channel rather than potentially spamming other channels.  If there are valid exceptions, then use a short summary or link to the original post or delete the original post and add it to another channel.</p>
 <h2 id="clojurians-zulip">Clojurians Zulip<a class="headerlink" href="#clojurians-zulip" title="Permanent link">λ︎</a></h2>
 <p>Discussions history is easier to follow in the <a href="http://clojurians.zulipchat.com/">Clojurians Zulip</a> than in Slack, especially where discussions take place over time, thanks to the Zulip topic-based threading.  Slack does have discussion threading, but this is often not used as conversation don't last in Slack.</p>
-<p><img alt="Zulip - topic-based threading" src="/images/zulip-topic-based-threading.png" /></p>
+<p><a class="glightbox" href="/images/zulip-topic-based-threading.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Zulip - topic-based threading" src="/images/zulip-topic-based-threading.png" /></a></p>
 <p>The Clojurians Zulip is very actively used, although not yet quite as busy as Slack.  There is a strong <a href="https://clojurians.zulipchat.com/#narrow/stream/151924-data-science">data science community</a> on Zulip and is also used for <a href="https://scicloj.github.io/pages/about/">SciCoj</a> hackathons and other (virtual) events.  It would be great to see more Clojurians using Zulip either via the website or the excellent <a href="https://zulipchat.com/apps/">Zulip app</a>.</p>
 <p>Discussions in Clojurians Zulip are also available indefinitely, whereas Slack conversations are only visible for a few days.   If a zulipchat bot has been added to a channel in the Clojurians Slack, that channel discussion history is available as a full-text-searchable archive.  To <a href="https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/topic/beginners">search the history of the #beginners channel</a>, use <code>/</code> to start a search and use the query:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>stream:slack-archive topic:beginners
@@ -1177,7 +1186,7 @@
 <h2 id="clojureverse">ClojureVerse<a class="headerlink" href="#clojureverse" title="Permanent link">λ︎</a></h2>
 <p>A <a href="https://clojureverse.org/">Clojure community forum</a> that is enjoyable to use with a rich user interface (topics, participant icons, etc.).  Responses may not be as immediate as Slack, however, it is far easier to track discussions as they evolve and review past discussions.</p>
 <p>All the usual forum features are available and direct and private messages can be sent between user accounts.</p>
-<p><img alt="Clojureverse front page" src="/images/clojureverse-front-page.png" /></p>
+<p><a class="glightbox" href="/images/clojureverse-front-page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Clojureverse front page" src="/images/clojureverse-front-page.png" /></a></p>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a> </p>
@@ -1193,8 +1202,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1364,5 +1391,5 @@
       <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

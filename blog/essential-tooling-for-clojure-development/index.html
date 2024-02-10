@@ -106,7 +106,16 @@
       
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1160,7 +1169,7 @@
 
   <h1>Essential tooling for Clojure development</h1>
 
-<p><img align="right" alt="alternative text" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="alternative text" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></a></p>
 <p>Clojure development benefits from great tooling focused around an editor (or IDE).</p>
 <p>Practicalli uses many features of a Clojure aware editor with a bias towards highly effective interaction with the REPL, user actions driven exclusively via the keyboard and an uncluttered user interface.</p>
 <p>Practicalli Clojure provides <a href="https://practicalli/clojure/clojure-editors/">an overview of Clojure editors</a> and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  </p>
@@ -1173,7 +1182,7 @@
 <!-- more -->
 
 <h2 id="repl-connnection">REPL connnection<a class="headerlink" href="#repl-connnection" title="Permanent link">λ︎</a></h2>
-<p><img align="right" alt="Practicalli Clojure REPL concept logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/repl-process.png?raw=true" style="height:150px;width:150px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/repl-process.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Clojure REPL concept logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/repl-process.png?raw=true" style="height:150px;width:150px" /></a></p>
 <p>Interaction with the REPL is the foundation of highly effective Clojure development. An editor connects to a REPL process via a network repl (nREPL) server process.</p>
 <p>Practicalli starts a REPL process in a terminal using the Clojure CLI tool.  </p>
 <p><code>:repl/rebel</code> alias is used to run Rebel Readline to provide a rich terminal UI REPL prompt and starts an nREPL server to support an editor connection.</p>
@@ -1181,7 +1190,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
 </div>
-<p><img alt="Practicalli Rebel Readline rich terminal REPL" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Rebel Readline rich terminal REPL" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png?raw=true" /></a></p>
 <div class="admonition info">
 <p class="admonition-title">Jack-in or Connect</p>
 <p>The REPL and nREPL processes are started by an editor jack-in command, providing the relevant dependencies and command line options to the Clojure CLI.  The editor automatically connects to the nREPL process.</p>
@@ -1189,7 +1198,7 @@
 <p>Practicalli uses a terminal REPL prompt for longer running processes or as a way to separate logs from evaluation events, e.g. starting components such as web servers.</p>
 <p>Starting the REPL process outside of the editor provides a useful separation of editor and REPL, also allows for a range of editors and other tooling to share the REPL state </p>
 </div>
-<p><img align="left" alt="Practicalli Clojure REPL Workflow" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Practicalli Clojure REPL Workflow" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png" /></a></p>
 <h2 id="customise-repl-starup">Customise REPL starup<a class="headerlink" href="#customise-repl-starup" title="Permanent link">λ︎</a></h2>
 <p>The <code>user</code> namespace is always loaded during REPL startup, allowing tools and libraries to be included via a <code>user.clj</code> file when on the class path.</p>
 <p>Clojure development workflows and tools may vary across projects, so customising the REPL starup is highly valuable.</p>
@@ -1206,7 +1215,7 @@
 <ul>
 <li>Un-evaluate a var to avoid running stale code and tests, e.g. remove def, defn, deftest names from the REPL process</li>
 </ul>
-<p><img alt="Practicalli Clojure REPL connected editor" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Clojure REPL connected editor" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png?raw=true" /></a></p>
 <h2 id="structural-editing">Structural Editing<a class="headerlink" href="#structural-editing" title="Permanent link">λ︎</a></h2>
 <p>Clojure has a highly structured syntax compared to many other languages thanks to its LISP heritage.  Functions are defined and called in expressions using parenthesis, <code>()</code>.</p>
 <p>Writing and code refactor is enhanced when the editor ensures parenthesis remain balanced, i.e. every opening paren has a closing paren.</p>
@@ -1216,7 +1225,7 @@
 <li>barf pushes the current expression out of the surrounding expression</li>
 </ul>
 <p><a href="https://shaunlebron.github.io/parinfer/" target="_blank">parinfer</a> provides structural editing based on indentation, automatically ensuring parens are ballanced as code is added or changed.  Parinfer doesnt require any commands or key bindings and so can feel more natural.</p>
-<p><img alt="Parinfer example" loading="lazy" src="https://storage.googleapis.com/zenn-user-upload/5a7508d12f68-20221206.gif" /></p>
+<p><a class="glightbox" href="https://storage.googleapis.com/zenn-user-upload/5a7508d12f68-20221206.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Parinfer example" loading="lazy" src="https://storage.googleapis.com/zenn-user-upload/5a7508d12f68-20221206.gif" /></a></p>
 <h2 id="maintain-repl-state">Maintain REPL State<a class="headerlink" href="#maintain-repl-state" title="Permanent link">λ︎</a></h2>
 <p>A Clojure REPL can be very long lived thanks to the stability of the Java Virtual Machine (JVM).  Removing state vars can help avoid a REPL restart, as tools that refresh namespaces and start/stop/restart a Clojure system components.</p>
 <ul>
@@ -1228,7 +1237,7 @@
 <p><a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/donut-system/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> donut-party/system</a>
 <a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/integrant/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Integrant &amp; Integrant REPL</a></p>
 <h2 id="inspecting-navigating-data">Inspecting / Navigating Data<a class="headerlink" href="#inspecting-navigating-data" title="Permanent link">λ︎</a></h2>
-<p><img align="right" alt="Practicalli Portal data inspector logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true" style="height:150px;width:150px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Portal data inspector logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true" style="height:150px;width:150px" /></a></p>
 <p>Many results of evaluating Clojure produce interesting and potentially complex data structures.  Tools for navigating data aid in the understanding of results produced by Clojure code.</p>
 <p>Being able to present the results in different ways can add greater meaning and easier consumption of the results, e.g. visual charts to support data science.</p>
 <ul>
@@ -1317,8 +1326,26 @@ Evaluation to investigate the behaviour of the code
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1476,5 +1503,5 @@ Evaluation to investigate the behaviour of the code
       <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

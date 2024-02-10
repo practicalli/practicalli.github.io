@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1192,7 +1201,7 @@
 
   <h1>Expose Clojure Service using Ngrok</h1>
 
-<p><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></a></p>
 <p>Exposing a local running services can be valuable when writing apps and web-hooks for Cloud API products, e.g. Slack, Atlassian Confluence, Hasura, Salesforce, etc.</p>
 <p>ngrok exposes local networked services behinds NATs and firewalls to the public internet over a secure tunnel.</p>
 <p><a href="https://ngrok.com/signup">Create a free ngrok account</a> to get an authorisation token for use with the ngrok agent to create a secure tunnel.  Or add an SSH public key to use SSH reverse tunnel with the ngrok service.</p>
@@ -1275,7 +1284,7 @@
 <li>Replay requests, optionally modifying a request first</li>
 <li><a href="http://localhost:4040/status">ngrok agent status</a> to help with troubleshooting the tunnel connetion</li>
 </ul>
-<p><img alt="Ngrok web inspection interface" src="https://ngrok.com/docs/assets/images/inspect2-91853c29eecae917896a429455b02111.png" /></p>
+<p><a class="glightbox" href="https://ngrok.com/docs/assets/images/inspect2-91853c29eecae917896a429455b02111.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ngrok web inspection interface" src="https://ngrok.com/docs/assets/images/inspect2-91853c29eecae917896a429455b02111.png" /></a></p>
 <p><a href="https://ngrok.com/docs/secure-tunnels/ngrok-agent/web-inspection-interface/">Ngrok web inspection interface</a></p>
 <h2 id="ssh-reverse-tunnel">SSH reverse tunnel<a class="headerlink" href="#ssh-reverse-tunnel" title="Permanent link">λ︎</a></h2>
 <p>ngrok can be used with SSH reverse tunneling (ssh -R), avoiding the need to install the ngrok agent.</p>
@@ -1347,8 +1356,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1522,5 +1549,5 @@
       <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

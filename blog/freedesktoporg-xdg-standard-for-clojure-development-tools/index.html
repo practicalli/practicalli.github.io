@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1300,7 +1309,7 @@
 
   <h1>FreeDesktop.org XDG standard for Clojure development tools</h1>
 
-<p><img align="right" alt="Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px" /></a></p>
 <p>The <a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> FreeDesktop.org XDG basedir standard</a> defines specific locations to store all user configuration, data files and caches.</p>
 <p>Without the XDG standard, these files and directories are often mixed together and stored in the <code>$HOME</code>  of the users account, making it more challenging to backup or version control.</p>
 <p>Development tools such as NeoVim, Emacs, Clojure CLI  and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.  There are simple approaches to work-around the limitations of tools that don't conform.</p>
@@ -1373,7 +1382,7 @@
 </code></pre></div>
 <h2 id="zsh-prezto">Zsh - prezto<a class="headerlink" href="#zsh-prezto" title="Permanent link">λ︎</a></h2>
 <p><a href="https://github.com/sorin-ionescu/prezto">Prezto</a> is an rich configuration for Zsh that provides aliases, functions, auto completion and prompt themes (including the popular <a href="https://github.com/romkatv/powerlevel10k">Powerline10k theme</a>). Prezto includes a wide range of optional modules such as git status, autosuggestions (fish shell completion), GPG, etc.</p>
-<p><img alt="Prezto themes - Sorin theme example" src="https://i.imgur.com/nrGV6pg.png" /></p>
+<p><a class="glightbox" href="https://i.imgur.com/nrGV6pg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prezto themes - Sorin theme example" src="https://i.imgur.com/nrGV6pg.png" /></a></p>
 <p>Install prezto in the <code>XDG_CONFIG_HOME/zsh</code> directory.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sorin-ionescu/prezto.git<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="si">}</span><span class="s2">/prezto&quot;</span>
 </code></pre></div>
@@ -1512,8 +1521,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1687,5 +1714,5 @@
       <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

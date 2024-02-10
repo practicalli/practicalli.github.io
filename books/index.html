@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1130,12 +1139,12 @@
 <h1 id="practicalli-books">Practicalli Books<a class="headerlink" href="#practicalli-books" title="Permanent link">λ︎</a></h1>
 <h2 id="engineering-playbook">Engineering Playbook<a class="headerlink" href="#engineering-playbook" title="Permanent link">λ︎</a></h2>
 <p>Practical guides for specific tools and practices to support software development. </p>
-<p><img alt="Practicalli Engineering Playbook Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/engineering-playbook/engineering-playbook-concept.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/engineering-playbook/engineering-playbook-concept.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Engineering Playbook Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/engineering-playbook/engineering-playbook-concept.png" /></a></p>
 <h2 id="clojure">Clojure<a class="headerlink" href="#clojure" title="Permanent link">λ︎</a></h2>
 <p>Clojure REPL workflow</p>
 <p>Learn the Clojure language through REPL driven development using Clojure CLI tools (deps.edn). Use a rich set of community tools, including Rebel readline Terminal UI, Portal and Reveal data browsers and tools to manage all aspects of Clojure projects.</p>
 <p>Practice Clojure by solving challenges with examples of different approaches. Encode the design and avoid regressions by writing unit tests and specifications for generative testing.</p>
-<p><img alt="Practicalli Clojure Book" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Clojure Book" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true" /></a></p>
 <h2 id="clojure-web-services">Clojure Web Services<a class="headerlink" href="#clojure-web-services" title="Permanent link">λ︎</a></h2>
 <p>Building services with APIs</p>
 <p>Build production level server-side web services, micro-services and API's in Clojure. </p>
@@ -1143,26 +1152,26 @@
 <p>Routing of requests are managed by Compojure or Reitit, passing requests to handers which are Clojure functions. </p>
 <p>Data formats are managed by coercion and content negotiation. </p>
 <p>OpenAPI (swagger) is used for self-documenting APIs</p>
-<p><img alt="Practicalli Clojure Web Services Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light" />
-<img alt="Practicalli Clojure Web Services Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Clojure Web Services Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light" /></a>
+<a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Clojure Web Services Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark" /></a></p>
 <h2 id="spacemacs-emacs">Spacemacs (Emacs)<a class="headerlink" href="#spacemacs-emacs" title="Permanent link">λ︎</a></h2>
 <p>powerful editing with Emacs and Vim multi-modal editing, with a mnemonic menu that simplifies the learning curve. Install a full Clojure development experience with two Git commands.</p>
-<p><img alt="Practicalli Spacemacs Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-spacemacs-book-banner.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-spacemacs-book-banner.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Spacemacs Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-spacemacs-book-banner.png" /></a></p>
 <h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
 <p>Neovim for effective Clojure development with Conjure and Clojure LSP (nvim-treesitter). With a mnemonic menu to simplify the learning curve.</p>
 <ul>
 <li>Conjure </li>
 <li>AstroNvim &amp; AstroNvim Community</li>
 </ul>
-<p><img alt="Practicalli Neovim Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-neovim-book-banner-astronvim.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-neovim-book-banner-astronvim.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli Neovim Book" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-neovim-book-banner-astronvim.png" /></a></p>
 <h1 id="under-development">Under development<a class="headerlink" href="#under-development" title="Permanent link">λ︎</a></h1>
 <p>Practicalli books evolve from commercial experiences and from teaching in the community.  The following books are work in progress or need significant updates.</p>
 <h2 id="clojurescript">ClojureScript<a class="headerlink" href="#clojurescript" title="Permanent link">λ︎</a></h2>
 <p>build single page apps (SPA's), dynamic UI's and mobile apps with responsive design</p>
-<p><img alt="Practicalli ClojureScript" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojurescript-book-banner-alpha.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojurescript-book-banner-alpha.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli ClojureScript" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojurescript-book-banner-alpha.png" /></a></p>
 <h2 id="clojure-data-science">Clojure Data Science<a class="headerlink" href="#clojure-data-science" title="Permanent link">λ︎</a></h2>
 <p>Clojure tools and techniques when working with data science related projects. Ingest data</p>
-<p><img alt="Practicalli ClojureScript" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-data-science-book-banner-alpha.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-data-science-book-banner-alpha.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Practicalli ClojureScript" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-data-science-book-banner-alpha.png" /></a></p>
 <h2 id="amazon-web-services">Amazon Web Services<a class="headerlink" href="#amazon-web-services" title="Permanent link">λ︎</a></h2>
 <p>Clojure development with Amazon Web Services</p>
 <h2 id="vspacecode">VSpaceCode<a class="headerlink" href="#vspacecode" title="Permanent link">λ︎</a></h2>
@@ -1176,8 +1185,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1347,5 +1374,5 @@
       <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1135,7 +1144,7 @@
 
   <h1>Clojure Advent Of Code - a fun way to learn</h1>
 
-<p><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true" style="width:240px" /></a></p>
 <p>Advent of Code is the annual coding challenge with a festive theme.  Each day there is a new challenge in two parts, the first fairly easy the second a little more involved.  The challenges are an investment of your time to complete them all, although even trying just a few is enough to help you think in different ways.</p>
 <p>Every programming language requires regular practice to maintain your skills.  A full time developer role gives you lots of opportunities to practice every day, however, its often focused in around solving problems within a specific business domain, with little time to explore others.  The Advent of Code puts you in a different domain, so its great for extending your coding experiences.</p>
 <p>Solving challenges in a different language is another great way to extend your experiences, so here are some tips and examples for solving the advent of code in Clojure.</p>
@@ -1162,7 +1171,7 @@
 <p>Challenges are only accessible from their day of the month onwards.  There is a count-down clock displayed on the next challenge to open, so you know when it will be available.  Don't feel pressured to keep up with the challenges though, enjoy the experience and have fun, you will learn more that way.</p>
 </li>
 </ul>
-<p><img alt="Advent Of Code 2019 Day 1 challenge snippet" src="https://github.com/practicalli/graphic-design/blob/live/code-challenges/advent-of-code-2019-day1.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/code-challenges/advent-of-code-2019-day1.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Advent Of Code 2019 Day 1 challenge snippet" src="https://github.com/practicalli/graphic-design/blob/live/code-challenges/advent-of-code-2019-day1.png?raw=true" /></a></p>
 <h2 id="a-previous-example">A previous example<a class="headerlink" href="#a-previous-example" title="Permanent link">λ︎</a></h2>
 <p>In the following video I walk through the first challenge of Advent of Code from 2018, trying out different solutions at increasing levels of abstraction.  With each level of abstraction it helps to think in a more functional way.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/opM7fU7IAV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1197,8 +1206,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1372,5 +1399,5 @@
       <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1178,7 +1187,7 @@
 <p>A complete picture of all the actions in the game are generated for analytics.</p>
 <p>Individual match data is aggregated to provide player and team statistics throughout the sports year.</p>
 <p>All data is stored in a Postgresql database and Hasura used to generate a GraphQL API.</p>
-<p><img alt="Sports Data enrichment pipeline" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-enrichment-pipeline.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-enrichment-pipeline.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sports Data enrichment pipeline" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-enrichment-pipeline.png?raw=true" /></a></p>
 <h3 id="graphql-authentication">GraphQL Authentication<a class="headerlink" href="#graphql-authentication" title="Permanent link">λ︎</a></h3>
 <p>Hasura has access rules to define which data can be accessed, however, there was no direct support for OAuth token validation.</p>
 <p>Hasura did provide a webhook so that each request could query an API to validate every request.</p>
@@ -1187,7 +1196,7 @@
 <p>The Clojure API returned an x-hasura header if the access token was valid.  The hasura token contained data to be used by the hasura rules to control access to the graphql result.</p>
 <p>The Clojure API checked the token from every request made to the GraphQL API.</p>
 <p>Integrant was used to manage the software components in the Clojure web service.</p>
-<p><img alt="Sports Data graphql authentication webhook" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-graphql-query-authentication-hasura.png?raw=true" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-graphql-query-authentication-hasura.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sports Data graphql authentication webhook" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-graphql-query-authentication-hasura.png?raw=true" /></a></p>
 <h2 id="fraud-detection">Fraud Detection<a class="headerlink" href="#fraud-detection" title="Permanent link">λ︎</a></h2>
 <p>Clojure Engineering in financial services, working with amazing people to deliver Fraud Detection using Machine Learning models</p>
 <p>Building a data pipeline with a range of service orchestration (internal and external) to supply comprehensive, accurate and timely data for processing via scientific models. Enabling the data science models to be effectively trained and instantly detect fraudulent activity within Fintech transactions</p>
@@ -1202,8 +1211,26 @@
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1373,5 +1400,5 @@
       <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

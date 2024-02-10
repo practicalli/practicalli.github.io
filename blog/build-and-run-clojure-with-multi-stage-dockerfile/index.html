@@ -108,7 +108,16 @@
       
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1264,7 +1273,7 @@
 
   <h1>Build and run Clojure with Multi-stage Dockerfile</h1>
 
-<p><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/docker-logo-name.png?raw=true" style="width:240px" /></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/docker-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/docker-logo-name.png?raw=true" style="width:240px" /></a></p>
 <p>Deployment of a Clojure service is very simple, requiring only an Uberjar (archive file containing the Clojure Project and Clojure run-time) and the Java Run-time Environment (JRE).</p>
 <p>A Clojure service rarely works in isolation and although many services are access via a network connection (defined in Environment Variables), provisioning containers to build and run Clojure along with any other services can be valuable as complexity of the architecture grows.</p>
 <p>A <a href="https://github.com/practicalli/clojure-app-template/blob/main/Dockerfile">Multi-stage <code>Dockerfile</code></a> is an effective way to build and run Clojure projects in continuous integration pipelines and during local development where multiple services are required for testing.</p>
@@ -1504,7 +1513,7 @@ call the <code>dist</code> target to build the Uberjar
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker<span class="w"> </span>build<span class="w"> </span>--tag<span class="w"> </span>practicalli/service-name:1.1<span class="w"> </span>.
 </code></pre></div>
 <p>After the first time building the docker image, any parts of the build that havent changed will use their respective cached layers in the builder stage.  This can lead to very fast, even zero time builds.</p>
-<p><img alt="Docker build image optomised to use docker layer cache for build stage" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/docker-compose-build-output-cached-layers.png" /></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/docker-compose-build-output-cached-layers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Docker build image optomised to use docker layer cache for build stage" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/docker-compose-build-output-cached-layers.png" /></a></p>
 <blockquote>
 <p>Maximising the docker cache by careful consideration of command order and design in a <code>Dockerfile</code> can have a significant positive affect on build speed. Each command is effectively a layer in the Docker image and if its respective files have not changed, then the cached version of the command will be run</p>
 </blockquote>
@@ -1535,8 +1544,26 @@ call the <code>dist</code> target to build the Uberjar
 
 
   
+    
+  
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
   
@@ -1710,5 +1737,5 @@ call the <code>dist</code> target to build the Uberjar
       <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
