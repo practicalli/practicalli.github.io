@@ -2,13 +2,11 @@
 
 Books and articles covering an extensive range of subjects related to software development practices and tools, with a specialisation on Clojure programming.
 
-[](contributing.md){target=_blank} 
+![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}
+![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}
 
-![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy}
-![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy}
-
-![Practicalli Clojurians Zulip button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-zulip-channel-button.png?raw=true){loading=lazy}
-![Practicalli Clojurians Slack button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-slack-channel-button.png?raw=true){loading=lazy}
+![Practicalli Clojurians Zulip button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-zulip-channel-button.png?raw=true){loading=lazy style="width:240px"}
+![Practicalli Clojurians Slack button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-slack-channel-button.png?raw=true){loading=lazy style="width:240px"}
 
 ---
 
