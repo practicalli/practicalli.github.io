@@ -82,6 +82,7 @@ markdown_extensions:
   - toc:
       permalink: λ︎
 
+## Plugins
 plugins:
   - blog:
       blog_dir: blog
@@ -90,7 +91,11 @@ plugins:
       draft_on_serve: true
       draft_if_future_date: true
   - rss:
-      enabled: !ENV [CI, false]
+      image: https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true
+      enabled: true
+      # How many articles to include (Default 20)
+      length: 50
+      # enabled: !ENV [CI, false]
       match_path: blog/posts/.*
       date_from_meta:
         as_creation: date
@@ -98,6 +103,12 @@ plugins:
         - categories
         - tags
   - search
+  - callouts
+  - glightbox # Image aligning
+  - git-revision-date-localized: # Update and Creation date of each page
+      # enable_creation_date: true
+      fallback_to_build_date: true
+
   # Generate Social Cards via CI only
   # in assets/images/social
   - social:
@@ -140,3 +151,4 @@ nav:
   - Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
+# TODO: setup override to point to blog/feed_rss_created.xlm
