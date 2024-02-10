@@ -1310,17 +1310,17 @@
   <h1>FreeDesktop.org XDG standard for Clojure development tools</h1>
 
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px" /></a></p>
-<p>The <a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> FreeDesktop.org XDG basedir standard</a> defines specific locations to store all user configuration, data files and caches.</p>
+<p>The <a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> FreeDesktop.org XDG basedir standard</a> defines specific locations to store all user configuration, data files and caches.</p>
 <p>Without the XDG standard, these files and directories are often mixed together and stored in the <code>$HOME</code>  of the users account, making it more challenging to backup or version control.</p>
 <p>Development tools such as NeoVim, Emacs, Clojure CLI  and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.  There are simple approaches to work-around the limitations of tools that don't conform.</p>
 <!-- more -->
 
 <h2 id="freedesktop-xdg-standards">FreeDesktop XDG Standards<a class="headerlink" href="#freedesktop-xdg-standards" title="Permanent link">λ︎</a></h2>
-<p><a href="https://www.freedesktop.org/wiki/">FreeDesktop.org</a> produces <a href="https://www.freedesktop.org/wiki/Specifications/">standards under the Cross-Desktop Group</a>, referred to as XDG.</p>
+<p><a href="https://www.freedesktop.org/wiki/" target="_blank">FreeDesktop.org</a> produces <a href="https://www.freedesktop.org/wiki/Specifications/" target="_blank">standards under the Cross-Desktop Group</a>, referred to as XDG.</p>
 <p>Two of the most relevant specifications for users are:</p>
 <ul>
-<li><a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/">Desktop base directories (basedir)</a>: defining the location of application configuration and data files</li>
-<li><a href="https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/">Desktop entries (.desktop)</a>: to define executable, application name, icon and description, used by application launchers and desktop menus</li>
+<li><a href="https://www.freedesktop.org/wiki/Specifications/basedir-spec/" target="_blank">Desktop base directories (basedir)</a>: defining the location of application configuration and data files</li>
+<li><a href="https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/" target="_blank">Desktop entries (.desktop)</a>: to define executable, application name, icon and description, used by application launchers and desktop menus</li>
 </ul>
 <p>This article will focus on the basedir configuration and document the XDG locations for a range of common developer tools</p>
 <h2 id="xdg-environment-variables">XDG Environment variables<a class="headerlink" href="#xdg-environment-variables" title="Permanent link">λ︎</a></h2>
@@ -1337,7 +1337,7 @@
 <blockquote>
 <p>Environment variables must be set to an absolute path to be consider valid.  Values can include other environment variables, e.g. HOME, as long as the path resolves as absolute.</p>
 </blockquote>
-<p>A detailed description is covered in <a href="https://specifications.freedesktop.org/basedir-spec/latest/ar01s03.html">the freedesktop.org basedir specification</a>.</p>
+<p>A detailed description is covered in <a href="https://specifications.freedesktop.org/basedir-spec/latest/ar01s03.html" target="_blank">the freedesktop.org basedir specification</a>.</p>
 <details>
 <summary>MacOSX FreeDesktop.org XDG Standard Paths</summary>
 <p>According to Apple documentation, the XDG Base directory specifications should use these locations</p>
@@ -1356,6 +1356,8 @@
 <h2 id="where-to-set-environment-variables">Where to Set environment variables<a class="headerlink" href="#where-to-set-environment-variables" title="Permanent link">λ︎</a></h2>
 <p>For desktop launchers, edit the <code>.profile</code> file and export a value for <code>XDG_CONFIG_HOME</code>, which should then be used by all applications launched in this way.</p>
 <p>For example, the <code>XDG_CONFIG_HOME</code> is defined for all applications and <code>SPACEMACSDIR</code> is defined specifically for Spacemacs configuration for Emacs.</p>
+<div class="admonition example">
+<p class="admonition-title">Set XDG Locations</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>export XDG_CONFIG_HOME=$HOME/.config
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -1368,6 +1370,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>export XDG_CACHE_HOME=$HOME/.cache
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>export XDG_STATE_HOME=$HOME/.local/state
 </code></pre></div>
+</div>
 <p>To apply these environment variables, logout of the desktop environment, then login again.  Now the environment variables are set.</p>
 <p>To test before logout/login, in a terminal run the command <code>source ~/.profile</code> and the environment variables will be available in that terminal session.</p>
 <h3 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">λ︎</a></h3>
@@ -1377,37 +1380,51 @@
 <li>zsh - use <code>~/.zprofile</code> or <code>.zshenv</code></li>
 </ul>
 <p>For example, in <code>~/.zprofile</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>export XDG_CONFIG_HOME=&quot;$XDG_CONFIG_HOME=$HOME/.config&quot;
+<div class="admonition note">
+<p class="admonition-title">Set XDG Config Home</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Set XDG_CONFIG_HOME for clean management of configuration files</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$XDG_CONFIG_HOME</span><span class="s2">=</span><span class="nv">$HOME</span><span class="s2">/.config&quot;</span>
 </code></pre></div>
+</div>
 <h2 id="zsh-prezto">Zsh - prezto<a class="headerlink" href="#zsh-prezto" title="Permanent link">λ︎</a></h2>
-<p><a href="https://github.com/sorin-ionescu/prezto">Prezto</a> is an rich configuration for Zsh that provides aliases, functions, auto completion and prompt themes (including the popular <a href="https://github.com/romkatv/powerlevel10k">Powerline10k theme</a>). Prezto includes a wide range of optional modules such as git status, autosuggestions (fish shell completion), GPG, etc.</p>
+<p><a href="https://github.com/sorin-ionescu/prezto" target="_blank">Prezto</a> is an rich configuration for Zsh that provides aliases, functions, auto completion and prompt themes including the popular <a href="https://github.com/romkatv/powerlevel10k" target="_blank">Powerline10k theme</a>. Prezto includes a wide range of optional modules such as git status, autosuggestions (fish shell completion), GPG, etc.</p>
 <p><a class="glightbox" href="https://i.imgur.com/nrGV6pg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prezto themes - Sorin theme example" src="https://i.imgur.com/nrGV6pg.png" /></a></p>
 <p>Install prezto in the <code>XDG_CONFIG_HOME/zsh</code> directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Clone Prezto</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/sorin-ionescu/prezto.git<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="si">}</span><span class="s2">/prezto&quot;</span>
 </code></pre></div>
+</div>
 <p>Prezto requires <code>~/.zshenv</code> to bootstrap the location of prezto configuration.  The <code>~/.zshenv</code> file can be a symbolic link to <code>XDG_CONFIG_HOME/zsh/.zshenv</code></p>
 <p>Set the <code>XDG_CONFIG_HOME</code> location to <code>HOME/.config</code> for all applications if not set in <code>~/.profile</code></p>
 <p>Set the <code>ZDOTDIR</code> location so Zsh can find the Prezto configuration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># Set XDG_CONFIG_HOME for clean management of configuration files
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>export XDG_CONFIG_HOME=&quot;${XDG_CONFIG_HOME:=$HOME/.config}&quot;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>export ZDOTDIR=&quot;${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}&quot;
+<div class="admonition example">
+<p class="admonition-title">Zsh XDG config</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Set XDG_CONFIG_HOME for clean management of configuration files</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">:=</span><span class="nv">$HOME</span><span class="p">/.config</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ZDOTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ZDOTDIR</span><span class="p">:=</span><span class="nv">$XDG_CONFIG_HOME</span><span class="p">/zsh</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
+</div>
 <p>Other application specific environment variables should be added to <code>.zshevn</code> file as well, e.g. <code>SPACEMACSDIR</code> for Spacemacs configuration.</p>
-<blockquote>
-<p>TIP: Once installed, any prezto configuration files that will be added can be copied from the <code>.zprezto/runcoms</code> directory to <code>XDG_CONFIG_HOME/zsh</code>, rather than linking as the documentation suggests. This approach minimises the need to merge changes when updating prezto.</p>
-</blockquote>
+<details class="hint">
+<summary>Copy Prezto files that will be changed</summary>
+<p>Once installed, any prezto configuration files that will be added can be copied from the <code>.zprezto/runcoms</code> directory to <code>XDG_CONFIG_HOME/zsh</code>, rather than linking as the documentation suggests. </p>
+<p>This approach minimises the need to merge changes when updating prezto.</p>
+</details>
 <h2 id="neovim">Neovim<a class="headerlink" href="#neovim" title="Permanent link">λ︎</a></h2>
 <p>Neovim supports the XDG basedir specification and will use <code>~/.config/nvim</code> directory by default.</p>
-<p>All the packages installed, such as the excellent <a href="https://github.com/Olical/conjure">Conjure</a> for Clojure development (and many other fun languages), will therefore be part of the <code>~/.config/neovim</code> configuration.</p>
+<p>All the packages installed, such as the excellent <a href="https://github.com/Olical/conjure" target="_blank">Conjure</a> for Clojure development (and many other fun languages), will therefore be part of the <code>~/.config/neovim</code> configuration.</p>
 <p>Vim does not support the basedir.  However, when Neovim is installed as a .deb package it will be used for the vim command (set via <code>/etc/alternatives/vim</code>)</p>
-<blockquote>
-<p><a href="https://practical.li/neovim/">Practicalli Neovim</a> is the start of a new book on setting up Neovim with Clojure, LSP, Treesitter and many other packages, using fennel (a lisp dialect) for its configuration.  More details coming soon.</p>
-</blockquote>
+<details>
+<summary>Practicalli Neovim book</summary>
+<p><a href="https://practical.li/neovim/" target="_blank">Practicalli Neovim</a> provides guides for setting up Neovim with Clojure, LSP, Treesitter and many other packages</p>
+</details>
 <h2 id="emacs-and-spacemacs-configuration">Emacs and Spacemacs Configuration<a class="headerlink" href="#emacs-and-spacemacs-configuration" title="Permanent link">λ︎</a></h2>
 <p>Emacs will use <code>XDG_CONFIG_HOME/emacs</code> location if it contains an <code>init.el</code> file.</p>
 <p><code>SPACEMACSDIR</code> environment variable is used by Spacemacs to set the <code>dotspacemacs-directory</code>, defining where to look for the Spacemacs specific <code>init.el</code> file.</p>
 <p>Set <code>SPACEMACSDIR</code> to <code>XDG_CONFIG_HOME/spacemacs</code></p>
+<div class="admonition example">
+<p class="admonition-title">Spacemacs alternate location</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Ensure XDG_CONFIG_HOME is set when launching apps from destktop
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>export XDG_CONFIG_HOME=&quot;$HOME/.config&quot;
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -1415,39 +1432,53 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># when using a desktop launcher
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>export SPACEMACSDIR=&quot;$XDG_CONFIG_HOME/spacemacs&quot;
 </code></pre></div>
+</div>
 <p>Move the <code>.spacemacs</code> file to <code>XDG_CONFIG_HOME/spacemacs/init.el</code>.  Or if using <code>~/.spacemacs.d/</code> then move that directory to be the <code>XDG_CONFIG_HOME/spacemacs/</code> directory.</p>
 <h2 id="authinfo-secure-credentials">authinfo secure credentials<a class="headerlink" href="#authinfo-secure-credentials" title="Permanent link">λ︎</a></h2>
 <p>Connection credentials that include sensitive data (passwords, developer tokens) can be stored in <code>authinfo.pgp</code>, a PGP encrypted file. This providing an extra level of security for sensitive data.</p>
 <p>For example, Magit Forge uses authinfo.gpg to define a connection to GitHub or GitLab that includes a developer token.</p>
+<div class="admonition example">
+<p class="admonition-title">authinfo locations</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  ;; Use XDG_CONFIG_HOME location or HOME
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  (setq auth-sources (list
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                      (concat (getenv &quot;XDG_CONFIG_HOME&quot;) &quot;/authinfo.gpg&quot;)
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                      &quot;~/.authinfo.gpg&quot;))
 </code></pre></div>
+</div>
 <h2 id="doom-emacs">Doom Emacs<a class="headerlink" href="#doom-emacs" title="Permanent link">λ︎</a></h2>
 <p>If Emacs configuration is detected in <code>$HOME/.config/emacs</code> then Doom will install its configuration in <code>$HOME/.config/doom</code>, so long as <code>DOOMDIR</code> has not already been configured to a different location by the user.</p>
 <h2 id="git">Git<a class="headerlink" href="#git" title="Permanent link">λ︎</a></h2>
 <p>Git will write to and read from <code>XDG_CONFIG_HOME/git/config</code> as its configuration, if that file exists and <code>~/.gitconfg</code> does not exist.  Otherwise <code>~/.gitconfg</code> is used.</p>
 <p>Before running any <code>git</code> commands, create a config file in the XDG location</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git/config
 </code></pre></div>
+</div>
 <p><code>git config</code> commands will now update the XDG configuration file, e.g. setting the user identity and configure diff to use the diff3 (shared parent) for merge conflicts</p>
+<div class="admonition note">
+<p class="admonition-title">Git Configuration</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;John Practicalli&quot;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;******+account-name@users.noreply.github.com&quot;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>merge.conflictstyle<span class="w"> </span>diff3
 </code></pre></div>
-<p>Add an ignore-global file to the <code>XDG_CONFIG_HOME/git</code> directory. Example excludes files can be found at <a href="https://github.com/github/gitignore">github/gitignore repository</a> or at <a href="https://github.com/practicalli/dotfiles">practicalli/dotfiles</a></p>
+</div>
+<p>Add an ignore-global file to the <code>XDG_CONFIG_HOME/git</code> directory. Example excludes files can be found at <a href="https://github.com/github/gitignore" target="_blank">github/gitignore repository</a> or at <a href="https://github.com/practicalli/dotfiles" target="_blank">practicalli/dotfiles</a></p>
 <p>Add an excludes file to the Git config file containing the patterns used across all the users projects.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git config --global core.excludesFile ~/.config/git/ignore-global
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.excludesFile<span class="w"> </span>~/.config/git/ignore-global
 </code></pre></div>
+</div>
 <blockquote>
 <p>The git ignore file should be defined with the full path so tools like projectile can find that ignore file.</p>
 </blockquote>
 <p><code>XDG_CONFIG_HOME/git/template</code> is a common location for scripts and hooks that should be added to a newly created Git repository, in the <code>.git</code> directory.  The template location is set by <code>init.templatedir</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir  $XDG_CONFIG_HOME/git/template
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mkdir<span class="w">  </span><span class="nv">$XDG_CONFIG_HOME</span>/git/template
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git config --global init.templatedir template
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.templatedir<span class="w"> </span>template
 </code></pre></div>
+</div>
 <h2 id="clojure-cli">Clojure CLI<a class="headerlink" href="#clojure-cli" title="Permanent link">λ︎</a></h2>
 <p>The <code>XDG_CONFIG_HOME/clojure</code> directory is the location for the Clojure CLI user level configuration files (e.g. <code>deps.edn</code>, <code>tools/tools.edn</code>).</p>
 <p>If <code>XDG_CONFIG_HOME</code> is not set or that location is not found, then <code>HOME/.clojure</code> is used instead.</p>
@@ -1459,18 +1490,24 @@
 <p>Clojure CLI and Leiningen use the Maven configuration directory to store Jar files from project (and tooling) dependencies, by default this is located in <code>$HOME/.m2/repository</code>.</p>
 <p>Jar files from dependencies are considered non-essential (to the Clojure CLI tool) so should be written to the $XDG_CACHE_HOME location, typically <code>$HOME/.cache</code></p>
 <p>Add the <code>:mvn/local-repo</code> top-level key in the user level deps.edn file to set a location for the Maven repository.  The value should be the full directory path.</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="ss">:mvn/local-repo</span><span class="w"> </span><span class="s">&quot;/home/practicalli/.cache/maven/repository&quot;</span>
 </code></pre></div>
+</div>
 <p>The <code>:mvn/local-repo</code> can also be used in a project deps.edn file or on the command line, i.e. <code>clojure -Sdeps '{:mvn/local-repo ".cache/temp-deps"}'</code> if the Maven dependencies should be kept separate from all other projects (this scenario is not common).</p>
-<p>The Maven <code>$HOME/.m2</code> directory also <a href="https://maven.apache.org/configure.html">contains several configuration files</a>, <code>maven.config</code>, <code>jvm.config</code> and <code>extensions.xml</code>, so unfortunately conflates configuration files with data files.  Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.</p>
+<p>The Maven <code>$HOME/.m2</code> directory also <a href="https://maven.apache.org/configure.html" target="_blank">contains several configuration files</a>, <code>maven.config</code>, <code>jvm.config</code> and <code>extensions.xml</code>, so unfortunately conflates configuration files with data files.  Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.</p>
 <h3 id="clojure-gitlibs">Clojure Gitlibs<a class="headerlink" href="#clojure-gitlibs" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI can used dependencies from Git repositories.  To do so, the repository is downloaded into a <code>$HOME/.gitlibs</code> directory, unless the <code>GITLIBS</code> environment variable is set.  As the <code>gitlibs</code> directory contains data for the application, then ideally this would be placed in <code>XDG_CACHE_HOME</code>, under a <code>clojure-gitlibs</code> directory</p>
 <p>Set the <code>GITLIBS</code> environment variable to determine the location of the local cache directory used to clone dependencies that are Git repositories.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>export $GITLIBS=$XDG_CACHE_HOME/clojure-libs
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">$GITLIBS</span><span class="o">=</span><span class="nv">$XDG_CACHE_HOME</span>/clojure-libs
 </code></pre></div>
+</div>
 <p>Optionally move the existing <code>$HOME/.gitlibs</code> to the Cache home.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mv $HOME/.gitlibs $XDG_CACHE_HOME/clojure-gitlibs
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mv<span class="w"> </span><span class="nv">$HOME</span>/.gitlibs<span class="w"> </span><span class="nv">$XDG_CACHE_HOME</span>/clojure-gitlibs
 </code></pre></div>
+</div>
 <h2 id="clojure-lsp">Clojure LSP<a class="headerlink" href="#clojure-lsp" title="Permanent link">λ︎</a></h2>
 <p><code>XDG_CONFIG_HOME/clojure-lsp</code> directory is used as the location for Clojure LSP configuration if <code>XDG_CONFIG_HOME</code> is set.  Otherwise, <code>$HOME/.clojure-lsp</code> is used as the configuration.</p>
 <blockquote>
@@ -1481,24 +1518,28 @@
 <p>Configuration is organised under the ~/.config/JetBrains/ directory with product and version sub-directories, for example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>~/.config/JetBrains/IntelliJIdea2022.1
 </code></pre></div>
-<p><a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory">Intellij IDEA 2020.1 documentation - configuration directories</a></p>
+<p><a href="https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory" target="_blank">Intellij IDEA 2020.1 documentation - configuration directories</a></p>
 <h2 id="leiningen">Leiningen<a class="headerlink" href="#leiningen" title="Permanent link">λ︎</a></h2>
-<p>Leiningen does not support configuration in <code>XDG_CONFIG_HOME</code>, although there is an <a href="https://github.com/technomancy/leiningen/issues/2087">outstanding issue to add this as an enhancement from 2016</a>.</p>
+<p>Leiningen does not support configuration in <code>XDG_CONFIG_HOME</code>, although there is an <a href="https://github.com/technomancy/leiningen/issues/2087" target="_blank">outstanding issue to add this as an enhancement from 2016</a>.</p>
 <p>Once Leiningen is installed, a temporary work-around would be to move the <code>~/.lein</code> directory to <code>XDG_CONFIG_HOME/leiningen</code> and create a symbolic link called <code>~/.lein</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mv ~/.lein $XDG_CONFIG_HOME/leiningen
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mv<span class="w"> </span>~/.lein<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/leiningen
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>ln -s $XDG_CONFIG_HOME/leiningen ~/.lein
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/leiningen<span class="w"> </span>~/.lein
 </code></pre></div>
+</div>
 <blockquote>
 <p>The <code>lein</code> script uses <code>LEIN_HOME</code> variable, although this is hard-coded in the script to <code>$HOME/.lein</code> and therefore is not usable to set as an operating system environment variable to change the configuration directory location.</p>
 </blockquote>
 <h2 id="vs-code-and-calva">VS Code and Calva<a class="headerlink" href="#vs-code-and-calva" title="Permanent link">λ︎</a></h2>
 <p>Unfortunately XDG basedir specification is not currently supported by VS Code and therefore Calva (although I assume the Clojure LSP tooling in Calva will use XDG_CONFIG_HOME)</p>
-<p>There is an outstanding issue on the VS Code, also from 2016, to <a href="https://github.com/microsoft/vscode/issues/3884">revisit the configuration structure and support XDG_CONFIG_HOME</a>.</p>
+<p>There is an outstanding issue on the VS Code, also from 2016, to <a href="https://github.com/microsoft/vscode/issues/3884" target="_blank">revisit the configuration structure and support XDG_CONFIG_HOME</a>.</p>
 <p>Using the symbolic link workaround, as with Leiningen, should work for VS Code too.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mv $HOME/.vscode $XDG_CONFIG_HOME/vscode
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ln -s $XDG_CONFIG_HOME/vscode $HOME/.vscode
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mv<span class="w"> </span><span class="nv">$HOME</span>/.vscode<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/vscode
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/vscode<span class="w"> </span><span class="nv">$HOME</span>/.vscode
 </code></pre></div>
+</div>
 <blockquote>
 <p>It is advisable to close VS Code before moving the configuration, to ensure the configuration has been saved.</p>
 </blockquote>
