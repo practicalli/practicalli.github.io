@@ -45,6 +45,12 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+  # Override theme
+  custom_dir: overrides
+
+extra_css:
+  - assets/stylesheets/extra.css
+
 ## Additional styling
 markdown_extensions:
   - admonition
