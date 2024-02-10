@@ -1,11 +1,11 @@
 site_name: Practicalli Software Development
-site_url: https://practical.li/blog
-site_description: Practical guide to Clojure programming language and Clojure REPL driven development
+site_url: https://practical.li/
+site_description: Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development
 site_author: Practicalli
 site_org: https://practical.li/
 copyright: Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-repo_url: https://github.com/practicalli/blog/
-edit_uri: https://github.com/practicalli/blog/edit/main/docs/
+repo_url: https://github.com/practicalli/
+edit_uri: https://github.com/practicalli/edit/main/docs/
 
 # Theme and styling
 theme:
@@ -78,14 +78,14 @@ markdown_extensions:
 
 plugins:
   - blog:
-      blog_dir: .
+      blog_dir: blog
       post_url_format: "{slug}"
       draft: false
       draft_on_serve: true
       draft_if_future_date: true
   - rss:
       enabled: !ENV [CI, false]
-      match_path: posts/.*
+      match_path: blog/posts/.*
       date_from_meta:
         as_creation: date
       categories:
