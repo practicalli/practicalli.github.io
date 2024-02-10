@@ -2,11 +2,11 @@
 
 Books and articles covering an extensive range of subjects related to software development practices and tools, with a specialisation on Clojure programming.
 
-![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}
-![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}
+[![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
+[![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
 
-![Practicalli Clojurians Zulip button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-zulip-channel-button.png?raw=true){loading=lazy style="width:240px"}
-![Practicalli Clojurians Slack button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-slack-channel-button.png?raw=true){loading=lazy style="width:240px"}
+[![Practicalli Clojurians Zulip button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-zulip-channel-button.png?raw=true){loading=lazy style="width:240px"}](https://clojurians.zulipchat.com/#narrow/stream/practicalli){target=_blank}
+[![Practicalli Clojurians Slack button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-slack-channel-button.png?raw=true){loading=lazy style="width:240px"}](https://clojurians.slack.com/messages/practicalli){target=_blank}
 
 ---
 
@@ -14,7 +14,7 @@ Books and articles covering an extensive range of subjects related to software d
 
 [![Sponsor practicalli-john](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png){align=left loading=lazy}](https://github.com/sponsors/practicalli-john/){target=_blank}
 
-All sponsorship recieved is used to maintain and further develop the [Practicalli series of books and videos](https://practical.li/){target=_blank}, although most of the work is currently done with personal time and cost.
+All sponsorship recieved is used to maintain and further develop the Practicalli series of books and videos, although most of the work is currently done with personal time and cost.
 
 Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors){target=_blank} from the Clojure community for your continued support
 
