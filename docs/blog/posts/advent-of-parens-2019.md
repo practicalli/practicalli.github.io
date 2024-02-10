@@ -26,7 +26,7 @@ While you wait to open these posts each day of December, I am kickstarting your 
 
 I also encourage you to take some time over the holiday season to practice Clojure
 
-* [Clojure Advent of Code](/posts/clojure-advent-of-code-2019/){target=_blank}
+* [Clojure Advent of Code](./clojure-advent-of-code-2019.md){target=_blank}
 * [:fontawesome-brands-youtube: Practicalli Clojure study group](https://www.youtube.com/watch?v=MZcuL4lRw5E&list=PLpr9V-R8ZxiDjyU7cQYWOEFBDR1t7t0wv){target=_blank}
 
 <!-- more -->
@@ -37,7 +37,7 @@ I also encourage you to take some time over the holiday season to practice Cloju
 
 * [:fontawesome-brands-youtube: Follow the Data: Product Development in Clojure - Derek Troy-West](https://www.youtube.com/watch?v=MnvtPzEH-d8&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ){target=_blank}
 * [:fontawesome-brands-youtube: From Lazy Lisper to Confident Clojurist - Alexander Oloo](https://www.youtube.com/watch?v=U99UHYUW63k&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ&index=5){target=_blank}
-* [:fontawesome-brands-youtube: Interactive Programming for Artificial Intelligence - Dragan Djuric](https://www.youtube.com/watch?v=m0rSJ9xdsdk&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ&index=10)
+* [:fontawesome-brands-youtube: Interactive Programming for Artificial Intelligence - Dragan Djuric](https://www.youtube.com/watch?v=m0rSJ9xdsdk&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ&index=10){target=_blank}
 * [:fontawesome-brands-youtube: Sherlock Holmes, Consulting Developer - Stuart Halloway](https://www.youtube.com/watch?v=OUZZKtypink&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ&index=11){target=_blank}
 
 Or just sit back and watch [:fontawesome-brands-youtube: all the amazing Clojure/conj 2019 talks](https://www.youtube.com/watch?v=MnvtPzEH-d8&list=PLZdCLR02grLqSy15ALLAZDU6LGpAJDrAQ){target=_blank} back to back
@@ -53,7 +53,7 @@ For the last year I have run a YouTube based study and there are over 50 hours o
 See the Clojure Study group playlist for all the videos.  I am currently creating videos to introduce Clojure CLI and tools.deps approach to Clojure and ClojureScript projects.
 
 
-TODO create a playlist for just the 4Clojure solutions
+4Clojure solutions
 
 start learning Clojure CLI and tools.deps approach for Clojure
 
