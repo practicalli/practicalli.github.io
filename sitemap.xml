@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/books/</loc>
+         <lastmod>2024-02-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure-community/</loc>
+         <lastmod>2024-02-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/commercial-projects/</loc>
          <lastmod>2024-02-10</lastmod>
          <changefreq>daily</changefreq>
@@ -17,6 +27,11 @@
     </url>
     <url>
          <loc>https://practical.li/practicalli-team/</loc>
+         <lastmod>2024-02-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/video-guides/</loc>
          <lastmod>2024-02-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
