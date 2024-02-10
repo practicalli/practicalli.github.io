@@ -15,7 +15,7 @@ Clojure development benefits from great tooling focused around an editor (or IDE
 
 Practicalli uses many features of a Clojure aware editor with a bias towards highly effective interaction with the REPL, user actions driven exclusively via the keyboard and an uncluttered user interface.
 
-Practicalli Clojure provides [an overview of Clojure editors](https://practicalli/clojure/clojure-editors/) and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  
+Practicalli Clojure provides [an overview of Clojure editors](https://practical.li/clojure/clojure-editors/) and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  
 
 ??? HINT "Practicalli preferred editors"
     LightTable was the editor used in the early years of learning Clojure as it was simple to use and provided instant feedback as code was typed.
