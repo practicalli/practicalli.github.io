@@ -22,17 +22,20 @@ Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](ht
 
 ## Books
 
-Practical guides to Clojure programming and development workflows and guides across the full spectrum of software development.
+Practical guides across the full spectrum of software development.
 
 [Practicalli Engineering Playbook](https://practical.li/engineering-playbook){target=_blank .md-button}
 
+Practical guides to Clojure programming and development workflows
+
 [Practicalli Clojure](https://practical.li/clojure){target=_blank .md-button}
+[Practicalli Clojure Web Services](https://practical.li/clojure-web-services){target=_blank .md-button}
+
+Development tools
 
 [Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank .md-button}
-
 [Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
 
-[Practicalli Clojure Web Services](https://practical.li/clojure-web-services){target=_blank .md-button}
 
 ---
 
