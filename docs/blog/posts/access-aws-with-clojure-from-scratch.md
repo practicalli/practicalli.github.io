@@ -10,16 +10,16 @@ tags:
 
 ![Practicalli AWS topic logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/aws-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-[:fontawesome-brands-github: Cognitect Labs AWS API](https://github.com/cognitect-labs/aws-api) is an excellent data driven Clojure library for interacting with AWS from code.  The project includes working code examples.
+[:fontawesome-brands-github: Cognitect Labs AWS API](https://github.com/cognitect-labs/aws-api){target=_blank} is an excellent data driven Clojure library for interacting with AWS from code.  The project includes working code examples.
 
 The biggest challenge for those new to AWS is to configuring suitable AWS accounts, programmatic access and service permissions.
 
-This article starts with nothing and steps through the simplest and quickest AWS account and permission setup, using the [:globe_with_meridians: AWS Free Tier](https://aws.amazon.com/free/).  
+This article starts with nothing and steps through the simplest and quickest AWS account and permission setup, using the [:globe_with_meridians: AWS Free Tier](https://aws.amazon.com/free/){target=_blank}.  
 
 !!! INFO "Service quota limits"
     Each service has itos own quota limits and some services are only free for a period of time (free trials & 12 months free).
 
-The approach outlined is not intended for commercial work, only the bare essentials to start exploring what is possible with the Cognitect Labs library.  (Or you could try out [:globe_with_meridians: LocalStack if you have docker installed locally](https://localstack.cloud/)).
+The approach outlined is not intended for commercial work, only the bare essentials to start exploring what is possible with the Cognitect Labs library.  Or try [:globe_with_meridians: LocalStack if docker is installed locally](https://localstack.cloud/){target=_blank}.
 
 <!-- more -->
 
@@ -55,7 +55,7 @@ Generate a secure password for the root account, e.g. using a Password Manager s
 
 Select **Personal** plan as this account is only used for personal projects & hacking (not cracking).
 
-Complete contact information with your actual details (used when AWS confirms the credit card is legitimate) and confirm the [:globe_with_meridians: AWS Customer Agreement](https://aws.amazon.com/agreement/).
+Complete contact information with your actual details (used when AWS confirms the credit card is legitimate) and confirm the [:globe_with_meridians: AWS Customer Agreement](https://aws.amazon.com/agreement/){target=_blank}.
 
 ![AWS sign up website - contact details](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-contact-information.png?raw=true)
 
@@ -94,7 +94,7 @@ Take a break from the form filling by stretching and taking some deep breaths.
 ![AWS sign up website - congratulations](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-congratulations.png?raw=true)
 
 !!! INFO "IAM Multi-Factor Authentication (MFA)"
-    Visit the IAM dashboard and add Multi-Factor authentication (MFA) to the root user account for additional security.  Practicalli uses the [Authy app](https://authy.com/) for Multi-Factor authentication
+    Visit the IAM dashboard and add Multi-Factor authentication (MFA) to the root user account for additional security.  Practicalli uses the [Authy app](https://authy.com/){target=_blank} for Multi-Factor authentication
 
 
 ## IAM User for Code & CLI
@@ -136,7 +136,7 @@ Retrieve the access key details so they can be used when configuring the AWS CLI
 
 ## Install AWS CLI 2
 
-[:globe_with_meridians: AWS Command Line Interface (AWS CLI)](https://aws.amazon.com/cli/) is a unified tool to control multiple AWS services from the command line and automate them through scripts.
+[:globe_with_meridians: AWS Command Line Interface (AWS CLI)](https://aws.amazon.com/cli/){target=_blank} is a unified tool to control multiple AWS services from the command line and automate them through scripts.
 
 The AWS CLI configuration can also be used by Clojure code using the Cognitect Labs AWS API library.
 
@@ -190,7 +190,7 @@ The wizard creates two files
 
 ## Install Clojure
 
-[:fontawesome-solid-book-open: Practicalli guide to install Clojure CLI](https://practical.li/clojure/install/), Java and Practicalli Clojure CLI Config for a wide range of community tools.
+[:fontawesome-solid-book-open: Practicalli guide to install Clojure CLI](https://practical.li/clojure/install/){target=_blank}, Java and Practicalli Clojure CLI Config for a wide range of community tools.
 
 > Leiningen should also work, although this tool was not tested
 
@@ -198,7 +198,7 @@ The wizard creates two files
 
 Now for the simpler part :)
 
-[Create a new Clojure project](https://practical.li/clojure/clojure-cli/projects/), e.g. using the `:project/create` alias from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/).
+[Create a new Clojure project](https://practical.li/clojure/clojure-cli/projects/){target=_blank}, e.g. using the `:project/create` alias from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank}.
 
 !!! NOTE "Create minimal Clojure CLI project"
     ```shell
@@ -214,9 +214,9 @@ Edit the `deps.edn` file and add the Cognitect Labs AWS API, Endpoints and S3 li
       com.cognitect.aws/s3 {:mvn/version "848.2.1413.0"}
     ```
 
-> [:fontawesome-brands-github: latest-release.edn](https://github.com/cognitect-labs/aws-api/blob/main/latest-releases.edn) listed all the libraries and their current version
+> [:fontawesome-brands-github: latest-release.edn](https://github.com/cognitect-labs/aws-api/blob/main/latest-releases.edn){target=_blank} listed all the libraries and their current version
 
-Start repl the repl, e.g. using the [:fontawesome-solid-book-open: Practicalli REPL Reloaded workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/) or from an editor
+Start repl the repl, e.g. using the [:fontawesome-solid-book-open: Practicalli REPL Reloaded workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/){target=_blank} or from an editor
 
 !!! NOTE ""
     ```shell
