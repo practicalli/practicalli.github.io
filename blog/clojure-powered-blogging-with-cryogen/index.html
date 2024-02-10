@@ -20,13 +20,11 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/blog/automate-cryogen-clojure-blog-with-github-actions/">
+        <link rel="canonical" href="https://practical.li/blog/clojure-powered-blogging-with-cryogen/">
       
       
-        <link rel="prev" href="../web-scraping-with-clojure---scraping-hacker-news/">
       
-      
-        <link rel="next" href="../building-emacs-28-on-ubuntu-linux/">
+        <link rel="next" href="../advent-of-parens-2019---feast-on-clojure-this-holiday-season/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
@@ -37,7 +35,7 @@
     
     
       
-        <title>Automate Cryogen Clojure blog with GitHub Actions - Practicalli Software Development</title>
+        <title>Clojure powered blogging with Cryogen - Practicalli Software Development</title>
       
     
     
@@ -84,11 +82,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Automate Cryogen Clojure blog with GitHub Actions - Practicalli Software Development" >
+        <meta  property="og:title"  content="Clojure powered blogging with Cryogen - Practicalli Software Development" >
       
         <meta  property="og:description"  content="Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development" >
       
-        <meta  property="og:image"  content="https://practical.li/assets/images/social/blog/posts/automate-cryogen-clojure-blog-with-github-actions.png" >
+        <meta  property="og:image"  content="https://practical.li/assets/images/social/blog/posts/clojure-powered-blogging-with-cryogen.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -96,15 +94,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/blog/automate-cryogen-clojure-blog-with-github-actions/" >
+        <meta  property="og:url"  content="https://practical.li/blog/clojure-powered-blogging-with-cryogen/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Automate Cryogen Clojure blog with GitHub Actions - Practicalli Software Development" >
+        <meta  name="twitter:title"  content="Clojure powered blogging with Cryogen - Practicalli Software Development" >
       
         <meta  name="twitter:description"  content="Practical software engineering guides with a focus on Clojure programming language and Clojure REPL driven development" >
       
-        <meta  name="twitter:image"  content="https://practical.li/assets/images/social/blog/posts/automate-cryogen-clojure-blog-with-github-actions.png" >
+        <meta  name="twitter:image"  content="https://practical.li/assets/images/social/blog/posts/clojure-powered-blogging-with-cryogen.png" >
       
     
     
@@ -136,7 +134,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-does-the-github-workflow-do" class="md-skip">
+        <a href="#requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -190,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Automate Cryogen Clojure blog with GitHub Actions
+              Clojure powered blogging with Cryogen
             
           </span>
         </div>
@@ -980,56 +978,101 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-does-the-github-workflow-do" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      What does the GitHub workflow do?
+      Requirements
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-to-other-repositories" class="md-nav__link">
+  <a href="#create-a-new-site" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying to other repositories
+      Create a new site
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-github-action" class="md-nav__link">
+  <a href="#configure-the-site" class="md-nav__link">
     <span class="md-ellipsis">
-      Add GitHub Action
+      Configure the site
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure the site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-live-evaluation-with-klipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable live evaluation with Klipse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version control
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-action-configuration-with-token" class="md-nav__link">
+  <a href="#writing-posts" class="md-nav__link">
     <span class="md-ellipsis">
-      GitHub Action configuration with token
+      Writing posts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing posts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-header-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post header - metadata
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-to-aws-s3-bucket" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying to AWS S3 bucket
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#deploying-the-site-to-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Deploying the site to GitHub pages
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Deploying the site to GitHub pages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prevent-github-pages-jekyll-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prevent GitHub pages Jekyll compilation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1089,7 +1132,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2021-08-28 00:00:00" class="md-ellipsis">August 28, 2021</time>
+                        <time datetime="2019-10-20 00:00:00" class="md-ellipsis">October 20, 2019</time>
                       </div>
                     </li>
                     
@@ -1111,7 +1154,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -1137,20 +1180,26 @@
     
     
     
-      <span class="md-tag">static-site</span>
+      <span class="md-tag">cryogen</span>
     
   
     
     
     
-      <span class="md-tag">github-action</span>
+      <span class="md-tag">blogging</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">static-site</span>
     
   
 </nav>
 
 
   
-    <a href="https://github.com/practicalli/edit/main/docs/blog/posts/automate-cryogen-clojure-blog-with-github-actions.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/edit/main/docs/blog/posts/clojure-powered-blogging-with-cryogen.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1159,105 +1208,125 @@
     
       
     
-    <a href="https://github.com/practicalli/raw/main/docs/blog/posts/automate-cryogen-clojure-blog-with-github-actions.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/raw/main/docs/blog/posts/clojure-powered-blogging-with-cryogen.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>Automate Cryogen Clojure blog with GitHub Actions</h1>
+  <h1>Clojure powered blogging with Cryogen</h1>
 
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/topic-images/cryogen-logo-name.png?raw=true" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/cryogen-logo-name.png?raw=true" style="width:240px" /></a></p>
-<p><a href="../clojure-powered-blogging-with-cryogen/">Practicalli uses Cryogen static site generator for its blog website</a>.  Cryogen is fast and simple to use thanks to the Clojure EDN file used for configuration.</p>
-<p>Cryogen documentation shows <a href="https://cryogenweb.org/docs/deploying-to-github-pages.html">how to publish a Cryogen blog to GitHub pages</a> using Git command.  The deployment can be automated using GitHub actions, so that a new version of the site is deployed when Pull Requests are merged to the specified branch (or on direct commits to that branch).</p>
+<p>A blog website shouldnt need a complex content management system. A simple and lightweight static website generator can create engaging websites that are simple to manage with Git.</p>
+<p>Cryogen is a static site generator written in Clojure, allowing content to be written in either markdown or asciidoc.  Posts and pages are configured with Clojure hash-maps to manage the meta-data and layout information for each post.</p>
+<p>Cryogen seems very quick to generate a site and a local server can be run to automatically generate an updated website when changes to posts and pages are saved.</p>
 <!-- more -->
 
-<h2 id="what-does-the-github-workflow-do">What does the GitHub workflow do?<a class="headerlink" href="#what-does-the-github-workflow-do" title="Permanent link">λ︎</a></h2>
-<p>This is a combination of GitHub actions, each doing a specific part of the automated workflow.</p>
-<p>The <strong>publish</strong> job runs on an Ubuntu docker image and the <strong>Checkout</strong> step performs a git checkout of the project into the docker image.</p>
-<p><strong>Prepare Java</strong> step uses the <a href="https://github.com/actions/setup-java">setup-java action</a> to add Java 11 to the docker image, using the Eclipse Foundation <code>temurin</code> image </p>
-<details class="info">
-<summary>OpenJDK manged by Eclipse Foundation</summary>
-<p><a href="https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/">OpenJDK / AdoptOpenJDK is now part of the Eclipse Foundation</a>).</p>
-</details>
-<p><strong>Install clojure tools</strong> step uses the <a href="https://github.com/DeLaGuardo/setup-clojure">setup-clojure action</a> to add the specified version of Clojure CLI tools (Leiningen and Boot build tools are also supported)</p>
-<p><strong>Build blog site</strong> step calls the Cryogen function using Clojure CLI tools to build the static site</p>
-<p><strong>Publish to GitHub pages</strong> step uses the <a href="https://github.com/JamesIves/github-pages-deploy-action">github-pages-deploy-action</a> to deploy a specific directory, the directory built by Cryogen, to another branch of the original repository or a different repository. If the branch does not exist, the action will create it.</p>
-<h2 id="deploying-to-other-repositories">Deploying to other repositories<a class="headerlink" href="#deploying-to-other-repositories" title="Permanent link">λ︎</a></h2>
-<p>When deploying the Cryogen site to the same GitHub repository as the source files, the <a href="https://github.com/JamesIves/github-pages-deploy-action">github-pages-deploy-action</a> does not require an explicit token to be added. The action uses the default repository scoped GitHub token.</p>
-<p>If deploying the site to another repository from that of its source files, create a GitHub secret with a value of a Personal Access Token (PAT). The personal access token should have the least permissions necessary, usually only <code>repo</code>.</p>
-<p>A GitHub secret can be added at user or organisation level and configured for specific repositories.</p>
-<h2 id="add-github-action">Add GitHub Action<a class="headerlink" href="#add-github-action" title="Permanent link">λ︎</a></h2>
-<p>Create a file called <code>.github/workflows/cryogen-publish.yml</code> and add a workflow configuration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Publish</span><span class="w"> </span><span class="err">Blog</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">o</span><span class="kc">n</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="err">push</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="err">bra</span><span class="kc">n</span><span class="err">ches</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="mi">-</span><span class="w"> </span><span class="err">live</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">jobs</span><span class="p">:</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="err">publish</span><span class="p">:</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="err">ru</span><span class="kc">ns</span><span class="mi">-</span><span class="err">o</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">ubu</span><span class="kc">ntu</span><span class="mi">-</span><span class="err">la</span><span class="kc">test</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="err">s</span><span class="kc">te</span><span class="err">ps</span><span class="p">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Checkou</span><span class="kc">t</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">ac</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/checkou</span><span class="kc">t</span><span class="err">@v</span><span class="mi">2</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Prepare</span><span class="w"> </span><span class="err">java</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">ac</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/se</span><span class="kc">tu</span><span class="err">p</span><span class="mi">-</span><span class="err">java@v</span><span class="mi">2</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="err">dis</span><span class="kc">tr</span><span class="err">ibu</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="kc">te</span><span class="err">muri</span><span class="kc">n</span><span class="err">&#39;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="err">java</span><span class="mi">-</span><span class="err">versio</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">11</span><span class="err">&#39;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">I</span><span class="kc">nstall</span><span class="w"> </span><span class="err">clojure</span><span class="w"> </span><span class="kc">t</span><span class="err">ools</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">DeLaGuardo/se</span><span class="kc">tu</span><span class="err">p</span><span class="mi">-</span><span class="err">clojure@</span><span class="mf">3.5</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">          </span><span class="err">cli</span><span class="p">:</span><span class="w"> </span><span class="mf">1.10.3.943</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Build</span><span class="w"> </span><span class="err">Blog</span><span class="w"> </span><span class="err">si</span><span class="kc">te</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="err">ru</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">clojure</span><span class="w"> </span><span class="mi">-</span><span class="err">M</span><span class="p">:</span><span class="err">build</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Publish</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">Gi</span><span class="kc">t</span><span class="err">Hub</span><span class="w"> </span><span class="err">Pages</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">JamesIves/gi</span><span class="kc">t</span><span class="err">hub</span><span class="mi">-</span><span class="err">pages</span><span class="mi">-</span><span class="err">deploy</span><span class="mi">-</span><span class="err">ac</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">@</span><span class="mf">4.1.4</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">          </span><span class="err">commi</span><span class="kc">t</span><span class="mi">-</span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">gi</span><span class="kc">t</span><span class="err">hub.eve</span><span class="kc">nt</span><span class="err">.head_commi</span><span class="kc">t</span><span class="err">.message</span><span class="w"> </span><span class="p">}}</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">          </span><span class="err">bra</span><span class="kc">n</span><span class="err">ch</span><span class="p">:</span><span class="w"> </span><span class="err">gh</span><span class="mi">-</span><span class="err">pages</span><span class="w">                                      </span><span class="err">#</span><span class="w"> </span><span class="err">bra</span><span class="kc">n</span><span class="err">ch</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">deploy</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">          </span><span class="err">si</span><span class="kc">n</span><span class="err">gle</span><span class="mi">-</span><span class="err">commi</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="w"> </span><span class="err">commi</span><span class="kc">t</span><span class="w"> </span><span class="err">his</span><span class="kc">t</span><span class="err">ory</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">          </span><span class="kc">f</span><span class="err">older</span><span class="p">:</span><span class="w"> </span><span class="err">public/blog</span><span class="w">                                   </span><span class="err">#</span><span class="w"> </span><span class="err">direc</span><span class="kc">t</span><span class="err">ory</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">deploy</span><span class="w"> </span><span class="kc">fr</span><span class="err">om</span>
+<p><a href="https://github.com/practicalli/blog-cryogen/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> practicalli/blog-cryogen</a> contains all the content and configuration used to create the Practicalli blog website.</p>
+<div class="admonition warning">
+<p class="admonition-title">Markdown tables not supported</p>
+<p><strong>Limitation/bug</strong> cryogen does not support tables in markdown posts.  </p>
+<p>The issue seem to reside in <a href="https://github.com/cryogen-project/cryogen-markdown" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> cryogen-markdown library</a></p>
+</div>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">λ︎</a></h2>
+<p>Clojure CLI and clj-new template to create and manage a Cryogen project</p>
+<p>A Java virtual Machine is a dependency for Clojure CLI, eg. <a href="https://adoptium.net/">Temurin from Adoptium.net</a></p>
+<p><a href="https://practical.li/clojure/install/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Install Clojure - Practicalli Clojure book</a>(target=_blank .md-button)</p>
+<h2 id="create-a-new-site">Create a new site<a class="headerlink" href="#create-a-new-site" title="Permanent link">λ︎</a></h2>
+<p>Use the <code>cryogen</code> template for Leiningen to create a new project</p>
+<p>Here we create a project called <code>practicalli-blog</code> using the template</p>
+<div class="admonition note">
+<p class="admonition-title">Create a Cryogen project</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure -T:project/new :template cryogen :name practicalli/blog
 </code></pre></div>
-<h2 id="github-action-configuration-with-token">GitHub Action configuration with token<a class="headerlink" href="#github-action-configuration-with-token" title="Permanent link">λ︎</a></h2>
-<p>If deploying to a different repository than the source, then add a token to either a <a href="https://docs.github.com/en/actions/reference/encrypted-secrets">repository, account or organisation secret</a>.  Use a <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub Personal Access Token</a> for the value of the token secret.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">      </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Publish</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">Gi</span><span class="kc">t</span><span class="err">Hub</span><span class="w"> </span><span class="err">Pages</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">JamesIves/gi</span><span class="kc">t</span><span class="err">hub</span><span class="mi">-</span><span class="err">pages</span><span class="mi">-</span><span class="err">deploy</span><span class="mi">-</span><span class="err">ac</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">@</span><span class="mf">4.1.4</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">          </span><span class="err">commi</span><span class="kc">t</span><span class="mi">-</span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">gi</span><span class="kc">t</span><span class="err">hub.eve</span><span class="kc">nt</span><span class="err">.head_commi</span><span class="kc">t</span><span class="err">.message</span><span class="w"> </span><span class="p">}}</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">          </span><span class="kc">t</span><span class="err">oke</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">secre</span><span class="kc">ts</span><span class="err">.PRACTICALLI_BLOG_PUBLISH_TOKEN</span><span class="w"> </span><span class="p">}}</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="err">Gi</span><span class="kc">t</span><span class="err">Hub</span><span class="w"> </span><span class="err">secre</span><span class="kc">t</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">          </span><span class="err">reposi</span><span class="kc">t</span><span class="err">ory</span><span class="mi">-</span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">prac</span><span class="kc">t</span><span class="err">icalli/deployed</span><span class="mi">-</span><span class="err">blog</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="err">reposi</span><span class="kc">t</span><span class="err">ory</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">deploy</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">          </span><span class="err">bra</span><span class="kc">n</span><span class="err">ch</span><span class="p">:</span><span class="w"> </span><span class="err">gh</span><span class="mi">-</span><span class="err">pages</span><span class="w">                                      </span><span class="err">#</span><span class="w"> </span><span class="err">bra</span><span class="kc">n</span><span class="err">ch</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">deploy</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">          </span><span class="err">si</span><span class="kc">n</span><span class="err">gle</span><span class="mi">-</span><span class="err">commi</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="w">                                    </span><span class="err">#</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="w"> </span><span class="err">commi</span><span class="kc">t</span><span class="w"> </span><span class="err">his</span><span class="kc">t</span><span class="err">ory</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">          </span><span class="kc">f</span><span class="err">older</span><span class="p">:</span><span class="w"> </span><span class="err">public/blog</span><span class="w">                                   </span><span class="err">#</span><span class="w"> </span><span class="err">direc</span><span class="kc">t</span><span class="err">ory</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">deploy</span><span class="w"> </span><span class="kc">fr</span><span class="err">om</span>
+</div>
+<p>Change into the project directory and use Leiningen to run the project</p>
+<div class="admonition note">
+<p class="admonition-title">Start Cryogen local server</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure -X:serve
 </code></pre></div>
-<h2 id="deploying-to-aws-s3-bucket">Deploying to AWS S3 bucket<a class="headerlink" href="#deploying-to-aws-s3-bucket" title="Permanent link">λ︎</a></h2>
-<p>Cryogen can also be published to an Amazon S3 bucket by taking the above GitHub action and replacing the <strong>Publish to GitHub Pages</strong> step.</p>
-<p>Add the following step in its place and add GitHub secrets to the Git Repository for AWS access and the name of the AWS bucket.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="mi">-</span><span class="w"> </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">Publish</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">AWS</span><span class="w"> </span><span class="err">S</span><span class="mi">3</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="err">uses</span><span class="p">:</span><span class="w"> </span><span class="err">jakejarvis/s</span><span class="mi">3-</span><span class="err">sy</span><span class="kc">n</span><span class="err">c</span><span class="mi">-</span><span class="err">ac</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">@mas</span><span class="kc">ter</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="err">wi</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="err">args</span><span class="p">:</span><span class="w"> </span><span class="mi">--</span><span class="kc">f</span><span class="err">ollow</span><span class="mi">-</span><span class="err">symli</span><span class="kc">n</span><span class="err">ks</span><span class="w"> </span><span class="mi">--</span><span class="err">dele</span><span class="kc">te</span><span class="w"> </span><span class="mi">--</span><span class="err">acl</span><span class="w"> </span><span class="err">public</span><span class="mi">-</span><span class="err">read</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="err">e</span><span class="kc">n</span><span class="err">v</span><span class="p">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="err">AWS_S</span><span class="mi">3</span><span class="err">_BUCKET</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">secre</span><span class="kc">ts</span><span class="err">.AWS_S</span><span class="mi">3</span><span class="err">_BUCKET</span><span class="w"> </span><span class="p">}}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="err">AWS_ACCESS_KEY_ID</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">secre</span><span class="kc">ts</span><span class="err">.AWS_ACCESS_KEY_ID</span><span class="w"> </span><span class="p">}}</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="err">AWS_SECRET_ACCESS_KEY</span><span class="p">:</span><span class="w"> </span><span class="err">$</span><span class="p">{{</span><span class="w"> </span><span class="err">secre</span><span class="kc">ts</span><span class="err">.AWS_SECRET_ACCESS_KEY</span><span class="w"> </span><span class="p">}}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="err">AWS_REGION</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;eu</span><span class="mi">-</span><span class="err">wes</span><span class="kc">t</span><span class="mi">-2</span><span class="err">&#39;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="err">SOURCE_DIR</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;public/blog&#39;</span>
-</code></pre></div>
+</div>
+<p>A server will now start and generate the sample posts provided by the Cryogen template.</p>
+<p>The web browser automatically open a new browser tab/window at <code>http://localhost:3000/blog</code></p>
 <blockquote>
-<p>NOTE: also check the AWS region is the correct one for your needs</p>
+<p>Changing files in the project will trigger a new compilation of the website. Manually refresh the browser page if kept open.</p>
 </blockquote>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
-<p>Once the <code>.github/workflows/cryogent-publish.yml</code> file is committed to the default branch of the repository, any commits to that branch or merged pull requests to that branch will trigger the workflow and publish a new version of the Cryogen static website.</p>
-<p>Consider adding linters and other GitHub Actions to check for potential issues with markdown and other aspects of the website, to avoid checking in content that may break the website.</p>
-<p>Setting up monitoring of the website is also recommended, using simple monitoring tools such as <a href="https://www.statuscake.com/">StatusCake</a>.</p>
+<h2 id="configure-the-site">Configure the site<a class="headerlink" href="#configure-the-site" title="Permanent link">λ︎</a></h2>
+<p>The configuration defines the site title (banner heading), author (copyright message), description (not sure where this is used).</p>
+<p><code>content/config.edn</code> is the configuration file for the generated site</p>
+<div class="admonition example">
+<p class="admonition-title">Practicalli Blog Cryogen config</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> :site-title           &quot;Practicalli&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> :author               &quot;Practicalli&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a> :description          &quot;Discovering the fun in Functional Programming with Clojure&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> :site-url             &quot;http://practical.li/&quot;
+</code></pre></div>
+<h3 id="enable-live-evaluation-with-klipse">Enable live evaluation with Klipse<a class="headerlink" href="#enable-live-evaluation-with-klipse" title="Permanent link">λ︎</a></h3>
+<p>Make your sample code executable and interactive to the user by enabling Klipse in Cryogen. Klipse provides live evaluation for a number of programming language.</p>
+<p>Enable Klipse by defining a specific CSS selector and use that name when defining a code block, e.g. <code>klipse-clj</code></p>
+<div class="admonition example">
+<p class="admonition-title">Cryogen Klipse config</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> :klipse               {:settings {:selector         &quot;.klipse-clj&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                                   :selector-reagent &quot;.klipse-reagent&quot;}}
+</code></pre></div>
+</div>
+<blockquote>
+<p>Example <a href="https://github.com/practicalli/blog-content/blob/master/content/config.edn">config.edn file</a> from the practicalli/blog-content GitHub repository</p>
+</blockquote>
+<h2 id="version-control">Version control<a class="headerlink" href="#version-control" title="Permanent link">λ︎</a></h2>
+<p>A <code>.gitignore</code> file is created when using the cryogen template to create a project.</p>
+<p>This contains the <code>/public/</code> pattern to exclude the generated website, as well as the common patterns for a Leiningen project.</p>
+<h2 id="writing-posts">Writing posts<a class="headerlink" href="#writing-posts" title="Permanent link">λ︎</a></h2>
+<p>Posts can be written in either markdown or asciidoc.  Markdown is the default and all posts should be placed inthe <code>content/md/</code> directory.</p>
+<p>The filename can be prefixed with the date of the post, however, I find it more flexible to specify the date in the post metadata header as if you change the date then the URL of the post will remain the same.  This is really handy if you need to update the post and need to reflect that in the date, or if you had planned to publish the post a few weeks in the future and then realise its ready sooner.</p>
+<h3 id="post-header-metadata">Post header - metadata<a class="headerlink" href="#post-header-metadata" title="Permanent link">λ︎</a></h3>
+<p>The start of each post is a Clojure hash-map, <code>{}</code> containing metadata for the specific blog</p>
+<p><code>:title</code> and <code>:layout</code> are mandatory keys, the rest are optional.  You can also define your own custom keys which can be used in the selma templates, for example <code>:topic</code></p>
+<ul>
+<li><code>:title</code>   The <code>h1</code> title used for the blog post</li>
+<li><code>:layout</code>  A keyword corresponding to an HTML file under themes/{theme}/html.</li>
+<li><code>:date</code>    The published date of the blog  (future blogs can be hidden)</li>
+<li><code>:author</code>  The name of the post author as a string, displayed at the top of the post in the default theme.</li>
+<li><code>:tags</code>    Tags associated with the blog, as a vector of strings e.g. ["clojure" "cryogen"]</li>
+<li><code>:klipse</code>  Enable live evaluation of code in the post (see live evaluation with Klipse)</li>
+<li><code>:toc</code>     Include a table of contents at the top of the page, with links to all the headings in the post</li>
+<li><code>:draft?</code>  <code>true</code> will skip this post from the static site generation</li>
+<li><code>:topic</code>   A custom key I use to manage a topic image displayed on each post (theme development will be covered in a future post)</li>
+</ul>
+<h2 id="deploying-the-site-to-github-pages">Deploying the site to GitHub pages<a class="headerlink" href="#deploying-the-site-to-github-pages" title="Permanent link">λ︎</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Automate publish with GitHub workflow</p>
+<p><a href="automate-cryogen-clojure-blog-with-github-actions" target="_blank">Automate Cryogent blog publishing </a> describes how to build and deploy a Cryogen blog with a GitHub CI workflow.</p>
+</div>
+<p>GitHub pages is a free static site hosting service and we can deploy the cryogen website by a git push.</p>
+<p>Create a repository in either a user account or GitHub organisation (eg. using the GitHub website).</p>
+<p>An unsophisticated script is used to deploy the generated website.  The script creates a Git repository in the <code>public</code> directory, all files are committed with a generic message, a remote repository added and the content pushed.</p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>public/blog<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;publish blog&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>master<span class="w"> </span>gh-pages<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\ </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>practicalli<span class="w"> </span>git@github.com:practicalli/blog.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>practicalli<span class="w"> </span>gh-pages
+</code></pre></div>
+</div>
+<p>Edit the <code>deploy-to-gh-pages</code> script and update the URL of the GitHub repository created to host the website.</p>
+<p>If the website is not displayed, check the GitHub repository settings and ensure the <code>gh-pages</code> is set.</p>
+<div class="admonition hint">
+<p class="admonition-title">Serve GitHub Pages from docs directory</p>
+<p>Set the <code>docs</code> directory as the source of GitHub pages source for the, especially when supporting a software project or library.</p>
+</div>
+<h3 id="prevent-github-pages-jekyll-compilation">Prevent GitHub pages Jekyll compilation<a class="headerlink" href="#prevent-github-pages-jekyll-compilation" title="Permanent link">λ︎</a></h3>
+<p>A Jekyll process runs every time a change is pushed to a GitHub pages branch.  As Cryogen generates the finished website Jekyll processing is not required and it can be switch it off.</p>
+<p>Add an empty file called <code>.nojekyll</code> to the <code>content</code> directory.</p>
+<p>Edit the <code>config.edn</code> configuration file and add the <code>.nojekyll</code> file to the resources.  This ensures the <code>.nojekyll</code> file is copied over to the generated website in the <code>public</code> directory.</p>
+<div class="admonition example">
+<p class="admonition-title">Disable Jekyll</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> :resources            [&quot;images&quot; &quot;.nojekyll&quot;]
+</code></pre></div>
+</div>
 <hr />
 <p>Thank you.</p>
 <p><a class="md-button" href="https://practical.li" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Practical.li Website</a> </p>
@@ -1328,31 +1397,15 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-          
-          <a href="../web-scraping-with-clojure---scraping-hacker-news/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Web Scraping with Clojure - Scraping Hacker News">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Web Scraping with Clojure - Scraping Hacker News
-              </div>
-            </div>
-          </a>
-        
         
           
-          <a href="../building-emacs-28-on-ubuntu-linux/" class="md-footer__link md-footer__link--next" aria-label="Next: Building Emacs 28 on Ubuntu Linux">
+          <a href="../advent-of-parens-2019---feast-on-clojure-this-holiday-season/" class="md-footer__link md-footer__link--next" aria-label="Next: Advent Of Parens 2019 - feast on Clojure this holiday season">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Building Emacs 28 on Ubuntu Linux
+                Advent Of Parens 2019 - feast on Clojure this holiday season
               </div>
             </div>
             <div class="md-footer__button md-icon">
