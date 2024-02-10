@@ -121,4 +121,6 @@ extra:
 nav:
   - index.md
   - practicalli-team.md
-  - RSS feed: feed_rss_created.xml
+  - Blog:
+      - blog/index.md
+      - RSS feed: feed_rss_created.xml
