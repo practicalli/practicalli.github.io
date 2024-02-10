@@ -13,7 +13,7 @@ tags:
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/cryogen-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-[Practicalli uses Cryogen static site generator for its blog website](https://practical.li/blog/posts/clojure-powered-blogging-with-cryogen/).  Cryogen is fast and simple to use thanks to the Clojure EDN file used for configuration.
+[Practicalli uses Cryogen static site generator for its blog website](./clojure-powered-blogging-with-cryogen.md).  Cryogen is fast and simple to use thanks to the Clojure EDN file used for configuration.
 
 Cryogen documentation shows [how to publish a Cryogen blog to GitHub pages](https://cryogenweb.org/docs/deploying-to-github-pages.html) using Git command.  The deployment can be automated using GitHub actions, so that a new version of the site is deployed when Pull Requests are merged to the specified branch (or on direct commits to that branch).
 
@@ -25,7 +25,10 @@ This is a combination of GitHub actions, each doing a specific part of the autom
 
 The **publish** job runs on an Ubuntu docker image and the **Checkout** step performs a git checkout of the project into the docker image.
 
-**Prepare Java** step uses the [setup-java action](https://github.com/actions/setup-java) to add Java 11 to the docker image, using the Eclipse Foundation `temurin` image ([OpenJDK / AdoptOpenJDK is now part of the Eclipse Foundation](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)).
+**Prepare Java** step uses the [setup-java action](https://github.com/actions/setup-java) to add Java 11 to the docker image, using the Eclipse Foundation `temurin` image 
+
+??? INFO "OpenJDK manged by Eclipse Foundation"
+    [OpenJDK / AdoptOpenJDK is now part of the Eclipse Foundation](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)).
 
 **Install clojure tools** step uses the [setup-clojure action](https://github.com/DeLaGuardo/setup-clojure) to add the specified version of Clojure CLI tools (Leiningen and Boot build tools are also supported)
 
