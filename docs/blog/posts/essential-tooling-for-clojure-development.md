@@ -11,11 +11,15 @@ tags:
 
 ![alternative text](https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-Clojure development benefits from great tooling focused around an editor (or IDE).
+Clojure development benefits from great tooling focused around an editor.
 
-Practicalli uses many features of a Clojure aware editor with a bias towards highly effective interaction with the REPL, user actions driven exclusively via the keyboard and an uncluttered user interface.
+Autocomplete, refactor tools, diagnostics feedback and syntax highlighting enhance the creation and modification of code.  
 
-Practicalli Clojure provides [an overview of Clojure editors](https://practicalli/clojure/clojure-editors/) and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  
+Evaluating in source code and using data inspectors for the results provides an effective interaction with the REPL.
+
+> Practicalli encourages editors that provide user actions driven exclusively via the keyboard and an uncluttered user interface.
+
+Practicalli Clojure provides [:fontawesome-solid-book-open: an overview of Clojure editors](https://practical.li/clojure/clojure-editors/) and the plugins that provide Clojure support, e.g. Emacs, Neovim, VS Code, Pulsar and Sublime.  
 
 ??? HINT "Practicalli preferred editors"
     LightTable was the editor used in the early years of learning Clojure as it was simple to use and provided instant feedback as code was typed.
@@ -66,9 +70,9 @@ Clojure development workflows and tools may vary across projects, so customising
     Clojure CLI aliases from project and user level deps.edn to support different configurations and tools when starting the REPL process
 
 
-The `:dev/env` and `:repl/reloaded` aliases from [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/) add the `dev` directory to the class path, loading a custom `user` namespace defined in `dev/user.clj`.  
+The `:dev/env` and `:repl/reloaded` aliases from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/){target=_blank} add the `dev` directory to the class path, loading a custom `user` namespace defined in `dev/user.clj`.  
 
-A [:fontawesome-solid-book-open: custom `user` namespace](https://practical.li/clojure/clojure-cli/repl-startup/) supports the [:fontawesome-solid-book-open: Practicalli REPL Reloaded workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/), launching Portal data inspector listening to all evaluation results and Mulog Tap Publisher sending log events to Portal.
+A [:fontawesome-solid-book-open: custom `user` namespace](https://practical.li/clojure/clojure-cli/repl-startup/){target=_blank} supports the [:fontawesome-solid-book-open: Practicalli REPL Reloaded workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/){target=_blank}, launching Portal data inspector listening to all evaluation results and Mulog Tap Publisher sending log events to Portal.
 
 
 ## Evaluate Clojure
@@ -90,12 +94,12 @@ Clojure has a highly structured syntax compared to many other languages thanks t
 
 Writing and code refactor is enhanced when the editor ensures parenthesis remain balanced, i.e. every opening paren has a closing paren.
 
-[paredit](http://paredit.org/){target=_blank} ensurce balanced parens along with structural refactor commands to change the structure, e.g.
+[:globe_with_meridians: paredit](http://paredit.org/){target=_blank} ensurce balanced parens along with structural refactor commands to change the structure, e.g.
 
 - slurp pulls expressions into the current expression
 - barf pushes the current expression out of the surrounding expression
 
-[parinfer](https://shaunlebron.github.io/parinfer/){target=_blank} provides structural editing based on indentation, automatically ensuring parens are ballanced as code is added or changed.  Parinfer doesnt require any commands or key bindings and so can feel more natural.
+[:globe_with_meridians: parinfer](https://shaunlebron.github.io/parinfer/){target=_blank} provides structural editing based on indentation, automatically ensuring parens are ballanced as code is added or changed.  Parinfer doesnt require any commands or key bindings and so can feel more natural.
 
 ![Parinfer example](https://storage.googleapis.com/zenn-user-upload/5a7508d12f68-20221206.gif){loading=lazy}
 
