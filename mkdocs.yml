@@ -143,6 +143,7 @@ extra:
 nav:
   - index.md
   - Contribute: contributing.md
+  - Writing Tips: writing-tips.md
   - About Practicalli: practicalli-team.md
   - Video Guides: video-guides.md
   - Practicalli Books: books.md
