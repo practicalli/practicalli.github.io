@@ -1,7 +1,7 @@
 ---
 # MegaLinter GitHub Action configuration file
 # More info at https://megalinter.github.io
-# All variables described in https://megalinter.github.io/configuration/
+# All variables described in https://megalinter.io/latest/configuration/
 
 name: MegaLinter
 on:
@@ -36,6 +36,7 @@ jobs:
             overrides
             .github
       - run: echo "🐙 Sparse Checkout of ${{ github.repository }} repository to the CI runner."
+
       # MegaLinter Configuration
       - name: MegaLinter Run
         id: ml
@@ -53,7 +54,7 @@ jobs:
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
         if: ${{ success() }} || ${{ failure() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: MegaLinter reports
           path: |
