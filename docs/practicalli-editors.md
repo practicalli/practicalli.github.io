@@ -73,6 +73,48 @@ Contributed a range of key bindings to the Spacemacs project for Clojure, especi
 TODO: list of contributions
 
 
+## repl.it
+
+https://repl.it/
+
+
+## Klipse
+
+Kipse is an embedded environment for evaluating ClojureScript code.
+
+Supports JavaScript interop.
+
+The runtime is ClojureScript, so there are a few clojure specific aspect that are not supported, e.g Java Interop.
+
+
+## Nightcode and Nightlight
+
+Nightcode provided some interesting project templates, with a focus on games and mobile apps.
+
+![Nightcode screenshot](https://github.com/oakes/Nightcode/raw/master/screenshot.png){loading=lazy}
+
+[Nightcode - ClojureBridge user guide](https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md){target=_blank .md-button} 
+
+Nighlight has replaced the original Nightcode project.
+
+Parvim has replaced nightlight, using the same embedded principle as Nightlight but with a richer Vim-style editing experience and an OpenGL desktop app rather than a local web-server.
+
+
+![Paravim - parasitic editor for Clojure](https://sekao.net/paravim/clj/screenshot.png){loading=lazy}
+
+
+??? WARNING "Minimal user documentation"
+    These projects had a lot of promise, althought there were not enough documentation for students or volunteers to pick up the editors quickly.  If there is time to read the source code then there are many interesting features in each of these projects, especially Paravim.
+
+    The projects were not completed, although do still provide some useful functionality.
+
+
+## Maria.cloud
+
+
+[Maria.cloud learning page - ClojureBridge London](https://clojurebridgelondon.github.io/workshop/colours-and-shapes/){target=_blank .md-button} 
+
+
 ## VS Code & Calva
 
 VS Code was a common choice for many students attending the ClojureBridge London events, so learning to be effective with Calva was very useful.
@@ -100,8 +142,7 @@ When I use Calva with Clojure CLI, I start a REPL from a terminal and then I am 
 There wasnt any advantage in using VS Code and Calva for my own workflow, and a slight disadvantage once I swiched to Clojure CLI.
 
 
-
-## Doom Emacs
+## Emacs-Doom 
 
 Many people were comenting on how much faster Doom Emacs was, so I spend 3 months working with it.
 
