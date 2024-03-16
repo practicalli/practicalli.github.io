@@ -69,13 +69,13 @@ Publish book workflow installs Material for MkDocs version 9
 
 Install mkdocs version 9 using the Python pip package manager
 
-```bash
+```shell
 pip install mkdocs-material=="9.5"
 ```
 
 Install the plugins used by the Practicalli site using Pip (these are also installed in the GitHub Action workflow)
 
-```bash
+```shell
 pip3 install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects pillow cairosvg mkdocs-rss-plugin
 ```
 
@@ -86,22 +86,26 @@ pip3 install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revisio
 
 Fork the GitHub repository and clone that fork to your computer,
 
-```bash
+```shell
 git clone https://github.com/<your-github-account>/<repository>.git
 ```
 
 Run a local server from the root of the cloned project
 
-```bash
+```shell
 make docs
 ```
 
 The website will open at <http://localhost:8000>
 
 If making smaller changes, then only rebuild the content that changes, speeding up the local development process
-```bash
+
+```shell
 make docs-changed
 ```
+
+> NOTE: navigation changes may not be correctly reflected without reloading the page in the web browser or carrying out a full `make docs` build
+
 
 ## Material for MkDocs Commands
 
