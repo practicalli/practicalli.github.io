@@ -1053,6 +1053,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#replit" class="md-nav__link">
+    <span class="md-ellipsis">
+      repl.it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Klipse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nightcode-and-nightlight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nightcode and Nightlight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mariacloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maria.cloud
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vs-code-calva" class="md-nav__link">
     <span class="md-ellipsis">
       VS Code &amp; Calva
@@ -1062,9 +1098,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doom-emacs" class="md-nav__link">
+  <a href="#emacs-doom" class="md-nav__link">
     <span class="md-ellipsis">
-      Doom Emacs
+      Emacs-Doom
     </span>
   </a>
   
@@ -1157,6 +1193,26 @@
 <h2 id="spacemacs-emacs-cider">Spacemacs - Emacs &amp; CIDER<a class="headerlink" href="#spacemacs-emacs-cider" title="Permanent link">λ︎</a></h2>
 <p>Contributed a range of key bindings to the Spacemacs project for Clojure, especially around evaluation.</p>
 <p>TODO: list of contributions</p>
+<h2 id="replit">repl.it<a class="headerlink" href="#replit" title="Permanent link">λ︎</a></h2>
+<p><a href="https://repl.it/">https://repl.it/</a></p>
+<h2 id="klipse">Klipse<a class="headerlink" href="#klipse" title="Permanent link">λ︎</a></h2>
+<p>Kipse is an embedded environment for evaluating ClojureScript code.</p>
+<p>Supports JavaScript interop.</p>
+<p>The runtime is ClojureScript, so there are a few clojure specific aspect that are not supported, e.g Java Interop.</p>
+<h2 id="nightcode-and-nightlight">Nightcode and Nightlight<a class="headerlink" href="#nightcode-and-nightlight" title="Permanent link">λ︎</a></h2>
+<p>Nightcode provided some interesting project templates, with a focus on games and mobile apps.</p>
+<p><a class="glightbox" href="https://github.com/oakes/Nightcode/raw/master/screenshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Nightcode screenshot" loading="lazy" src="https://github.com/oakes/Nightcode/raw/master/screenshot.png" /></a></p>
+<p><a class="md-button" href="https://github.com/ClojureBridge/getting-started/blob/master/nightcode.md" target="_blank">Nightcode - ClojureBridge user guide</a> </p>
+<p>Nighlight has replaced the original Nightcode project.</p>
+<p>Parvim has replaced nightlight, using the same embedded principle as Nightlight but with a richer Vim-style editing experience and an OpenGL desktop app rather than a local web-server.</p>
+<p><a class="glightbox" href="https://sekao.net/paravim/clj/screenshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Paravim - parasitic editor for Clojure" loading="lazy" src="https://sekao.net/paravim/clj/screenshot.png" /></a></p>
+<details class="warning">
+<summary>Minimal user documentation</summary>
+<p>These projects had a lot of promise, althought there were not enough documentation for students or volunteers to pick up the editors quickly.  If there is time to read the source code then there are many interesting features in each of these projects, especially Paravim.</p>
+<p>The projects were not completed, although do still provide some useful functionality.</p>
+</details>
+<h2 id="mariacloud">Maria.cloud<a class="headerlink" href="#mariacloud" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="https://clojurebridgelondon.github.io/workshop/colours-and-shapes/" target="_blank">Maria.cloud learning page - ClojureBridge London</a> </p>
 <h2 id="vs-code-calva">VS Code &amp; Calva<a class="headerlink" href="#vs-code-calva" title="Permanent link">λ︎</a></h2>
 <p>VS Code was a common choice for many students attending the ClojureBridge London events, so learning to be effective with Calva was very useful.</p>
 <p>I created a essentials cheatsheet for each editor to support the students.</p>
@@ -1170,7 +1226,7 @@
 <p>The only way to include a user alias was to create a json mapping in the Calva config.  Given the size of my user configuration, this seemed to be a show-stopper for me.</p>
 <p>When I use Calva with Clojure CLI, I start a REPL from a terminal and then I am free to use which ever user and project aliases I prefer.  Then I can use Calva connect to the REPL process running in the terminal.</p>
 <p>There wasnt any advantage in using VS Code and Calva for my own workflow, and a slight disadvantage once I swiched to Clojure CLI.</p>
-<h2 id="doom-emacs">Doom Emacs<a class="headerlink" href="#doom-emacs" title="Permanent link">λ︎</a></h2>
+<h2 id="emacs-doom">Emacs-Doom<a class="headerlink" href="#emacs-doom" title="Permanent link">λ︎</a></h2>
 <p>Many people were comenting on how much faster Doom Emacs was, so I spend 3 months working with it.</p>
 <p>I had used Emacs Live before so I was comfortable with using a config driven mainly by one person as Doom Emacs is.</p>
 <p>The Clojure setup in Doom Emacs was simple, althogh the experience and available key bindings were more limited than in Spacemacs.</p>
@@ -1214,7 +1270,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2024</span>
   </span>
 
     
