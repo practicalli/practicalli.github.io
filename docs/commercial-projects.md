@@ -3,24 +3,17 @@
 Experiences from Clojure related commercial projects.
 
 
-## Data ingestion and distribution
+## Fraud Detection Data Pipeline
 
-Leading a globally distributed set of developments, team building the next generation in data services to support the Equities business at Citi.
+Clojure Engineering in financial services, working with amazing people to deliver Fraud Detection using Machine Learning models
 
-Responsible for services consumed by dozens of other technical stakeholders, liaising with many other development teams to understand their requirements and challenges. Working closely with those teams to enhance solutions provided by the teams I was responsible for. 
+Building a data pipeline with a range of service orchestration (internal and external) to supply comprehensive, accurate and timely data for processing via scientific models. Enabling the data science models to be effectively trained and instantly detect fraudulent activity within Fintech transactions
 
-Involved in software development, testing, DevOps and even operations resouce management (acquiring physical servers & hard drives for Oracle database servers)
+Supported improvements in DevOps and Engineering workflows and practices, defining a range of common practices across the organisation.
 
-I defined standards and practices for the team within Citi tooling and regulation constraints, shaping the use of development tools and services and driving architecture discussions that shaped technical decisions within the team. 
+![Mock Fintech Startup - Fraud service deployment view](https://github.com/practicalli/graphic-design/blob/live/architecture/structurizr-fintech-aws-deployment-fraud.png?raw=true)
 
-The main technology stack is based on Clojure along with a myriad of enterprise technology services and products to create a global system processing millions of transactions per day. I also advocate functional programming and the Clojure programming language throughout the organisation.
-
-Leading the move to Cloud Infrastructure for our systems and start to evolve the core product architecture into an immutable event stream with Kafka.
-
-Citi is a leading financial services company with a truly global reach – 200 million customer accounts in more than 160 countries.
-
-
-## Natural Language Processing
+![Mock Fintech Startup - Fraud services and data stores](https://github.com/practicalli/graphic-design/blob/live/architecture/structurizr-fintech-fraud-services-datastores.png?raw=true)
 
 
 ## Sports Data 
@@ -64,14 +57,18 @@ Integrant was used to manage the software components in the Clojure web service.
 ![Sports Data graphql authentication webhook](https://github.com/practicalli/graphic-design/blob/live/commercial-projects/sports-data-graphql-query-authentication-hasura.png?raw=true){loading=lazy}
 
 
-## Fraud Detection
+## Data ingestion and distribution
 
-Clojure Engineering in financial services, working with amazing people to deliver Fraud Detection using Machine Learning models
+Leading a globally distributed set of developments, team building the next generation in data services to support the Equities business at Citi.
 
-Building a data pipeline with a range of service orchestration (internal and external) to supply comprehensive, accurate and timely data for processing via scientific models. Enabling the data science models to be effectively trained and instantly detect fraudulent activity within Fintech transactions
+Responsible for services consumed by dozens of other technical stakeholders, liaising with many other development teams to understand their requirements and challenges. Working closely with those teams to enhance solutions provided by the teams I was responsible for. 
 
-Supported improvements in DevOps and Engineering workflows and practices, defining a range of common practices across the organisation.
+Involved in software development, testing, DevOps and even operations resouce management (acquiring physical servers & hard drives for Oracle database servers)
 
-Unfortunately the role ended abruptly due to sudden economic shock.
+I defined standards and practices for the team within Citi tooling and regulation constraints, shaping the use of development tools and services and driving architecture discussions that shaped technical decisions within the team. 
 
-TODO: Structurizr diagrams
+The main technology stack is based on Clojure along with a myriad of enterprise technology services and products to create a global system processing millions of transactions per day. I also advocate functional programming and the Clojure programming language throughout the organisation.
+
+Leading the move to Cloud Infrastructure for our systems and start to evolve the core product architecture into an immutable event stream with Kafka.
+
+Citi is a leading financial services company with a truly global reach – 200 million customer accounts in more than 160 countries.
