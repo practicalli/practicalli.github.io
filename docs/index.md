@@ -2,6 +2,11 @@
 
 Books and articles covering an extensive range of subjects related to software development practices and tools, with a specialisation on Clojure programming.
 
+![Practicalli Badge Semper Decere](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-decere.png?raw=true){align=right loading=lazy style="width:240px"}
+
+!!! INFO "Semper decere"
+    Always showing, teaching, causing to know.
+
 [![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
 [![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
 
