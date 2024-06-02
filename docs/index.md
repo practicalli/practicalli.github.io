@@ -2,7 +2,7 @@
 
 Books and articles covering an extensive range of subjects related to software development practices and tools, with a specialisation on Clojure programming.
 
-![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus.png?raw=true){align=right loading=lazy style="width:200px"}
+![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus-circle-keyboard.png?raw=true){align=right loading=lazy style="width:142px"}
 
 [![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
 [![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
@@ -26,35 +26,36 @@ Thanks to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https
 
 Practical guides across the full spectrum of software development.
 
-[Practicalli Engineering Playbook](https://practical.li/engineering-playbook){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Engineering Playbook](https://practical.li/engineering-playbook){target=_blank .md-button}
 
 Practical guides to Clojure programming and development workflows
 
-[Practicalli Clojure](https://practical.li/clojure){target=_blank .md-button}
-[Practicalli Clojure Web Services](https://practical.li/clojure-web-services){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Clojure](https://practical.li/clojure){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Clojure Web Services](https://practical.li/clojure-web-services){target=_blank .md-button}
 
 Development tools
 
-[Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank .md-button}
-[Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
-
+[:fontawesome-solid-book-open: Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
 
 ---
 
 ## Projects
 
-[Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button} 
 
 ---
 
-## Practicall User Configurations
+## Tooling & Configuration
 
-- Clojure CLI Config
-- Clojure LSP Config
-- Spacemacs user config
-- AstroNvim user config 
-- dotfiles - git, kitty, zsh (zprezto), regolith
 
+[:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/){target=_blank .md-button} 
+[:fontawesome-brands-github: Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config/){target=_blank .md-button} 
+
+[:fontawesome-brands-github: Spacemacs Config](https://github.com/practicalli/spacemacs-config/){target=_blank .md-button} 
+[:fontawesome-brands-github: Neovim AstroNvim Config](https://github.com/practicalli/astronvim-config/){target=_blank .md-button} 
+
+[:fontawesome-brands-github: dotfiles - git, kitty, zsh, regolith](https://github.com/practicalli/astronvim-config/){target=_blank .md-button}
 
 ---
 

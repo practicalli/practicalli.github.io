@@ -7,3 +7,4 @@
 - readme: book status, description and local build steps
 - intro: add writing tips page (from Practicalli Clojure)
 - post: updated London Clojurians brief history
+- intro: semper scribus badge & button link logos
