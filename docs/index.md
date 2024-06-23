@@ -7,7 +7,7 @@ Books and articles covering an extensive range of subjects related to software d
 [![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
 [![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
 
-[![Practicalli Clojurians Zulip button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-zulip-channel-button.png?raw=true){loading=lazy style="width:240px"}](https://clojurians.zulipchat.com/#narrow/stream/practicalli){target=_blank}
+[![Practicalli GitHub Discussions button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-github-discussions-button.png?raw=true){loading=lazy style="width:240px"}](https://github.com/orgs/practicalli/discussions){target=_blank}
 [![Practicalli Clojurians Slack button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-slack-channel-button.png?raw=true){loading=lazy style="width:240px"}](https://clojurians.slack.com/messages/practicalli){target=_blank}
 
 ---
