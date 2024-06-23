@@ -1,6 +1,6 @@
-# Practicalli Software Development 
+# Practicalli Software Development
 
-Books and articles covering an extensive range of subjects related to software development practices and tools, with a specialisation on Clojure programming.
+Books, articles and live coding videos covering software development practices and tools, with a specialisation in Functional programming with the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
 
 ![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus-circle-keyboard.png?raw=true){align=right loading=lazy style="width:142px"}
 
@@ -42,18 +42,18 @@ Development tools
 
 ## Projects
 
-[:fontawesome-solid-book-open: Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button}
 
 ---
 
 ## Tooling & Configuration
 
 
-[:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/){target=_blank .md-button} 
-[:fontawesome-brands-github: Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config/){target=_blank .md-button} 
+[:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/){target=_blank .md-button}
+[:fontawesome-brands-github: Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config/){target=_blank .md-button}
 
-[:fontawesome-brands-github: Spacemacs Config](https://github.com/practicalli/spacemacs-config/){target=_blank .md-button} 
-[:fontawesome-brands-github: Neovim AstroNvim Config](https://github.com/practicalli/astronvim-config/){target=_blank .md-button} 
+[:fontawesome-brands-github: Spacemacs Config](https://github.com/practicalli/spacemacs-config/){target=_blank .md-button}
+[:fontawesome-brands-github: Neovim AstroNvim Config](https://github.com/practicalli/astronvim-config/){target=_blank .md-button}
 
 [:fontawesome-brands-github: dotfiles - git, kitty, zsh, regolith](https://github.com/practicalli/astronvim-config/){target=_blank .md-button}
 
