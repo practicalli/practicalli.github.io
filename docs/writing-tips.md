@@ -262,18 +262,22 @@ Add highlight line meta data to a code block after the opening backticks and cod
 
 ### Embed external files
 
-`--8<--` in a code block inserts code from a source code file or other text file
+`--8<--` in a code block inserts code from a source code file or other text file, e.g.
 
-Specify a local file from the root of the book project (the directory containing mkdocs.yml)
+`--8<-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"`
 
-??? EXAMPLE "Scheduled Version Check GitHub Workflow from source code file"
-    ```yaml title="scheduled version check"
-    --8<-- ".github/workflows/scheduled-version-check.yaml"
-    ```
+| NOTE: For GitHub, always use the raw code link, i.e. https://raw.githubusercontent.com
 
 ??? EXAMPLE "Practicalli Project Templates"
     ```markdown title="Emacs project configuration - .dir-locals.el"
     --8<-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"
+    ```
+
+Specifying a local file from the root of the book project (the directory containing mkdocs.yml) only seems to work when running the server locally, e.g. `--8<-- ".github/workflows/scheduled-version-check.yaml"`
+
+??? EXAMPLE "Scheduled Version Check GitHub Workflow from source code file"
+    ```yaml title="scheduled version check"
+    --8<-- ".github/workflows/scheduled-version-check.yaml"
     ```
 
 !!! HINT "Code example reuse"
