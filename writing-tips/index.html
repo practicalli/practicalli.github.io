@@ -1675,18 +1675,92 @@ semper lorem quam in massa.</p>
 </span></code></pre></div>
 <h3 id="embed-external-files">Embed external files<a class="headerlink" href="#embed-external-files" title="Permanent link">λ︎</a></h3>
 <p><code>--8&lt;--</code> in a code block inserts code from a source code file or other text file, e.g.</p>
-<p><code>--8&lt;-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"</code></p>
-<p>| NOTE: For GitHub, always use the raw code link, i.e. <a href="https://raw.githubusercontent.com">https://raw.githubusercontent.com</a></p>
+<p><code>--8&lt;-- "https://github.com/practicalli/project-templates/blob/main/deps.edn?raw=true"</code></p>
+<p>| NOTE: For GitHub, add <code>?raw=true</code> on the end of the url to the GitHub file or use the raw code link, i.e. <code>https://raw.githubusercontent.com/...</code></p>
 <details class="example">
 <summary>Practicalli Project Templates</summary>
-<div class="highlight"><span class="filename">Emacs project configuration - .dir-locals.el</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                  (cider-clojure-cli-aliases . &quot;:test/env:dev/reloaded&quot;))))
+<div class="highlight"><span class="filename">Emacs project configuration - .dir-locals.el</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{:paths [&quot;src&quot; &quot;resources&quot;]
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a> :deps
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a> {org.clojure/clojure {:mvn/version &quot;1.11.3&quot;}}
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> :aliases
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a> {;; Add libraries and paths to support additional test tools
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  :test/env
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>  {:extra-paths [&quot;test&quot;]
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>   :extra-deps {org.clojure/test.check {:mvn/version &quot;1.1.1&quot;}
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>                ;; https://github.com/seancorfield/deps-new/
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>                io.github.seancorfield/deps-new
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>                {:git/tag &quot;v0.7.1&quot; :git/sha &quot;c1e42aa&quot;}}}
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  ;; Test runner - local and CI
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  ;; call with <span class="sb">`:watch? true`</span> argument to start file watcher and re-run tests on saved changes
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>  :test/run
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>  {:extra-paths [&quot;test&quot;]
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>   :extra-deps {lambdaisland/kaocha {:mvn/version &quot;1.91.1392&quot;}}
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>   :main-opts   [&quot;-m&quot; &quot;kaocha.runner&quot;]
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>   :exec-fn kaocha.runner/exec-fn
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>   :exec-args {:randomize? false
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>               :fail-fast? true}}}}
 </code></pre></div>
 </details>
-<p>Specifying a local file from the root of the book project (the directory containing mkdocs.yml) only seems to work when running the server locally, e.g. <code>--8&lt;-- ".github/workflows/scheduled-version-check.yaml"</code></p>
+<p>Specifying a local file from the root of the book project (the directory containing <code>mkdocs.yml</code>) only seems to work when running the server locally, e.g. <code>--8&lt;-- ".github/workflows/scheduled-version-check.yaml"</code></p>
 <details class="example">
-<summary>Scheduled Version Check GitHub Workflow from source code file</summary>
+<summary>LOCAL File: Only works when running mkdocs server locally</summary>
 <div class="highlight"><span class="filename">scheduled version check</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>
+</code></pre></div>
+</details>
+<details class="example">
+<summary>FULL URL: Always works correctly</summary>
+<div class="highlight"><span class="filename">scheduled version check</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nn">---</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># ------------------------------------------</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># Scheduled check of versions</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># - use as non-urgent report on versions</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># - Uses POSIX Cron syntax</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1">#   - Minute [0,59]</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">#   - Hour [0,23]</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1">#   - Day of the month [1,31]</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1">#   - Month of the year [1,12]</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1">#   - Day of the week ([0,6] with 0=Sunday)</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">#</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1"># Using liquidz/anta to check:</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># - GitHub workflows</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1"># - deps.edn</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1"># ------------------------------------------</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Scheduled</span><span class="nv"> </span><span class="s">Version</span><span class="nv"> </span><span class="s">Check&quot;</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="nt">on</span><span class="p">:</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">    </span><span class="c1"># - cron: &quot;0 4 * * *&quot; # at 04:04:04 ever day</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">    </span><span class="c1"># - cron: &quot;0 4 * * 5&quot; # at 04:04:04 ever Friday</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&quot;</span><span class="w"> </span><span class="c1"># at 04:04:04 on first day of month</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"> </span><span class="c1"># Run manually via GitHub Actions Workflow page</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">  </span><span class="nt">scheduled-version-check</span><span class="p">:</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Scheduled</span><span class="nv"> </span><span class="s">Version</span><span class="nv"> </span><span class="s">Check&quot;</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🚀 Job automatically triggered by ${{ github.event_name }}&quot;</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🐧 Job running on ${{ runner.os }} server&quot;</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository&quot;</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout Code</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="w">          </span><span class="nt">sparse-checkout</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span class="w">            </span><span class="no">.github</span>
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🐙 ${{ github.repository }} repository sparse-checkout to the CI runner.&quot;</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Antq</span><span class="nv"> </span><span class="s">Check</span><span class="nv"> </span><span class="s">versions&quot;</span>
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">liquidz/antq-action@main</span>
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="w">          </span><span class="nt">excludes</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a><span class="w">          </span><span class="nt">skips</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;boot</span><span class="nv"> </span><span class="s">clojure-cli</span><span class="nv"> </span><span class="s">pom</span><span class="nv"> </span><span class="s">shadow-cljs</span><span class="nv"> </span><span class="s">leiningen&quot;</span>
+<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>
+<a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a><span class="w">      </span><span class="c1"># Summary</span>
+<a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🎨 library versions checked with liquidz/antq&quot;</span>
+<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;🍏 Job status is ${{ job.status }}.&quot;</span>
 </code></pre></div>
 </details>
 <div class="admonition hint">
@@ -1700,11 +1774,11 @@ semper lorem quam in massa.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Clojure CLI</label><label for="__tabbed_1_2">Leiningen</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>clojure<span class="w"> </span>-T:project/new<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/gameboard
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>clojure<span class="w"> </span>-T:project/new<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/gameboard
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>lein<span class="w"> </span>new<span class="w"> </span>app<span class="w"> </span>practicalli/gameboard
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>lein<span class="w"> </span>new<span class="w"> </span>app<span class="w"> </span>practicalli/gameboard
 </code></pre></div>
 </div>
 </div>
@@ -1715,11 +1789,11 @@ semper lorem quam in massa.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Clojure CLI</label><label for="__tabbed_2_2">Leiningen</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>clojure<span class="w"> </span>-T:repl/rebel
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>clojure<span class="w"> </span>-T:repl/rebel
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>lein<span class="w"> </span>repl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>lein<span class="w"> </span>repl
 </code></pre></div>
 </div>
 </div>
@@ -1795,19 +1869,19 @@ semper lorem quam in massa.</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>{style="height:150px;width:150px"}</code> specifies the image size
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){style=&quot;height:150px;width:150px&quot;}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){style=&quot;height:150px;width:150px&quot;}
 </code></pre></div></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Kitty Logo" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" style="height:150px;width:150px" /></a></p>
 </div>
 <div class="tabbed-block">
 <p><code>{loading=lazy}</code> specifies an image should lazily load in the browser
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png</span>){loading=lazy}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png</span>){loading=lazy}
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p><code>{aligh=left}</code> or <code>{aligh=right}</code> specifies the page alignment of an image.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){align=right}
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){align=right}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){align=right}
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){align=right}
 </code></pre></div></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Kitty Logo" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png" style="height:64px;width:64px" /></a>
 <a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Kitty Logo" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png" style="height:64px;width:64px" /></a>
@@ -1815,8 +1889,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.
 </div>
 <div class="tabbed-block">
 <p><code>![Kitty Logo](image/kitty-light.png#only-dark)</code> or <code>![Kitty Logo](image/kitty-light.png#only-light)</code>  specifies the theme the image should be shown, allowing different versions of images to be shown based on the theme.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){style=&quot;height:150px;width:150px&quot;}
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){style=&quot;height:150px;width:150px&quot;}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){style=&quot;height:150px;width:150px&quot;}
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){style=&quot;height:150px;width:150px&quot;}
 </code></pre></div>
 Use the theme toggle in the top nav bar to see the icon change between light and dark.
 <a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Kitty Logo" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" style="height:150px;width:150px" /></a>
@@ -1827,8 +1901,8 @@ Use the theme toggle in the top nav bar to see the icon change between light and
 </div>
 <div class="tabbed-block">
 <p>Alight right, lazy load and set image to 150x150</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){align=right loading=lazy style=&quot;height:64px;width:64px&quot;}
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){align=right loading=lazy style=&quot;height:64px;width:64px&quot;}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark</span>){align=right loading=lazy style=&quot;height:64px;width:64px&quot;}
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>![<span class="nt">Kitty Logo</span>](<span class="na">https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light</span>){align=right loading=lazy style=&quot;height:64px;width:64px&quot;}
 </code></pre></div>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Kitty Logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark" style="height:64px;width:64px" /></a>
 <a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="Kitty Logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light" style="height:64px;width:64px" /></a>
@@ -1850,12 +1924,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Task List example</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">- [x]</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">- [ ]</span> Vestibulum convallis sit amet nisi a tincidunt
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="k">* [x]</span> In hac habitasse platea dictumst
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="k">* [x]</span> In scelerisque nibh non dolor mollis congue sed et metus
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="k">* [ ]</span> Praesent sed risus massa
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="k">- [ ]</span> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">- [x]</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">- [ ]</span> Vestibulum convallis sit amet nisi a tincidunt
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="k">* [x]</span> In hac habitasse platea dictumst
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="k">* [x]</span> In scelerisque nibh non dolor mollis congue sed et metus
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="k">* [ ]</span> Praesent sed risus massa
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">- [ ]</span> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 </code></pre></div>
 </div>
 <h2 id="tooltips">Tooltips<a class="headerlink" href="#tooltips" title="Permanent link">λ︎</a></h2>
@@ -1893,7 +1967,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 28, 2024</span>
   </span>
 
     
