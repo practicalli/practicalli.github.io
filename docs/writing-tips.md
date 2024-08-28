@@ -264,21 +264,27 @@ Add highlight line meta data to a code block after the opening backticks and cod
 
 `--8<--` in a code block inserts code from a source code file or other text file, e.g.
 
-`--8<-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"`
+`--8<-- "https://github.com/practicalli/project-templates/blob/main/deps.edn?raw=true"`
 
-| NOTE: For GitHub, always use the raw code link, i.e. https://raw.githubusercontent.com
+| NOTE: For GitHub, add `?raw=true` on the end of the url to the GitHub file or use the raw code link, i.e. `https://raw.githubusercontent.com/...`
 
 ??? EXAMPLE "Practicalli Project Templates"
     ```markdown title="Emacs project configuration - .dir-locals.el"
-    --8<-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"
+    --8<-- "https://github.com/practicalli/project-templates/blob/main/deps.edn?raw=true"
     ```
 
-Specifying a local file from the root of the book project (the directory containing mkdocs.yml) only seems to work when running the server locally, e.g. `--8<-- ".github/workflows/scheduled-version-check.yaml"`
+Specifying a local file from the root of the book project (the directory containing `mkdocs.yml`) only seems to work when running the server locally, e.g. `--8<-- ".github/workflows/scheduled-version-check.yaml"`
 
-??? EXAMPLE "Scheduled Version Check GitHub Workflow from source code file"
+??? EXAMPLE "LOCAL File: Only works when running mkdocs server locally"
     ```yaml title="scheduled version check"
     --8<-- ".github/workflows/scheduled-version-check.yaml"
     ```
+
+??? EXAMPLE "FULL URL: Always works correctly"
+    ```yaml title="scheduled version check"
+    --8<-- "https://github.com/practicalli/practicalli.github.io/blob/main/.github/workflows/scheduled-version-check.yaml?raw=true"
+    ```
+
 
 !!! HINT "Code example reuse"
     Use an embedded local or external file (URL) when the same content is required in more than one place in the book.
