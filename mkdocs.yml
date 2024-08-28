@@ -141,14 +141,16 @@ extra:
 
 # Navigation
 nav:
-  - index.md
-  - Contribute: contributing.md
-  - Writing Tips: writing-tips.md
-  - About Practicalli: practicalli-team.md
-  - Video Guides: video-guides.md
+  - Overview: index.md
   - Practicalli Books: books.md
+  - Video Guides: video-guides.md
+  - Clojure Workflow: clojure-repl-workflow.md
+  - Clojure Community: clojure-community.md
+  - Open Source Projects: oss-projects.md
   - Commercial Experiences: commercial-projects.md
-  - Community Support: clojure-community.md
+  - Contribute: contributing.md
+  - About Practicalli: practicalli-team.md
+  - Writing Tips: writing-tips.md
   - Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
