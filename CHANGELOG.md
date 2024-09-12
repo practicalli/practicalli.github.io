@@ -12,3 +12,4 @@
 
 ## Changed
 - mkdocs: correct github url for repo and edit link
+- dev: megalinter upgrade to version 8
