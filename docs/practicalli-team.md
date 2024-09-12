@@ -1,15 +1,25 @@
 # Practicall Team
 
-Learnging by teaching 
-Learning by doing 
+!!! QUOTE "Practicalli founding principle"
+    Learning by doing, learn even more by teaching.
 
-practicalli content is to understand 
+practicalli content is designed to be easy to understand.  If there is something that is not clear or could be described differently then please [get in touch](contributing.md)
+
+!!! WARNING "Work in progress, sorry"
+
 
 # Who Is Practicalli
 
 Practicalli is the result of many years "learning by teaching" in the community.
 
 The majority of learning was around Clojure and development tooling.
+
+About Johnny Stevenson
+
+<p style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/k4k0ZbpeSSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 
 
 ## Community Developer
@@ -19,13 +29,13 @@ Sharing code from dojo events
 Assembla
 GitHub
 
-Teaching engineers how to deploy from source on Heroku PaaS platform, 
+Teaching engineers how to deploy from source on Heroku PaaS platform,
 
 
 
 ## Journey Into Clojure
 
-Started looking at Haskell and Scala.  
+Started looking at Haskell and Scala.
 
 Both languages seemed more focused on defining types than solving problems.  Many conepts felt quite academic and I was looking for something more pragmatic and generally simpler.
 
@@ -78,9 +88,9 @@ A Clojure Pack was designed and contributed to AstroNvim Community.
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
