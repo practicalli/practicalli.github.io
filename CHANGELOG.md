@@ -8,3 +8,6 @@
 - intro: add writing tips page (from Practicalli Clojure)
 - post: updated London Clojurians brief history
 - intro: semper scribus badge & button link logos
+
+## Changed
+- mkdocs: correct github url for repo and edit link
