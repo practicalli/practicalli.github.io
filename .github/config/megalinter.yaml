@@ -77,6 +77,10 @@ DISABLE_LINTERS:
   - REPOSITORY_CHECKOV # fails on root user in Dockerfile
   - REPOSITORY_SECRETLINT
 
+  # Linters from full Megalinter version
+  - REPOSITORY_DEVSKIM
+  - REPOSITORY_KICS # requires Git SHA as versions on actions
+
 # Ignore all errors and return without error status
 # DISABLE_ERRORS: true
 
