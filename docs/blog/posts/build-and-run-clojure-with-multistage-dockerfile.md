@@ -5,7 +5,7 @@ authors:
   - practicalli
 categories:
   - docker
-tags:  
+tags:
   - docker
   - clojure
   - java
@@ -27,9 +27,9 @@ A [Multi-stage `Dockerfile`](https://github.com/practicalli/clojure-app-template
 
 ## Multi-stage Dockerfile
 
-A multi-stage `Dockerfile` contains builder stage and a run-time stage (usually unnamed).  There may also be a common stage used by both bulder and run-time states. 
+A multi-stage `Dockerfile` contains builder stage and a run-time stage (usually unnamed).  There may also be a common stage used by both bulder and run-time states.
 
-The builder stage should be optimised for building the Clojure project, i.e. caching dependencies and layers, building only layers that change.  
+The builder stage should be optimised for building the Clojure project, i.e. caching dependencies and layers, building only layers that change.
 
 The run-time stage should be optimised for running the service efficiently and securely, including only essential files for a minimal size.
 
@@ -55,7 +55,7 @@ The Eclipse OpenJDK image is used by the Clojure docker image, so they implicitl
     * [Amazon Corretto](https://hub.docker.com/_/amazoncorretto) is an alternative version of OpenJDK
 
 ??? INFO "Official Docker Image definition"
-    An Official Docker Image means the configuration of that image follows the [Docker recommended practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), is well documented and designed for common use cases.  
+    An Official Docker Image means the configuration of that image follows the [Docker recommended practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), is well documented and designed for common use cases.
 
     There is no implication as to the correctness of tools, languages or service that image provides, only in the means in which they are provided.
 
@@ -120,7 +120,7 @@ Run the `tools.build` command to generate an Uberjar.
 
 
 ??? HINT "Using make task for build"
-    [When using make for the build](https://practical.li/engineering-playbook/build-tool/make/), also copy the `Makefile` to the builder stage and call the `deps` target to download the dependencies 
+    [When using make for the build](https://practical.li/engineering-playbook/build-tool/make/), also copy the `Makefile` to the builder stage and call the `deps` target to download the dependencies
 
     Ensure `deps` target in the `Makefile` depends on the `deps.edn` file so the target is skipped if that file has not changed.
 
@@ -257,13 +257,13 @@ ENV JDK_JAVA_OPTIONS "-XshowSettings:system -XX:+UseContainerSupport -XX:MaxRAMP
 
 Options that are most relevant to running Clojure & Java Virtual Machine in a container include:
 
-* `-XshowSettings:system` display (container) system resources on JVM startup
-* `-XX:InitialRAMPercentage` Percentage of real memory used for initial heap size
-* `-XX:MaxRAMPercentage` Maximum percentage of real memory used for maximum heap size
-* `-XX:MinRAMPercentage` Minimum percentage of real memory used for maximum heap size on systems with small physical memory
-* `-XX:ActiveProcessorCount` specifies the number of CPU cores the JVM should use regardless of container detection heuristics
-* `-XX:±UseContainerSupport` force JVM to run in container mode, disabling container detection (only useful if JVM not detecting container environment)
-* `-XX:+UseZGC` low latency Z Garbage collector (read the [Z Garbage collector documentation](https://docs.oracle.com/en/java/javase/17/gctuning/z-garbage-collector.html) and understand the trade-offs before use) - the default Hotspot garbage collector is the most effective choice for most services
+- `-XshowSettings:system` display (container) system resources on JVM startup
+- `-XX:InitialRAMPercentage` Percentage of real memory used for initial heap size
+- `-XX:MaxRAMPercentage` Maximum percentage of real memory used for maximum heap size
+- `-XX:MinRAMPercentage` Minimum percentage of real memory used for maximum heap size on systems with small physical memory
+- `-XX:ActiveProcessorCount` specifies the number of CPU cores the JVM should use regardless of container detection heuristics
+- `-XX:±UseContainerSupport` force JVM to run in container mode, disabling container detection (only useful if JVM not detecting container environment)
+- `-XX:+UseZGC` low latency Z Garbage collector (read the [Z Garbage collector documentation](https://docs.oracle.com/en/java/javase/17/gctuning/z-garbage-collector.html) and understand the trade-offs before use) - the default Hotspot garbage collector is the most effective choice for most services
 
 > Without performance testing of a specific Clojure service and analysis of the results, let the JVM use its own heuristics to determine the most optimum strategies it should use
 
@@ -294,7 +294,7 @@ ENTRYPOINT directive defines the command to run the service
 
 ??? INFO "Understanding the Docker image ENTRYPOINT"
     `ENTRYPOINT` is the recommended way to run a service in Docker.  `CMD` can be used to pass additional arguments to the `ENTRYPOINT` command, or used instead of `ENTRYPOINT`.
-  
+
     `jshell`is the default `ENTRYPOINT` for the Eclipse Temurin image, so `jshell` will run if an `ENTRYPOINT` of `CMD` directive is not included in the run-time stage of the `Dockerfile`.
 
 The `ENTRYPOINT` command runs as process id 1 (PID 1) inside the docker container.  In a Linux system PID 1 should respond to all TERM and SIGTERM signals.
@@ -333,7 +333,7 @@ docker run --publish 8080:8080 practicalli/service-name
 ```
 
 !!! HINT "Docker Compose to orchestrate services locally"
-    Consider creating a Docker `compose.yml` file that defines all the services that should be run to support local development 
+    Consider creating a Docker `compose.yml` file that defines all the services that should be run to support local development
 
     run `docker compose up` to start all the services, including pauses for heath checks where service startup depends on other services.
 
@@ -349,9 +349,9 @@ Consider creating a `docker-compose.yaml` file to orchestrate services that are 
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
