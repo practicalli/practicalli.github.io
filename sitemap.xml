@@ -105,6 +105,10 @@
          <lastmod>2024-09-29</lastmod>
     </url>
     <url>
+         <loc>https://practical.li/blog/create-deps-new-templates-for-clojure-cli-projects/</loc>
+         <lastmod>2024-09-29</lastmod>
+    </url>
+    <url>
          <loc>https://practical.li/blog/web-scraping-with-clojure---scraping-hacker-news/</loc>
          <lastmod>2024-09-29</lastmod>
     </url>
@@ -146,6 +150,10 @@
     </url>
     <url>
          <loc>https://practical.li/blog/category/docker/</loc>
+         <lastmod>2024-09-29</lastmod>
+    </url>
+    <url>
+         <loc>https://practical.li/blog/category/clojure-cli/</loc>
          <lastmod>2024-09-29</lastmod>
     </url>
     <url>
