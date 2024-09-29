@@ -13,3 +13,4 @@
 ## Changed
 - mkdocs: correct github url for repo and edit link
 - dev: megalinter upgrade to version 8
+- dev: update mkdocs targets to use python virtual environment
