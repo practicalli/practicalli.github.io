@@ -195,7 +195,7 @@ ls -la $HOME/Downloads  # (1)
 1.  :woman_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
 
 
-Code blocks with annotation, add `!` after the annotation number to suppress the `#` character
+Code blocks with annotation, add `!` after the annotation number to suppress the `#` character, e.g. `# (1)`
 
 ```clojure
 (defn helper-function
@@ -244,6 +244,10 @@ jobs:
       mkdocs-awesome-pages-plugin \
       ...
     ```
+
+!!! TIP "Annotations within an Admonition"
+    Codeblock annotations wrapped within an admonition should have the annotation description indented to be aligned with the admonition (i.e. 4 space indent)
+
 
 ### Highlight lines in code blocks
 
