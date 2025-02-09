@@ -40,9 +40,11 @@ Development tools
 
 ---
 
-## Projects
+## Open Source Projects and Tools
 
 [:fontawesome-solid-book-open: Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button}
+[:fontawesome-brands-github: Gameboard API Clojure Webapp](https://github.com/practicalli/gameboard-donut){target=_blank .md-button}
+
 
 ---
 
