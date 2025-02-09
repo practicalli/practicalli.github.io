@@ -1,4 +1,4 @@
-# Practicalli Software Development
+# Practicalli Software Engineering Guides
 
 Books, articles and live coding videos covering software development practices and tools, with a specialisation in Functional programming with the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
 
@@ -22,7 +22,7 @@ Thanks to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https
 
 ---
 
-## Books
+## Free Software Engineering Books
 
 Practical guides across the full spectrum of software development.
 
