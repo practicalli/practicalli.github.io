@@ -1,6 +1,6 @@
 # Practicalli Software Engineering Guides
 
-Books, articles and live coding videos covering software development practices and tools, with a specialisation in Functional programming with the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
+Books, articles and live coding videos covering software development practices and tools, including Lean and Agile practices along with a specialisation in Functional programming using the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
 
 ![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus-circle-keyboard.png?raw=true){align=right loading=lazy style="width:142px"}
 
