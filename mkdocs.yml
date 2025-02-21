@@ -142,16 +142,15 @@ extra:
 # Navigation
 nav:
   - Overview: index.md
-  - Practicalli Books: books.md
+  - Online Books: books.md
   - Video Guides: video-guides.md
-  - Clojure Workflow: clojure-repl-workflow.md
-  - Clojure Community: clojure-community.md
+  - Personal Journal: https://practical.li/journal
+  - About Practicalli: practicalli-team.md
   - Open Source Projects: oss-projects.md
   - Commercial Experiences: commercial-projects.md
+  - Clojure Community: clojure-community.md
   - Contribute: contributing.md
-  - About Practicalli: practicalli-team.md
-  - Writing Tips: writing-tips.md
-  - Blog:
+  - MkDocs Tips: writing-tips.md
+  - Practicalli Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
-# TODO: setup override to point to blog/feed_rss_created.xlm
