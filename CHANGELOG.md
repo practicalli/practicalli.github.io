@@ -10,6 +10,7 @@
 - intro: semper scribus badge & button link logos
 - dev: megalinter runner upgrade make task
 - writing-tips: examples of annotations within admonitions
+- mkdocs: round corners style for buttons etc
 
 ## Changed
 - mkdocs: correct github url for repo and edit link
