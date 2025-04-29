@@ -1,44 +1,40 @@
 # Contributing to Practicalli
 
-By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/practicalli.github.io/graphs/contributors){target=_blank}.
+[:fontawesome-brands-github: Practicalli Kanban board - GitHub Project](https://github.com/orgs/practicalli/projects/8/){target=_blank .md-button}
 
-!!! INFO "Please raise an issue before creating a pull request"  
-    Raising an issue or post on the #practicalli channel of Clojurians Slack community avoids disappointment if the contribution would not be accepted and saves time for all.
-
-Practicalli books are written in markdown and use MkDocs to generate the published website via a GitHub workflow.  MkDocs can also run a local server using the `make docs` target from the `Makefile`
+Practicalli welcomes ideas and constructive feedback for content.  Please reach out to the Practicalli team before making a contribution to avoid disappointment.
 
 All content and interaction with any persons or systems must be done so with respect and within the Practicalli Code of Conduct.
 
-## Book status
+By submitting content ideas and corrections you are to that work becoming the copyright of Practicalli and published under the [:globe_with_meridians: Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/practicalli.github.io/graphs/contributors){target=_blank}, pull request and issue history.
 
-[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml){target=_blank}[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli.github.io/practicalli/actions/workflows/publish-book.yaml){target=_blank}
-[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml){target=_blank}
-[![pages-build-deployment](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment){target=_blank}
+!!! Warning "Reaching out to the Practicalli Team before creating a pull request"
+    [:fontawesome-brands-github: Raise an issue](https://github.com/orgs/practicalli/projects/8/){target=_blank}, [:fontawesome-brands-github: start a GitHub discussion](https://github.com/orgs/practicalli/discussions) or post a message on the #practicalli channel of [Clojurians Slack community](http://clojurians.net/){target=_blank} to avoid disappointment.
 
-[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/practicalli/issues){target=_blank}
-[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure?style=for-the-badge)](https://github.com/practicalli/practicalli/pulls){target=_blank}
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure?style=for-the-badge&label=github%20contributors)
+## Content Tools
+
+Practicalli books and websites are written in markdown and uses [:globe_with_meridians: Material for MkDocs](https://squidfunk.github.io/mkdocs-material/){target=_blank} to [:fontawesome-solid-book-open: generate the published website via a GitHub workflow](https://practical.li/engineering-playbook/continuous-integration/github/workflows/practicalli/#mkdocs-publisher).  MkDocs can also run a local server using the `make docs` target from the `Makefile`
+
+The README.md of each project contains install instructions for a local MkDocs server.
+
 
 ## Submit and issue or idea
 
-If something doesnt seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/practicalli/issues){target=_blank} explaining in as much detail as you can.
+Each website and book has a link to its GitHub repository in the top-level navigation bar.
 
-**Raising an issue before creating a pull request will save you and the maintainer time**.
+Use the [:fontawesome-brands-github: Practicalli Kanban board](https://github.com/orgs/practicalli/projects/8/){target=_blank} to create an issue on any of the Practicalli GitHub repositories.
 
-Alternatively, reach out to Practicalli via the `#practicalli` channel of the Clojurians Slack community.
-
-[Clojurians Slack community](http://clojurians.net/){target=_blank .md-button}
 
 ## Considering a Pull request?
 
 !!! INFO "Pull Request Commits must be cryptographically signed"
-    All commits contributed to Practicalli must be signed via a legitimate SSH or GPG key to avoid the risk of commit spoofing.
 
-    [Configure commit signing with SSH key - Practicalli Engineering](https://practical.li/engineering-playbook/source-control/git-configuration/#commit-signing-with-ssh-key){target=_blank .md-button}
+All commits contributed to Practicalli must be signed via a legitimate SSH or GPG key to avoid the risk of commit spoofing.
 
-All pull requests must include an entry in CHANGELOG.md or will not be merged.  A changelog entry allows the community to follow the changes to the book.
+[:fontawesome-solid-book-open: Configure commit signing with SSH key - Practicalli Engineering](https://practical.li/engineering-playbook/source-control/git-configuration/#commit-signing-with-ssh-key){target=_blank .md-button}
+
+All pull requests must include an entry in CHANGELOG.md or will not be merged.  A changelog entry allows the community to follow the changes.
 
 Each pull request will have a number of CI workflows run against the contribution, checking the format of the content and if a changelog entry has been provided.
 
@@ -51,7 +47,7 @@ Issues such as grammar improvements are typically a sign of a rushed section tha
 
 ## Thank you to everyone that has contributed
 
-A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.  
+A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.
 
 The Clojure community has been highly supportive of everyone using Clojure and I'd like to thank everyone for the feedback and contributions.  I would also like to thank everyone that has joined in with the [London Clojurins community](https://www.meetup.com/London-Clojurians/){target=_blank}, [ClojureBridgeLondon](https://clojurebridgelondon.github.io/){target=_blank}, [Clojurians Slack community](http://clojurians.net/){target=_blank}, [Clojurians Zulip](https://clojurians.zulipchat.com/){target=_blank} community and [Clojureverse community](https://clojureverse.org/){target=_blank}.
 
