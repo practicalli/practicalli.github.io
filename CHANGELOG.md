@@ -12,6 +12,7 @@
 - writing-tips: examples of annotations within admonitions
 - mkdocs: round corners style for buttons etc
 - intro: add code of respect
+- dev: stale issue & pr scheduled check (monthly)
 
 ## Changed
 - mkdocs: correct github url for repo and edit link
