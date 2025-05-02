@@ -13,6 +13,7 @@
 - mkdocs: round corners style for buttons etc
 - intro: add code of respect
 - dev: stale issue & pr scheduled check (monthly)
+- intro: lexers for markdown code block syntax highlights in writing tips
 
 ## Changed
 - mkdocs: correct github url for repo and edit link

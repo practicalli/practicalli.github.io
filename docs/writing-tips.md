@@ -149,6 +149,23 @@ Code blocks include a copy icon automatically
 
 Syntax highlighting in code blocks
 
+[Available Lexers for syntax highlights](https://pygments.org/docs/lexers/#pygments.lexers.configs.UnixConfigLexer){target=_blank .md-button}
+
+
+??? INFO "Lexers used by Practicalli"
+    - `clojure` Clojure and ClojureScript code
+    - `json` api data, etc.
+    - `markdown` markdown text
+    - `make` Makefile task definitions
+    - `unixconfig` general configuration files
+    - `yaml` .yaml / .yml configuration files, e.g. GitHub Workflow
+    - `shell` scripts (alternatives `bash`, `zsh`)
+    - `shell-session` prompt, command and output for one or more commands
+    - `docker` and compose configs
+    - `html`
+    - `mermaid` ([Diagrams - Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/diagrams/))
+
+
 ```clojure
 (defn my-function  ; Write a simple function
   "With a lovely doc-string"
