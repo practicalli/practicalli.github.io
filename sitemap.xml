@@ -2,178 +2,178 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/books/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure-community/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/code-of-respect/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/commercial-projects/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/contributing/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/practicalli-editors/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/practicalli-team/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/video-guides/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/writing-tips/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/assets/images/social/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/accessing-aws-with-clojure-from-scratch---simple-approach/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/freedesktoporg-xdg-standard-for-clojure-development-tools/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/advent-of-parens-2019---feast-on-clojure-this-holiday-season/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/automate-cryogen-clojure-blog-with-github-actions/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/build-and-run-clojure-with-multi-stage-dockerfile/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/building-emacs-28-on-ubuntu-linux/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/build-emacs-from-source-on-debian-linux/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/clojure-advent-of-code---a-fun-way-to-learn/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/clojure-powered-blogging-with-cryogen/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/docker-a-simple-workflow-for-clojure/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/essential-tooling-for-clojure-development/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/expose-clojure-service-using-ngrok/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/safeguard-against-git-commit-spoofing/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/london-clojurians-community---a-relatively-brief-history/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/pin-emacs-packages-to-manage-issues/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/create-deps-new-templates-for-clojure-cli-projects/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/web-scraping-with-clojure---scraping-hacker-news/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2024/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2023/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2022/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2021/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2020/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/archive/2019/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/git/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/emacs/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/docker/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/clojure-cli/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/community/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/debian/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/category/cryogen/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
     <url>
          <loc>https://practical.li/blog/page/2/</loc>
-         <lastmod>2025-05-01</lastmod>
+         <lastmod>2025-05-02</lastmod>
     </url>
 </urlset>
