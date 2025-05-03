@@ -21,7 +21,7 @@ Software development guides and live coding screencasts, with a focus on the Clo
 [![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml)
 [![pages-build-deployment](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment)
 
-[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/practicalli.github.io?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli.github.io/clojure/issues)
+[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/practicalli.github.io?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/practicalli.github.io?style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/pulls)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/practicalli.github.io?style=for-the-badge)
@@ -120,5 +120,3 @@ make docs-changed
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-
-
