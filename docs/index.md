@@ -42,30 +42,30 @@ Development tools
 
 ## Open Source Projects and Tools
 
-[:fontawesome-solid-book-open: Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button}
-[:fontawesome-brands-github: Gameboard API Clojure Webapp](https://github.com/practicalli/gameboard-donut){target=_blank .md-button}
 
+[:fontawesome-solid-book-open: Clojure Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/){target=_blank .md-button}
+[:fontawesome-brands-github: Gameboard API Clojure Webapp](https://github.com/practicalli/gameboard-donut){target=_blank .md-button}
 
 ---
 
-## Tooling & Configuration
+## Editors and Tools Configuration
 
 
 [:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/){target=_blank .md-button}
 [:fontawesome-brands-github: Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config/){target=_blank .md-button}
 
-[:fontawesome-brands-github: Spacemacs Config](https://github.com/practicalli/spacemacs-config/){target=_blank .md-button}
-[:fontawesome-brands-github: Neovim AstroNvim Config](https://github.com/practicalli/astronvim-config/){target=_blank .md-button}
+[:fontawesome-brands-github: Astro5 Neovim Config](https://github.com/practicalli/nvim-astro5){target=_blank .md-button}
+[:fontawesome-brands-github: Spacemacs Emacs Config](https://github.com/practicalli/spacemacs-config){target=_blank .md-button}
 
-[:fontawesome-brands-github: dotfiles - git, kitty, zsh, regolith](https://github.com/practicalli/astronvim-config/){target=_blank .md-button}
+[:fontawesome-brands-github: dotfiles - git, kitty, ssh, zsh, docker, aws, regolith, hyprland](https://github.com/practicalli/dotfiles/){target=_blank .md-button}
 
+---
 
 ## Website Status
 
 [![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml){target=_blank}[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli.github.io/practicalli/actions/workflows/publish-book.yaml){target=_blank}
 [![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml){target=_blank}
 [![pages-build-deployment](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment){target=_blank}
-
 
 ---
 
