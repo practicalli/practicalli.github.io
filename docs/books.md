@@ -3,7 +3,7 @@
 
 ## Engineering Playbook
 
-Practical guides for specific tools and practices to support software development. 
+Practical guides for specific tools and practices to support software development.
 
 [![Practicalli Engineering Playbook Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/engineering-playbook/engineering-playbook-concept.png){loading=lazy}](https://practical.li/engineering-playbook){target=_blank}
 
@@ -18,22 +18,19 @@ Practice Clojure by solving challenges with examples of different approaches. En
 
 [![Practicalli Clojure Book](https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true){loading=lazy}](https://practical.li/clojure){target=_blank}
 
-[:fontawesome-solid-book-open: Practicalli Clojure](https://practical.li/clojure){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Practicalli Clojure](https://practical.li/clojure){target=_blank .md-button}
+[:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank .md-button}
 
 
 ## Clojure Web Services
 
-Building services with APIs
+Build production level server-side web services and API's in Clojure.
 
-Build production level server-side web services, micro-services and API's in Clojure. 
+Ring converts each HTTP request to a hash-map. Define routes to middleware & handler functions to process requests and return a Ring response.
 
-Using Ring as an abstraction over HTTP with requests and responses as simple Clojure hash-maps. 
+Data formats are managed by coercion and content negotiation, optionally using specifications to ensure data validation.
 
-Routing of requests are managed by Compojure or Reitit, passing requests to handers which are Clojure functions. 
-
-Data formats are managed by coercion and content negotiation.
-
-OpenAPI (swagger) is used for self-documenting APIs
+OpenAPI (swagger) is used for self-documenting APIs and testing.
 
 [![Practicalli Clojure Web Services Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light){loading=lazy}](https://practical.li/clojure-web-services){target=_blank}
 [![Practicalli Clojure Web Services Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark){loading=lazy}](https://practical.li/clojure-web-services){target=_blank}
@@ -43,11 +40,14 @@ OpenAPI (swagger) is used for self-documenting APIs
 
 ## Spacemacs (Emacs)
 
-powerful editing with Emacs and Vim multi-modal editing, with a mnemonic menu that simplifies the learning curve. Install a full Clojure development experience with two Git commands.
+Powerful editing with Emacs and Vim multi-modal editing (Evil). A mnemonic menu simplifies the learning curve.
+
+Install a full Clojure development experience with two Git clone commands.
 
 [![Practicalli Spacemacs Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-spacemacs-book-banner.png){loading=lazy}](https://practical.li/spacemacs){target=_blank}
 
 [:fontawesome-solid-book-open: Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank .md-button}
+[:fontawesome-brands-github: Spacemacs Config](https://github.com/practicalli/spacemacs-config){target=_blank .md-button}
 
 
 ## Neovim
@@ -60,6 +60,9 @@ Neovim for effective Clojure development with Conjure and Clojure LSP (nvim-tree
 [![Practicalli Neovim Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-neovim-book-banner-astronvim.png){loading=lazy}](https://practical.li/neovim){target=_blank}
 
 [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
+[:fontawesome-brands-github: Astro5 Neovim Config](https://github.com/practicalli/nvim-astro5){target=_blank .md-button}
+
+---
 
 # Under development
 
@@ -75,6 +78,7 @@ build single page apps (SPA's), dynamic UI's and mobile apps with responsive des
 [:fontawesome-solid-book-open: Practicalli ClojureScript](https://practical.li/clojurescript){target=_blank .md-button}
 
 
+<!--
 ## Clojure Data Science
 
 Clojure tools and techniques when working with data science related projects. Ingest data
@@ -99,3 +103,4 @@ Practicalli contributed Calva key bindings to the VSpaceCode project to support 
 
 [:fontawesome-solid-book-open: Practicalli VSpaceCode](https://practical.li/vspacecode){target=_blank .md-button}
 
+-->
