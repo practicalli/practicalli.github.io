@@ -116,9 +116,9 @@ plugins:
   - tags
 
   # Redirect pages when moved or changed
-  - redirects:
-      redirect_maps:
-        feed_rss_created.xml: blog/feed_rss_created.xml
+  # - redirects:
+  #     redirect_maps:
+  #       feed_rss_created.xml: blog/feed_rss_created.xml
 
 # Footer / Social Media
 extra:
