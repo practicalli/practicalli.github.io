@@ -1,6 +1,6 @@
 # Practicalli Software Development
 
-Software development guides with a focus on the Clojure programming language, using Clojure CLI and a wide range of community tools for a REPL focused workflow.
+Software development guides and live coding screencasts, with a focus on the Clojure programming language.
 
 [![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
 
