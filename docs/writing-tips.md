@@ -312,6 +312,9 @@ Specifying a local file from the root of the book project (the directory contain
 
     An effective way of sharing code and configuration mutliple times in a book or across multiple books.
 
+!!! WARNING "Avoid embedding file from same repository"
+    An `HTTP Error 429: Too Many Requests` can occur when running `mkdocs serve` due to embedding a file in a code block that comes from the same repository as the site being built.
+
 ## Content tabs
 
 Create in page tabs that can also be
