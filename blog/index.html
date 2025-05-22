@@ -33,7 +33,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -41,7 +41,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -497,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oss-projects.md" class="md-nav__link">
+      <a href="../oss-projects/" class="md-nav__link">
         
   
   
@@ -710,6 +710,8 @@
       
         
       
+        
+      
     
     
     
@@ -742,6 +744,31 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -909,6 +936,8 @@
   
     
     
+      
+        
       
         
       
@@ -1118,6 +1147,31 @@
   
   
     <li class="md-nav__item">
+      <a href="category/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="category/emacs/" class="md-nav__link">
         
   
@@ -1206,6 +1260,55 @@
       <header class="md-typeset">
         <h1 id="practicalli-articles">Practicalli Articles<a class="headerlink" href="#practicalli-articles" title="Permanent link">λ︎</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-04-13 00:00:00+00:00">April 13, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/documentation/" class="md-meta__link">documentation</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="advantages-of-writing-documentation-for-code"><a class="toclink" href="advantages-of-writing-documentation-for-code/">Advantages of writing documentation for code</a></h2>
+<p>Code that executes correctly and provides only limited value to the business can still be a huge maintenance burden.</p>
+<p>Code is very rarely written to include why is was added, what is the purpose of this code.</p>
+<p>Dismiss the value of adding documentation that describes the why of the code significantly increases the cost of maintaining and extending that code.  Skipping documentation adds to the engineering debt of any solution (even when the intention is to re-write that code).</p>
+
+    
+      <nav class="md-post__action">
+        <a href="advantages-of-writing-documentation-for-code/">
+          Continue reading
+        </a>
+      </nav>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -1670,57 +1773,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-logo.png?raw=true" alt="Practicalli Johnny">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2022-10-30 00:00:00+00:00">October 30, 2022</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/docker/" class="md-meta__link">docker</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              11 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="build-and-run-clojure-with-multi-stage-dockerfile"><a class="toclink" href="build-and-run-clojure-with-multi-stage-dockerfile/">Build and run Clojure with Multi-stage Dockerfile</a></h2>
-<p><img align="right" alt="Practicalli Clojure Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/docker-logo-name.png?raw=true" style="width:240px" /></p>
-<p>Deployment of a Clojure service is very simple, requiring only an Uberjar (archive file containing the Clojure Project and Clojure run-time) and the Java Run-time Environment (JRE).</p>
-<p>A Clojure service rarely works in isolation and although many services are access via a network connection (defined in Environment Variables), provisioning containers to build and run Clojure along with any other services can be valuable as complexity of the architecture grows.</p>
-<p>A <a href="https://github.com/practicalli/clojure-app-template/blob/main/Dockerfile">Multi-stage <code>Dockerfile</code></a> is an effective way to build and run Clojure projects in continuous integration pipelines and during local development where multiple services are required for testing.</p>
-<p><a href="https://hub.docker.com/">Docker Hub</a> provides a wide range of images, supporting development, continuous integration and system integration testing.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="build-and-run-clojure-with-multi-stage-dockerfile/">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
       
         
           
@@ -1889,10 +1941,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.sections"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.sections"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
