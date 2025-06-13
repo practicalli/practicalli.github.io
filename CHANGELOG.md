@@ -15,6 +15,7 @@
 - dev: stale issue & pr scheduled check (monthly)
 - intro: lexers for markdown code block syntax highlights in writing tips
 - intro: warning not to embed file from same repository in code block
+- dev: github issue templates
 
 ## Changed
 - mkdocs: correct github url for repo and edit link
