@@ -1,34 +1,36 @@
 # Practicall Team
 
+![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus-circle-keyboard.png?raw=true){align=right loading=lazy style="width:142px"}
+
+
 !!! QUOTE "Practicalli founding principle"
-    Learning by doing, learn even more by teaching.
+    Learn by doing. Learn effectively by sharing lessons learned.
 
-Practicalli content is designed to be easy to understand.  If there is something that is not clear or could be described differently then please [get in touch](contributing.md)
+Practicalli is the result of many years "learning by teaching" in the community and commercial training for several consulting companies.
 
-Practicalli is the result of many years "learning by teaching" in the community. The majority of learning was around Clojure and development tooling.
-
+Practicalli content is designed to be understood so [feedback on clarity and topics covered](contributing.md){target=_blank} is always appreciated.
 
 ## Vision
 
-Practicalli guides started with a focus on effective development with the Clojure functional programming language, along with development tools that support an effective Clojure REPL workflow (Repl Driven Development).
+Practicalli started with a focus on effective development with the Clojure functional programming language, providing practical books for learning the Clojure language and supporting engineering tools.  Collectively those books provide a deep insight to the complete workflow for Clojure REPL Driven Development.
 
 The long term vision is to provide a complete set of practical guides for modern software engineering, covering principles, practices and tools.  The focus on Clojure will remain as it is seen as the move effective programming languages for most modern systems.
 
 
-
 ## Sponsor Practicalli
 
-[![Sponsor practicalli-john](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png)](https://github.com/sponsors/practicalli-john/)
+[![Sponsor practicalli-johnny](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png){ align=left loading=lazy }](https://github.com/sponsors/practicalli-johnny/)
 
-The majority of my work is now focused on the [Practicalli series of books and videos](https://practical.li/) and an advisory role with several communities
+Sponsorship supports continued development of [Practicalli books & videos](https://practical.li/){target=_blank}. Sponsor [feedback on content & topics](https://github.com/orgs/practicalli/projects/8) is most welcome.
 
-Thank you to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors) from the Clojure community for your continued support
+Domain registration is the only infrastructure cost, as zero-cost GitHub repositories, CI workflows and GitHub pages are used to publish content.
+
+Thanks to [Nubank](https://nubank.com.br/){target=_blank} and [:fontawesome-brands-github: sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} from the Clojure community for their continued support
 
 
+## About Johnny
 
-## About Johnny Stevenson
-
-Johnny Stevenson is the founder of Practical.li, using my experiences of teaching thousands of people over the last 3 decades.
+Johnny is the founder of Practical.li, using my experiences from teaching thousands of people over the last 3 decades.
 
 A presentation to introduce where I came from was captured from my time working for StatsBomb in 2021 (focusing on my life rather than career).
 
@@ -42,23 +44,35 @@ A presentation to introduce where I came from was captured from my time working 
 
 I started community outreach with Linux, running install parties and workshops across London.  I introduced hundreds of people to Linux, mainly Ubuntu, covering a wide range of development tools and workflows.
 
-I joined forces with FossBox, which ran free workshops on Linux for the community in London.  I created a workshop on using Inkscape for creating graphics using Scaler Vector Graphics.
+
+### Open Source
+
+I joined forces with [FossBox](https://www.fossbox.org.uk/), which ran free workshops on Open Source Software (OSS) for the community in London.  I created a workshop on using Inkscape for creating graphics using Scaler Vector Graphics.  Inkscape is the tool I used to create custom graphics for all my work.
 
 Afternoon workshops on Wednesdays at [University College London (UCL)](https://www.ucl.ac.uk/).  Event posters were designed and created by myself and posted around the University with help from their computer society.  This was mostly people curious coming along to ask questions, although a good percentage were installing Linux and many of the tools I recommended.  Demos of specific tools were done on request (and I also learned a lot from the questions that were asked).
 
 Install parties were run in a pub, using a booked area (or a quiet pub).  The first pub used was "The Slaughtered Lamb", which was near the SkillsMatter offices and a regular social venue for post presentation drinks
 
 
+### Scala Code dojo
+
+I wanted to practice the new languages I was learning and a code dojo event was an ideal way to accelerate that learning by working with other people.
+
+After a decade and a half of Java development I wanted to try functional programming.  Scala was gaining a lot of interest and I became involved in the London Scala User Group (LSUG).
+
+After suggesting we should run a code dojo event at a meeting of the LSUG organisers I was tasked organising those events.  As I had never organised such an event I attended the London Python and London Clojurians code dojo events.
+
 Sharing code from dojo events
 
 Assembla
 GitHub
 
-Teaching engineers how to deploy from source on Heroku PaaS platform,
+[How to run a code dojo event](URL){target=_blank .md-button}
+
+> NOTE: Teaching people how to use Git and code sharing services was a highly valuable skill when I started working for Heroku, as their deployment workflow used Git and if you understood Git then you understood how to use Heroku.
 
 
-
-## Personal Journey Into Clojure
+## Journey Into Clojure
 
 Started looking at Haskell and Scala.
 
