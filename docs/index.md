@@ -2,8 +2,6 @@
 
 Books, articles and live coding videos covering software development practices and tools, including Lean and Agile practices along with a specialisation in Functional programming using the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
 
-![Practicalli Badge Semper Scribus](https://github.com/practicalli/graphic-design/blob/live/designs/practicalli-badge-semper-scribus-circle-keyboard.png?raw=true){align=right loading=lazy style="width:142px"}
-
 [![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
 [![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
 
@@ -16,9 +14,11 @@ Books, articles and live coding videos covering software development practices a
 
 [![Sponsor practicalli-johnny](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png){ align=left loading=lazy }](https://github.com/sponsors/practicalli-johnny/)
 
-All sponsorship funds are used to support the continued development of [Practicalli series of books and videos](https://practical.li/){target=_blank}, although most work is done at personal cost and time.
+Sponsorship supports continued development of [Practicalli books & videos](https://practical.li/){target=_blank}. Sponsor [feedback on content & topics](https://github.com/orgs/practicalli/projects/8) is most welcome.
 
-Thanks to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} from the Clojure community for your continued support
+Domain registration is the only infrastructure cost, as zero-cost GitHub repositories, CI workflows and GitHub pages are used to publish content.
+
+Thanks to [Nubank](https://nubank.com.br/){target=_blank} and [:fontawesome-brands-github: sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} from the Clojure community for their continued support
 
 ---
 
