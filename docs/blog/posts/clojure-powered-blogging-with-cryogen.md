@@ -24,7 +24,7 @@ Cryogen seems very quick to generate a site and a local server can be run to aut
 [:fontawesome-brands-github: practicalli/blog-cryogen](https://github.com/practicalli/blog-cryogen/){target=_blank} contains all the content and configuration used to create the Practicalli blog website.
 
 !!! WARNING "Markdown tables not supported"
-    **Limitation/bug** cryogen does not support tables in markdown posts.  
+    **Limitation/bug** cryogen does not support tables in markdown posts.
 
     The issue seem to reside in [:fontawesome-brands-github: cryogen-markdown library](https://github.com/cryogen-project/cryogen-markdown){target=_blank}
 
@@ -125,7 +125,7 @@ The start of each post is a Clojure hash-map, `{}` containing metadata for the s
 ## Deploying the site to GitHub pages
 
 !!! INFO "Automate publish with GitHub workflow"
-    [Automate Cryogent blog publishing ](automate-cryogen-clojure-blog-with-github-actions){target=_blank} describes how to build and deploy a Cryogen blog with a GitHub CI workflow.
+    [Automate Cryogent blog publishing ](./automate-cryogen-clojure-blog-with-github-actions.md){target=_blank} describes how to build and deploy a Cryogen blog with a GitHub CI workflow.
 
 GitHub pages is a free static site hosting service and we can deploy the cryogen website by a git push.
 
@@ -138,7 +138,7 @@ An unsophisticated script is used to deploy the generated website.  The script c
     cd public/blog && \
     rm -rf .git && git init && git add . && \
     git commit -m "publish blog" && \
-    git branch -m master gh-pages && \ 
+    git branch -m master gh-pages && \
     git remote add practicalli git@github.com:practicalli/blog.git && \
     git push -f practicalli gh-pages
     ```
@@ -166,9 +166,9 @@ Edit the `config.edn` configuration file and add the `.nojekyll` file to the res
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli@clj.social](https://clj.social/@practicalli){target=_blank .md-button}
