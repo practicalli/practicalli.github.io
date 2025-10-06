@@ -1,63 +1,30 @@
-# ------------------------------------------
+# -------------------------------------- #
 # Practicalli Makefile
 #
 # Consistent set of targets to support local book development
-# ------------------------------------------
+# -------------------------------------- #
 
+# -- Makefile task config -------------- #
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all clean deps dist docs lint pre-commit-check repl test test-ci test-watch
+.PHONY: all clean docs lint pre-commit-check test
 # -------------------------------------- #
 
 # -- Makefile Variables ---------------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
-SHELL := /usr/bin/zsh
-
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
+
+SHELL := /usr/bin/zsh
 
 # Tool Commands
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
-
-# Makefile file and directory name wildcard
-# EDN-FILES := $(wildcard *.edn)
 # -------------------------------------- #
 
-# -- Help ------------------------------ #
-# Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
-
-help:  ## Describe available tasks in Makefile
-	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
-	sort | \
-	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
-# -------------------------------------- #
-
-# -- Clojure Projects ------------------ #
-service:  ## New project with practicalli/service template
-	$(info -- Create Service Project ----------------)
-	clojure -T:project/create :template practicalli/service :name practicalli/gameboard
-
-service-donut:  ## New project with practicalli/service template & Donut
-	$(info -- Create Service Project with Donut -----)
-	clojure -T:project/create :template practicalli/service :name practicalli/gameboard :target-dir gameboard-donut
-
-service-integrant:  ## New project with practicalli/service template & Integrant
-	$(info -- Create Service Project with Integrant -)
-	clojure -T:project/create :template practicalli/service :name practicalli/gameboard :target-dir gameboard-integrant
-
-landing-page:  ## New project with practicalli/landing-page template local
-	$(info -- Run Rebel REPL ------------------------)
-	clojure -T:project/create :template practicalli/landing-page :name practicalli/landing-page
-
-outdated: ## Check deps.edn & GitHub actions for new versions
-	$(info -- Search for outdated libraries ---------)
-	- clojure -T:search/outdated > $(OUTDATED_FILE)
-# -------------------------------------- #
-
-# -- Code Quality ---------------------- #
+# --  Quality Checks  ------------------ #
 pre-commit-check: lint
 
 lint:  ## Run MegaLinter with custom configuration (node.js required)
@@ -75,6 +42,48 @@ lint-clean:  ## Clean MegaLinter report information
 megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
 	$(info -- MegaLinter Upgrade Config -------------)
 	npx mega-linter-runner@latest --upgrade
+
+dependencies-outdated: ## Report new versions of library dependencies and GitHub action
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:search/outdated > $(OUTDATED_FILE)
+
+dependencies-update: ## Update all library dependencies and GitHub action
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
+# -------------------------------------- #
+
+# --- Documentation Generation  -------- #
+python-venv:  ## Create Python Virtual Environment
+	$(info -- Create Python Virtual Environment -----)
+	python3 -m venv ~/.local/venv
+
+python-activate:  ## Activate Python Virtual Environment for MkDocs
+	$(info -- Mkdocs Local Server -------------------)
+	source ~/.local/venv/bin/activate
+
+mkdocs-install:
+	$(info -- Install Material for MkDocs -----------)
+	source ~/.local/venv/bin/activate && pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
+
+docs: ## Build and run mkdocs in local server (python venv)
+	$(info -- MkDocs Local Server -------------------)
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+
+docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
+	$(info -- Mkdocs Local Server -------------------)
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+
+docs-build:  ## Build mkdocs (python venv)
+	$(info -- Mkdocs Build Website ------------------)
+	source ~/.local/venv/bin/activate && mkdocs build
+
+docs-debug:  ## Run mkdocs local server in debug mode (python venv)
+	$(info -- Mkdocs Local Server Debug -------------)
+	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
+
+docs-staging:  ## Deploy to staging repository
+	$(info -- Mkdocs Staging Deploy -----------------)
+	source ~/.local/venv/bin/activate && mkdocs gh-deploy --force --no-history --config-file mkdocs-staging.yml
 # -------------------------------------- #
 
 # ------- Version Control -------------- #
@@ -87,26 +96,13 @@ git-status:  ## status details of git repos under current directory
 	mgitstatus
 # -------------------------------------- #
 
-# --- Documentation Generation  -------- #
+# ------------ Help -------------------- #
+# Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
 
-python-venv:
-	$(info -- Create Python Virtual Environment -----)
-	python3 -m venv ~/.local/venv
-
-mkdocs-install:
-	$(info -- Install Material for MkDocs -----------)
-	source ~/.local/venv/bin/activate; pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
-
-docs: ## Build and run mkdocs in local server (python venv)
-	$(info -- MkDocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
-
-docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
-
-docs-build:  ## Build mkdocs (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && mkdocs build
+help:  ## Describe available tasks in Makefile
+	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
+	sort | \
+	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
 # -------------------------------------- #
 
+dist: deps-build ## Build mkdocs website
