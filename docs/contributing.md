@@ -44,15 +44,14 @@ A PR with a list of changes across different sections will be closed without mer
 
 Issues such as grammar improvements are typically a sign of a rushed section that requires a rewrite, so a pull request to fix a typeographic error will probably not be merged.  Raise an issue, or post a thread in the [:globe_with_meridians: Clojurians Slack #practicall channel](https://clojurians.slack.com/messages/practicalli)
 
-
-## Thank you to everyone that has contributed
+## Gratitude
 
 A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.
 
-The Clojure community has been highly supportive of everyone using Clojure and I'd like to thank everyone for the feedback and contributions.  I would also like to thank everyone that has joined in with the [London Clojurins community](https://www.meetup.com/London-Clojurians/){target=_blank}, [ClojureBridgeLondon](https://clojurebridgelondon.github.io/){target=_blank}, [Clojurians Slack community](http://clojurians.net/){target=_blank}, [Clojurians Zulip](https://clojurians.zulipchat.com/){target=_blank} community and [Clojureverse community](https://clojureverse.org/){target=_blank}.
+The Clojure community has been highly supportive and I'd like to thank everyone for constructive feedback and contributions.  In particular I would like to thank everyone that joined in with the [London Clojurins community](https://www.meetup.com/London-Clojurians/){target=_blank}, [ClojureBridgeLondon](https://clojurebridgelondon.github.io/){target=_blank}, [Clojurians Slack community](http://clojurians.net/){target=_blank}, [Clojurians Zulip](https://clojurians.zulipchat.com/){target=_blank} community.
 
-Thank you to everyone who sponsors the Practicalli websites and videos and for the [Clojurists Together sponsorship](https://www.clojuriststogether.org/){target=_blank}, it helps me continue the work at a much faster pace.
+I am humbled by those who have sponsored the Practicalli websites and videos, providing financial and motivational support.
 
-Special thanks to [Bruce Durling](https://twitter.com/otfrom){target=_blank} for getting me into Cloure in the first place.
+Special thanks to [Bruce Durling](https://uk.linkedin.com/in/brucedurling){target=_blank} for getting me into Cloure in the first place.
 
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure?style=for-the-badge&label=github%20contributors)
