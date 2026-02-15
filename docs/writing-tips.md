@@ -290,7 +290,7 @@ Add highlight line meta data to a code block after the opening backticks and cod
 | NOTE: For GitHub, add `?raw=true` on the end of the url to the GitHub file or use the raw code link, i.e. `https://raw.githubusercontent.com/...`
 
 ??? EXAMPLE "Practicalli Project Templates"
-    ```markdown title="Emacs project configuration - .dir-locals.el"
+    ```markdown title="Clojure project configuration - deps.edn"
     --8<-- "https://github.com/practicalli/project-templates/blob/main/deps.edn?raw=true"
     ```
 
