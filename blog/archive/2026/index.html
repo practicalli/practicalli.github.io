@@ -1433,7 +1433,7 @@
           
           <li class="md-meta__item">
             
-              9 min read
+              10 min read
             
           </li>
         
@@ -1445,9 +1445,11 @@
   <div class="md-post__content md-typeset">
     <h2 id="use-the-latest-dev-tools-on-a-stable-debian-linux"><a class="toclink" href="../../use-the-latest-dev-tools-on-a-stable-debian-linux/">Use the latest Dev Tools on a Stable Debian Linux</a></h2>
 <p><img align="right" alt="Practicalli Debian Linux Logo" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/topic-images/debian-linux-logo-name.png?raw=true" style="width:240px"></p>
-<p>I use Debian Linux as there is a huge advantage to having a stable and low maintenance operating system. This allows me to focus  and get more things done.</p>
+<p>I use Debian Linux as it provides a stable and low maintenance operating system, enabling me to focus on getting valuable tasks done.  Package updates are well tested and the <code>deb</code> package management system avoid incompatible versions between dependent packages.</p>
+<p>The small amount of maintenance is done via the Advance Packaging Tool (Apt), which has a very simple to understand command line, i.e. <code>apt install</code>, <code>apt update</code>, <code>apt upgrade</code> and <code>apt purge</code>.</p>
 <p>The constraint of a stable operating system is that some of the latest versions of development tools and programming languages may not be available as part of the distributions package manager.</p>
-<p>Simple bash scripts were created to install the latest development tools, made effectively one-liner's where the [Download Release Artifacts (DRA)](#Git} project could be used. The scripts were very simple even when falling back to <code>curl</code> with a few basic Linux commands.</p>
+<p><img align="right" alt="Bash logo" loading="lazy" src="https://github.com/odb/official-bash-logo/blob/master/assets/Logos/Icons/PNG/128x128.png?raw=true"></p>
+<p>Simple bash scripts were created to install the latest development tools, made effectively one-liner's where the [Download Release Artifacts (DRA)](} project could be used. The scripts were very simple even when falling back to <code>curl</code> with a few basic Linux commands.</p>
 <p>These shell scripts and the DRA tool are used to install editors, programming languages (e.g. Clojure, Rust, Node.js), Terminal UI (TUI's) tools for development or system administration and even the odd desktop app.</p>
 <p>A <code>debian-linux-post-instal.sh</code> script was created update all the Debian packages, reading packages to add and remove from a plain text file.</p>
 <p>A <code>dev-tools-install.sh</code> calls each script that installs the latest versions of each development tool, programming language, TUI and desktop app.</p>
