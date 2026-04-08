@@ -2,14 +2,15 @@
 title: Use the latest Dev Tools on a Stable Debian Linux
 date:
   created: 2026-03-29
-  updated: 2026-03-30
+  updated: 2026-04-08
 authors:
   - practicalli
 categories:
   - debian
 tags:
-  - operating-system
   - bash
+  - clojure
+  - operating-system
   - scripting
   - tui
 draft: false
@@ -27,7 +28,7 @@ The constraint of a stable operating system is that some of the latest versions 
 
 Simple bash scripts were created to install the latest development tools, made effectively one-liner's where the [Download Release Artifacts (DRA)](#github-releases) project could be used. The scripts were very simple even when falling back to `curl` with a few basic Linux commands.
 
-Each shell script installs either an editor, programming language (e.g. Clojure, Rust, Node.js), Terminal UI (TUI) for development or system administration and for a few desktop apps.
+Each shell script installs either an editor, programming language (e.g. [Clojure](#clojure), Rust, Node.js), Terminal UI (TUI) for development or system administration and for a few desktop apps.
 
 - `debian-linux-post-instal.sh` updates all the Debian packages, reading packages to add and remove from a plain text file.
 - `dev-tools-install.sh` calls each script to install all the development tools, programming languages, TUI's and desktop app's.
@@ -150,14 +151,14 @@ The following tools are used to simplify the scripts:
 
 - [Download Release Assets (DRA)](https://github.com/devmatteini/dra){target=_blank} downloads the latest stable release from a GitHub repository
 - [Uv](https://docs.astral.sh/uv/){target=_blank} to install python packages, using `uv tool install` to avoid the need for a Python virtual environment.
-- Curl with a tools specific install script, e.g. Clojure CLI.
+- Curl with a tools specific install script, e.g. [Clojure CLI](#clojure).
 - Curl with a little scripting magic as a fall-back
 
 [Practicalli Dotfiles](https://github.com/practicalli/dotfiles/){target=_blank} contains a [debian-linux](https://github.com/practicalli/dotfiles/tree/main/debian-linux){target=_blank} directory with the individual tool scripts organised in sub-directories:
 
 - `app` for desktop applications
 - `cli` for command line tools
-- `language` for programming languages, e.g. Clojure, Rust, Node.js
+- `language` for programming languages, e.g. [Clojure](#clojure), Rust, Node.js
 - `tui` terminal UI apps used for system administration and supporting development tools
 
 
@@ -343,13 +344,13 @@ For a newer version or to try bleeding features then I compile Emacs from source
 
 ### Clojure
 
-The Clojure programming language environment is distributed as a library, packages as a Java Archive (.jar file). The Clojure library is included in Clojure source code projects as a dependency, so any version of Clojure can be used by specifying the version.
+The Clojure programming language environment is distributed as a library, packages as a Java Archive (.jar file). The Clojure library is included in Clojure source code projects as a dependency, allowing any version of Clojure to be used by specifying the version.
 
-The Clojure CLI managed all library dependencies, including the Clojure library.  The Clojure CLI includes the current Clojure library version to simplify getting started.
+The Clojure CLI manages all library dependencies, including the Clojure library.  The Clojure CLI includes the current Clojure library version to simplify getting started.
 
-[Practicalli Clojure CLI Config]() provides additional tools from the Clojure community on top of the Clojure CLI.
+[Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} provides additional tools from the Clojure community on top of the Clojure CLI.
 
-The Practicalli script uses the install script provided by the Clojure CLI project, then clones Practicalli Clojure CLI Config.
+The Practicalli script for Debian Linux uses the install script provided by the Clojure CLI project, then clones Practicalli Clojure CLI Config project as the configuration for Clojure CLI tool.
 
 !!! EXAMPLE "Install Clojure CLI with Practicalli Clojure CLI Config"
     ```shell
@@ -364,22 +365,44 @@ The Practicalli script uses the install script provided by the Clojure CLI proje
 
     # Run the Clojure CLI install script for the latest release:
     # https://github.com/Schniz/fnm
-    curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh
+    curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh --output /tmp/clojure-cli-install.sh
 
     echo "Make script executable"
-    chmod +x linux-install.sh
-
+    chmod +x /tmp/clojure-cli-install.sh
     if [ ! $# -eq 0 ]; then
       echo "Installing Clojure CLI in $1"
-      ./linux-install.sh --prefix "$1"
+      /tmp/clojure-cli-install.sh --prefix "$1"
     else
       echo "Install Clojure CLI in /usr/local/bin"
-      sudo ./linux-install.sh
+      sudo /tmp/clojure-cli-install.sh
     fi
 
+    echo "Remove install script"
+    rm -f /tmp/clojure-cli-install.sh
     echo
-    echo "Install Practicalli Clojure CLI Config in ~/.config/clojure"
-    git clone --depth=1 https://github.com/practicalli/clojure-cli-config "$HOME"/.config/clojure
+
+
+    # Move existing config to a backup file
+    if [ -d "$XDG_CONFIG_HOME"/clojure ]; then
+      echo "Backup Clojure CLI Config from $XDG_CONFIG_HOME/clojure"
+      mv "$XDG_CONFIG_HOME"/clojure "$XDG_CONFIG_HOME"/clojure-backup-"$(date +%Y.%m.%d)"
+    elif [ -d "$HOME"/.clojure ]; then
+      echo "Install Clojure CLI Config in $HOME/.clojure"
+      mv "$HOME"/.clojure "$HOME"/.clojure-backup-"$(date +%Y.%m.%d)"
+    else
+      echo "No existing Clojure CLI Config found"
+    fi
+    echo
+
+    echo "Install Practicalli Clojure CLI Config"
+    # Check if XDG_CONFIG_HOME is set
+    if [[ -v XDG_CONFIG_HOME ]]; then
+      echo "Install Clojure CLI Config in $XDG_CONFIG_HOME/clojure"
+      git clone --depth=1 https://github.com/practicalli/clojure-cli-config "$XDG_CONFIG_HOME"/clojure
+    else
+      echo "Install Clojure CLI Config in $HOME/.clojure"
+      git clone --depth=1 https://github.com/practicalli/clojure-cli-config "$HOME"/.clojure
+    fi
     echo
 
     # Verify the Clojure CLI version:
