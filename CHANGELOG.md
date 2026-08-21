@@ -18,6 +18,7 @@
 - dev: github issue templates
 
 ## Changed
+- ci(github): 🔧 practicalli workflow for custom megalinter flavor for static sites
 - mkdocs: correct github url for repo and edit link
 - dev: megalinter upgrade to version 8
 - dev: update mkdocs targets to use python virtual environment
