@@ -18,6 +18,7 @@
 - dev: github issue templates
 
 ## Changed
+- docs(readme): 📝 update link to practicalli contributing guide
 - build(ci): 🔧 practicalli makefile tasks preparing for zensical
 - ci(github): 🔧 practicalli workflow for custom megalinter flavor for static sites
 - mkdocs: correct github url for repo and edit link
