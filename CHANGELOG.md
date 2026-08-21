@@ -18,6 +18,7 @@
 - dev: github issue templates
 
 ## Changed
+- ci(github): 🔧 workflow to prepare for zensical migration
 - build(overrides): 💄 update page not found and announcement
 - docs(readme): 📝 update link to practicalli contributing guide
 - build(ci): 🔧 practicalli makefile tasks preparing for zensical
