@@ -16,6 +16,7 @@
 - intro: lexers for markdown code block syntax highlights in writing tips
 - intro: warning not to embed file from same repository in code block
 - dev: github issue templates
+- docs(intro): 📝 python style markdown tips for zensical websites
 
 ## Changed
 - ci(github): 🔧 workflow to prepare for zensical migration

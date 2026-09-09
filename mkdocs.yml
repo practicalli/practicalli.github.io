@@ -147,6 +147,7 @@ nav:
   - Clojure Community: clojure-community.md
   - Contribute: contributing.md
   - MkDocs Tips: writing-tips.md
+  - Zensical Tips: zensical-tips.md
   - Practicalli Blog:
       - blog/index.md
       - RSS feed: feed_rss_created.xml
