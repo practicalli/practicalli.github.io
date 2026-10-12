@@ -19,6 +19,7 @@
 - docs(intro): 📝 python style markdown tips for zensical websites
 
 ## Changed
+- ci(github): 🔧 zensical dock publish workflow using Uv
 - ci(github): 🔧 workflow to prepare for zensical migration
 - build(overrides): 💄 update page not found and announcement
 - docs(readme): 📝 update link to practicalli contributing guide

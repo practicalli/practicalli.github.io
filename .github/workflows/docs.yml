@@ -1,0 +1,56 @@
+# Workflow to conditionally publish a Zensical project
+---
+name: Publish Zensical Docs
+
+on:
+  workflow_dispatch:  # Manually trigger workflow
+
+  # Run work flow conditional on linter workflow success
+  workflow_run:
+    workflows:
+      - "MegaLinter"
+    paths:
+      - 'docs/**'
+      - 'includes/**'
+      - 'overrides/**'
+      - 'zensical.toml'
+    branches:
+      - main
+    types:
+      - completed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "🚀 Job automatically triggered by ${{ github.event_name }}"
+      - run: echo "🐧 Job running on ${{ runner.os }} server"
+      - run: echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"
+
+      - uses: actions/checkout@v7
+      - run: echo "🐙 ${{ github.repository }} repository sparse-checkout to the CI runner."
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: "latest"
+          activate-environment: "false"
+          github-token: ${{ github.token }}
+          enable-cache: "auto"
+      - name: "Python version to the logs"
+        run: echo "Version of Python available $(python --version)"
+      - run: echo "Running Zensical Static Site Generator with Catppuccin theme"
+      - run: uvx --with catppuccin-zensical zensical build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5
+
+      # Summary
+      - run: echo "🎨 built and published Zensical website"
+      - run: echo "🍏 Job status is ${{ job.status }}."
