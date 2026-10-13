@@ -179,18 +179,20 @@ Everything is working correctly and the tests are failing because we have not wr
 Use different versions of dependencies in your project that is set globally.  One example is if you are actively building a project, you may want to include the latest commit on a feature branch.  Or you may be using a third party library and want to test out a new beta version.  Or perhaps you are releasing a library and want to test it with earlier versions of Clojure, for example.
 
 
-### Example
-
-
-
 ## JVM options
 
-Passing options to the Java Virtual Machine can be very important to shape the performance dynamics of your Clojure application.  For example, not enough memory allocation can really grind your application to a halt.  I experienced this with a third party Java project, they only had 512Mb as the memory allocation size and after a number of uses we working with it then it would steadily grind to a halt.  Doubling the JVM memory allocation made the application fly for hundreds of concurrent users.
+Passing options to the Java Virtual Machine can shape the performance dynamics of your Clojure application.
+
+Limited memory allocation can grind the application to a halt.
+
+I experienced this with a third party Java project, they only had 512Mb as the memory allocation size and after a number of uses we working with it then it would steadily grind to a halt.  Doubling the JVM memory allocation made the application fly for hundreds of concurrent users.
 
 
-## Configuration options useful for CLJS
+## ClojureScript configuration
 
-:output-dir to define where the resulting JavaScript file is written too when compiling ClojureScript.  This is used for a different build, e.g. `deploy` to
+`:output-dir` defines where the resulting JavaScript file is written too when compiling ClojureScript.
+
+This is used for a different build, e.g. `deploy` to
 
 
 ## Deployment
