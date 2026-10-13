@@ -440,7 +440,7 @@ cards_layout_options = { font_family = "Ubuntu" }
 # ----------------------------------------------------------------------------
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/practicalli/journal"
+link = "https://github.com/practicalli/practicalli.github.io"
 [[project.extra.social]]
 icon = "material/web"
 link = "https://practical.li/"
