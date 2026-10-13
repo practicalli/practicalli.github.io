@@ -54,19 +54,7 @@ Development tools
 [:fontawesome-brands-github: Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/){target=_blank .md-button}
 [:fontawesome-brands-github: Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config/){target=_blank .md-button}
 
-[:fontawesome-brands-github: Astro5 Neovim Config](https://github.com/practicalli/nvim-astro5){target=_blank .md-button}
-[:fontawesome-brands-github: Spacemacs Emacs Config](https://github.com/practicalli/spacemacs-config){target=_blank .md-button}
+[:fontawesome-brands-github: Neovim Config](https://github.com/practicalli/nvim-astro){target=_blank .md-button}
+[:fontawesome-brands-github: Emacs (Spacemacs ) Config](https://github.com/practicalli/spacemacs-config){target=_blank .md-button}
 
-[:fontawesome-brands-github: dotfiles - git, kitty, ssh, zsh, docker, aws, regolith, hyprland](https://github.com/practicalli/dotfiles/){target=_blank .md-button}
-
----
-
-## Website Status
-
-[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml){target=_blank}[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli.github.io/practicalli/actions/workflows/publish-book.yaml){target=_blank}
-[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml){target=_blank}
-[![pages-build-deployment](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment){target=_blank}
-
----
-
-[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+[:fontawesome-brands-github: dotfiles - git, kitty, ssh, zsh, docker, debian-linux](https://github.com/practicalli/dotfiles/){target=_blank .md-button}
