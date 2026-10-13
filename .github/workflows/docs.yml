@@ -44,8 +44,8 @@ jobs:
           enable-cache: "auto"
       - name: "Python version to the logs"
         run: echo "Version of Python available $(python --version)"
-      - run: echo "Running Zensical Static Site Generator with Catppuccin theme"
-      - run: uvx --with catppuccin-zensical zensical build
+      - run: echo "Running Zensical Static Site Generator"
+      - run: uvx zensical build
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
