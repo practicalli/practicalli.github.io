@@ -60,15 +60,17 @@ nav = [
   "index.md",
   { "Online Books" = "books.md" },
   { "Video Guides" = "video-guides.md" },
-  { "Weekly Journal" = "https://practical.li/journal" },
-  { "About Practicalli" = "practicalli-team.md" },
-  { "Open Source Projects" = "oss-projects.md" },
   { "Commercial Experiences" = "commercial-projects.md" },
+  { "Open Source Projects" = "oss-projects.md" },
+  { "About Practicalli" = "practicalli-team.md" },
   { "Clojure Community" = "clojure-community.md" },
+
+  { "Technical Blog" = "blog/index.md" },
+  { "Weekly Journal" = "https://practical.li/journal" },
+
   { "Contribute" = "contributing.md" },
   { "MkDocs Tips" = "writing-tips.md" },
   { "Zensical Tips" = "zensical-tips.md" },
-  { "Technical Blog" = "blog/index.md" },
 
   { "RSS feed" = "feed_rss_created.xml" },  # posts by created date
   { "RSS feed (updated)" = "feed_rss_updated.xml" }, # posts by updated date

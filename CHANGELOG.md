@@ -31,6 +31,7 @@
 - docs(readme): 📝 update link to practicalli contributing guide
 - build(ci): 🔧 practicalli makefile tasks preparing for zensical
 - ci(github): 🔧 practicalli workflow for custom megalinter flavor for static sites
+- build(zensical): 🔧 re-order top level navigation
 - mkdocs: correct github url for repo and edit link
 - dev: megalinter upgrade to version 8
 - dev: update mkdocs targets to use python virtual environment
