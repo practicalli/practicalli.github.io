@@ -27,6 +27,7 @@
 - ci(github): 🔧 zensical dock publish workflow using Uv
 - ci(github): 🔧 workflow to prepare for zensical migration
 - build(overrides): 💄 update page not found and announcement
+- build(overrides): 💄 remove cookie settings link from announcement
 - docs(readme): 📝 update link to practicalli contributing guide
 - build(ci): 🔧 practicalli makefile tasks preparing for zensical
 - ci(github): 🔧 practicalli workflow for custom megalinter flavor for static sites
