@@ -20,6 +20,7 @@
 
 ## Changed
 
+- build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - refactor(footer): update link to mastodon social account
 - build(zensical): 🔧 practicalli configuration for zensical
 - ci(github): 🔧 zensical dock publish workflow using Uv
