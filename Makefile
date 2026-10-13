@@ -63,61 +63,27 @@ deps-upgrade: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(DEPS_UPDATE_REPORT)
 # ------------------------------------------------ #
 
-# --- Documentation Generation MkDocs ------------ #
-python-venv:  ## Create Python Virtual Environment
-	$(info -- Create Python Virtual Environment -----)
-	python3 -m venv ~/.local/venv
+# -- Documentation Generation -------------------- #
+docs-install:  ## Install or upgrade Zensical
+	uv tool install zensical --upgrade
 
-python-activate:  ## Activate Python Virtual Environment for MkDocs
-	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate
+docs:  ## Build and run docs in local server
+	$(info -- Local Server --------------------------)
+	$(DOCS_SERVER)
 
-mkdocs-install:
-	$(info -- Install Material for MkDocs -----------)
-	source ~/.local/venv/bin/activate && pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
+docs-open:  ## Build docs, run server & open browser
+	$(info -- Local Server & Browser ----------------)
+	$(DOCS_SERVER) --open
 
-docs: ## Build and run mkdocs in local server (python venv)
-	$(info -- MkDocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+docs-build:  ## Build docs locally
+	$(info -- Build Docs Website --------------------)
+	zensical build
 
-docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+docs-debug:  ## Run local server in debug mode
+	$(info -- Local Server Debug --------------------)
+	$(DOCS_SERVER) -v
 
-docs-build:  ## Build mkdocs (python venv)
-	$(info -- Mkdocs Build Website ------------------)
-	source ~/.local/venv/bin/activate && mkdocs build
-
-docs-debug:  ## Run mkdocs local server in debug mode (python venv)
-	$(info -- Mkdocs Local Server Debug -------------)
-	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
-
-docs-staging:  ## Deploy to staging repository
-	$(info -- Mkdocs Staging Deploy -----------------)
-	source ~/.local/venv/bin/activate && mkdocs gh-deploy --force --no-history --config-file mkdocs-staging.yml
-# -------------------------------------- #
-
-# --- Documentation Generation Zensical ---------- #
-# docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
-# 	uv tool install zensical --with catppuccin-zensical --upgrade
-#
-# docs:  ## Build and run docs in local server
-# 	$(info -- Local Server --------------------------)
-# 	$(DOCS_SERVER)
-#
-# docs-open:  ## Build docs, run server & open browser
-# 	$(info -- Local Server & Browser ----------------)
-# 	$(DOCS_SERVER) --open
-#
-# docs-build:  ## Build docs locally
-# 	$(info -- Build Docs Website --------------------)
-# 	zensical build
-#
-# docs-debug:  ## Run local server in debug mode
-# 	$(info -- Local Server Debug --------------------)
-# 	$(DOCS_SERVER) -v
-#
-# dist: docs-build ## Build Zensical website
+dist: docs-build ## Build Zensical website
 # ------------------------------------------------ #
 
 # -- Version Control ----------------------------- #

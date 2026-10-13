@@ -20,6 +20,7 @@
 
 ## Changed
 
+- build(zensical): 🔧 practicalli tasks for zensical
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - refactor(footer): update link to mastodon social account
 - build(zensical): 🔧 practicalli configuration for zensical
