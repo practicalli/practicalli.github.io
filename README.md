@@ -15,10 +15,8 @@ Software development guides and live coding screencasts, with a focus on the Clo
 
 ## Status
 
-[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yaml)[![Publish Docs](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yaml)
-
-[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/practicalli.github.io?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/issues)
-[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/practicalli.github.io?style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/pulls)
+[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yml)
+[![Publish Zensical Docs](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yml)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/practicalli.github.io?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/practicalli.github.io?style=for-the-badge&label=github%20contributors)
@@ -32,14 +30,15 @@ Software development guides and live coding screencasts, with a focus on the Clo
 
 ## Contributing
 
-Issues and pull requests are most welcome although it is the maintainers discression as to if they are applicable.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
-
 Please read the [detailed Practicalli contributing page](https://practical.li/contributing/) before raising an issue or pull request to avoid disappointment.
 
-* [Current Issues](https://github.com/practicalli/practicalli.github.io/issues)
-* [Current pull requests](https://github.com/practicalli/practicalli.github.io/pulls)
+[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/practicalli.github.io?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/practicalli.github.io?style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/pulls)
 
-By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/practical.li/graphs/contributors).
+By submitting content ideas and corrections you agree they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Attribution is detailed via [GitHub contributors](https://github.com/practicalli/practical.li/graphs/contributors).
+
 
 ## Sponsor Practicalli
 
@@ -47,7 +46,7 @@ By submitting content ideas and corrections you are agreeing they can be used in
 
 All sponsorship funds are used to support the continued development of [Practicalli series of books and videos](https://practical.li/), although most work is done at personal cost and time.
 
-Thanks to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-johnny#sponsors) for your continued support
+Thanks to [Nubank](https://nubank.com.br/) and a wide range of other [GitHub sponsors](https://github.com/sponsors/practicalli-johnny#sponsors) for their continued support
 
 
 ## GitHub Actions
