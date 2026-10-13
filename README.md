@@ -2,10 +2,6 @@
 
 Software development guides and live coding screencasts, with a focus on the Clojure programming language.
 
-[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
-
-> NOTE: migration to [zensical static site generator](https://zensical.org/) once the blog plugin is released (assumed end of 2026)
-
 
 ```none
 ██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗
@@ -19,9 +15,7 @@ Software development guides and live coding screencasts, with a focus on the Clo
 
 ## Status
 
-[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/megalinter.yaml)[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml)
-[![Publish Book](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/publish-book.yaml)
-[![pages-build-deployment](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/pages/pages-build-deployment)
+[![MegaLinter](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/mega-linter.yaml)[![Publish Docs](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yaml/badge.svg)](https://github.com/practicalli/practicalli.github.io/actions/workflows/docs.yaml)
 
 [![Ideas & Issues](https://img.shields.io/github/issues/practicalli/practicalli.github.io?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/practicalli.github.io?style=for-the-badge)](https://github.com/practicalli/practicalli.github.io/pulls)
@@ -58,67 +52,60 @@ Thanks to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.b
 
 ## GitHub Actions
 
-The megalinter GitHub actions will run when a pull request is created,checking basic markdown syntax.
+The megalinter GitHub workflow runs when a pull request is created, checking markdown syntax and links.
 
 A review of the change will be carried out by the Practicalli team and the PR merged if the change is acceptable.
 
-The Publish Book GitHub action will run when PR's are merged into main (or the Practicalli team pushes changes to the default branch).
+The Docs workflow will run when PR's are merged into main (or the Practicalli team pushes changes to the default branch).
 
-Publish book workflow installs Material for MkDocs version 9
+The Docs workflow installs UV and runs Zensical as a tool to build the site. GitHub actions are used to create a new pages deployment.
 
 
 ## Local development
 
-Install mkdocs version 9 using the Python pip package manager
+Zensical can be installed locally via vu or pip.  Practicalli uses uv and installs Zensical as a tool for simplicity.
+
+CLI Commands are wrapped in tasks defined within the `Makefile`, providing a simpler and consistent user experience.
+
+[Zensical - Practcialli Engineering Playbook](https://practical.li/engineering-playbook/technical-writing/static-site/zensical/)
+
+Clone the repository and change into the root of the project.
 
 ```shell
-pip install mkdocs-material=="9.5"
+git clone https://github.com/practicalli/cycling
 ```
 
-Install the plugins used by the Practicalli site using Pip (these are also installed in the GitHub Action workflow)
+Install Zensical as a tool using `uv` (updating if there is a new version).
 
 ```shell
-pip3 install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects pillow cairosvg mkdocs-rss-plugin
+make docs-install
 ```
 
-> pillow and cairosvg python packages are required for [Social Cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/)
-
-> mkdocs-rss-plugin is used to create an RSS feed from blog posts
-
-
-Fork the GitHub repository and clone that fork to your computer,
+Or use the uv command:
 
 ```shell
-git clone https://github.com/<your-github-account>/<repository>.git
+uv tool install zensical --with catppuccin-zensical --upgrade
 ```
 
-Run a local server from the root of the cloned project
+
+Build the website and serve locally at [http://localhost:8000](http://localhost:8000)
 
 ```shell
 make docs
 ```
 
-The website will open at <http://localhost:8000>
-
-If making smaller changes, then only rebuild the content that changes, speeding up the local development process
+Or use the zensical command:
 
 ```shell
-make docs-changed
+zensical serve --dev-addr localhost:7777
 ```
 
-> NOTE: navigation changes may not be correctly reflected without reloading the page in the web browser or carrying out a full `make docs` build
+---
 
+Specific command if now using make:
 
-## Material for MkDocs Commands
+Create a virtual python in the root of the project.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```shell
+uv tool install zensical --upgrade
+```
