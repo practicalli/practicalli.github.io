@@ -8,7 +8,7 @@
 
 Practicalli is the result of many years "learning by teaching" in the community and commercial training for several consulting companies.
 
-Practicalli content is designed to be understood so [feedback on clarity and topics covered](contributing.md){target=_blank} is always appreciated.
+Practicalli content is designed to be understood so [feedback on clarity and topics covered](contribute.md){target=_blank} is always appreciated.
 
 ## Vision
 

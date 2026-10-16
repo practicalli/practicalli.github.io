@@ -2,7 +2,7 @@
 
 Books, articles and live coding videos covering software development practices and tools, including Lean and Agile practices along with a specialisation in Functional programming using the [:fontawesome-solid-book-open: Clojure programming language](https://practical.li/clojure/){target=_blank}
 
-[![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contributing.md)
+[![Contribute to Practicalli](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-logo-contribute-button.png?raw=true){loading=lazy style="width:240px"}](contribute.md)
 [![Practicalli YouTube Subscribe button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-youtube-channel-subscribe-button.png?raw=true){loading=lazy style="width:240px"}](https://youtube.com/practicalli){target=_blank}
 
 [![Practicalli GitHub Discussions button](https://github.com/practicalli/graphic-design/blob/live/buttons/practicalli-github-discussions-button.png?raw=true){loading=lazy style="width:240px"}](https://github.com/orgs/practicalli/discussions){target=_blank}
