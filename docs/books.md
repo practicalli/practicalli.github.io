@@ -1,9 +1,13 @@
 # Practicalli Books
 
+Topics range from general engineering practices and tools to specific software development with the Clojure programming language.
+
 
 ## Engineering Playbook
 
-Practical guides for specific tools and practices to support software development.
+Practical guides for specific tools and practices to support common aspects of software development.
+
+Topics include career development, culture, operating systems, development practices, version control, software design and technical writing.
 
 [![Practicalli Engineering Playbook Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/engineering-playbook/engineering-playbook-concept.png){loading=lazy}](https://practical.li/engineering-playbook){target=_blank}
 
@@ -12,7 +16,9 @@ Practical guides for specific tools and practices to support software developmen
 
 ## Clojure
 
-Learn the Clojure language through REPL driven development using Clojure CLI tools (deps.edn). Use a rich set of community tools, including Rebel readline Terminal UI, Portal and Reveal data browsers and tools to manage all aspects of Clojure projects.
+A practical approach to learning the Clojure programming language, taking a REPL driven development approach.
+
+The Clojure CLI and rich set of community tools support the Clojure development workflow, including Rebel readline Terminal UI and Portal data inspector.
 
 Practice Clojure by solving challenges with examples of different approaches. Encode the design and avoid regressions by writing unit tests and specifications for generative testing.
 
@@ -24,13 +30,15 @@ Practice Clojure by solving challenges with examples of different approaches. En
 
 ## Clojure Web Services
 
-Build production level server-side web services and API's in Clojure.
+Step by step guides to building production level server-side web services and API's in Clojure.
 
-Ring converts each HTTP request to a hash-map. Define routes to middleware & handler functions to process requests and return a Ring response.
+The defacto Ring standard provides an abstraction between HTTP requests & responses, using Clojure Hash-maps. Ring middleware defines common processing actions, handler functions define actions for specific routes.
 
 Data formats are managed by coercion and content negotiation, optionally using specifications to ensure data validation.
 
-OpenAPI (swagger) is used for self-documenting APIs and testing.
+[Reitit suite of libraries](https://github.com/metosin/reitit){target=_blank} provide a data driven approach to defining routing.
+
+OpenAPI (swagger) is used for testing andself-documenting APIs.
 
 [![Practicalli Clojure Web Services Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-light.png#only-light){loading=lazy}](https://practical.li/clojure-web-services){target=_blank}
 [![Practicalli Clojure Web Services Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojure-web-service-book-banner-dark.png#only-dark){loading=lazy}](https://practical.li/clojure-web-services){target=_blank}
@@ -52,26 +60,33 @@ Install a full Clojure development experience with two Git clone commands.
 
 ## Neovim
 
-Neovim for effective Clojure development with Conjure and Clojure LSP (nvim-treesitter). With a mnemonic menu to simplify the learning curve.
+Neovim is a highly effective and highly configurable text editor, with IDE features without the UI overhead.
 
-- Conjure
-- AstroNvim & AstroNvim Community
+Neovim supports the highly effective vim-style editing language, minimising the barrier between thought and editor once that language is learned.
+
+Practically uses Neovim for Clojure development with Conjure and Clojure LSP. The configuration includes a mnemonic menu which simplifies the learning curve of Neovim.
+
+- Conjure REPL client for Clojure (and other languages)
+- AstroNvim & AstroNvim Community provides a range of plugins and base config.
+- Neogit for simple source control
 
 [![Practicalli Neovim Book](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-neovim-book-banner-astronvim.png){loading=lazy}](https://practical.li/neovim){target=_blank}
 
 [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
-[:fontawesome-brands-github: Astro5 Neovim Config](https://github.com/practicalli/nvim-astro5){target=_blank .md-button}
+[:fontawesome-brands-github: Practicalli Neovim Config](https://github.com/practicalli/nvim-astro){target=_blank .md-button}
 
 ---
 
 # Under development
 
-Practicalli books evolve from commercial experiences and from teaching in the community.  The following books are work in progress or need significant updates.
+Practicalli books evolve from commercial experiences and from teaching in the community.
+
+The following books are work in progress or need significant updates.
 
 
 ## ClojureScript
 
-build single page apps (SPA's), dynamic UI's and mobile apps with responsive design
+Build single page apps (SPA's), dynamic UI's and mobile apps with responsive design.
 
 [![Practicalli ClojureScript](https://raw.githubusercontent.com/practicalli/graphic-design/live/book-covers/practicalli-clojurescript-book-banner-alpha.png){loading=lazy}](https://practical.li/clojurescript){target=_blank}
 
