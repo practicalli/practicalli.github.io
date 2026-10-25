@@ -17,6 +17,7 @@
 - intro: warning not to embed file from same repository in code block
 - dev: github issue templates
 - docs(intro): 📝 python style markdown tips for zensical websites
+- docs(intro): ✏️ update navigation keys information
 
 ## Changed
 

@@ -58,3 +58,18 @@ Development tools
 [:fontawesome-brands-github: Emacs (Spacemacs ) Config](https://github.com/practicalli/spacemacs-config){target=_blank .md-button}
 
 [:fontawesome-brands-github: dotfiles - git, kitty, ssh, zsh, docker, debian-linux](https://github.com/practicalli/dotfiles/){target=_blank .md-button}
+
+
+## Navigate the book
+
+Use the links in the footer of each page or built-in key bindings to navigate the pages of the book.
+
+- ++"n"++ or ++period++ : go to next page
+- ++"p"++ or ++comma++ : go to previous page
+
+Use the search box to quickly find a specific topic
+
+- ++slash++ or ++ctrl+"k"++: open search dialog
+- ++arrow-down++  ++arrow-up++ : select next / previous search result
+- ++esc++ or ++tab++ : close search dialog
+- ++enter++ : follow selected result
