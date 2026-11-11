@@ -1,6 +1,8 @@
 ---
 title: "Docker: a simple workflow for Clojure"
-date: 2023-05-15
+date:
+  created: 2023-05-15
+  updated: 2023-05-15
 authors:
   - practicalli
 categories:

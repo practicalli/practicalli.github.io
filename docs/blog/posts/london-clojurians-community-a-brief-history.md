@@ -1,6 +1,8 @@
 ---
 title: London Clojurians Community - a relatively brief history
-date: 2023-03-10
+date:
+  created: 2023-03-10
+  updated: 2023-03-10
 authors:
   - practicalli
 categories:

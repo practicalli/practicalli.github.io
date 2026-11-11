@@ -2,8 +2,10 @@
 title: FreeDesktop.org XDG standard for Clojure development tools
 authors:
   - practicalli
-date: 2022-05-16
-draft: false 
+date:
+  created: 2022-05-16
+  updated: 2022-05-16
+draft: false
 categories:
   - debian
 tags:

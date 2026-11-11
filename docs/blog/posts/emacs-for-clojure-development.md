@@ -5,6 +5,7 @@ icon: https://github.com/practicalli/graphic-design/blob/live/topic-images/emacs
 status: new
 date:
   created: 2025-01-26
+  updated: 2025-01-26
 authors:
   - practicalli
 categories:

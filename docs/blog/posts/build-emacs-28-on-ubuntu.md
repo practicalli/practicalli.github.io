@@ -1,6 +1,8 @@
 ---
 title: "Building Emacs 28 on Ubuntu Linux"
-date: 2022-05-16
+date:
+  created: 2022-05-16
+  updated: 2022-05-16
 authors:
   - practicalli
 categories:

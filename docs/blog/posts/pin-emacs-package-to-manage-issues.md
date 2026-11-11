@@ -1,6 +1,8 @@
 ---
 title: "Pin Emacs packages to manage issues"
-date: 2023-08-15
+date:
+  created: 2023-08-15
+  updated: 2023-08-15
 authors:
   - practicalli
 categories:

@@ -2,7 +2,9 @@
 title: A deeper understanding of Clojure CLI tools
 authors:
   - practicalli
-date: 2019-07-21
+date:
+  created: 2019-07-21
+  updated: 2019-07-21
 draft: false
 categories:
   - clojure-cli

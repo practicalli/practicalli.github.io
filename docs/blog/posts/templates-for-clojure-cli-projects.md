@@ -1,6 +1,8 @@
 ---
 title: "Create deps-new templates for Clojure CLI projects"
-date: 2023-03-30
+date:
+  created: 2023-03-30
+  updated: 2023-03-30
 authors:
   - practicalli
 categories:

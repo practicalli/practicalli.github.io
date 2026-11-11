@@ -1,6 +1,8 @@
 ---
 title: "Clojure powered blogging with Cryogen"
-date: 2019-10-20
+date:
+  created: 2019-10-20
+  updated: 2019-10-20
 authors:
   - practicalli
 categories:

@@ -1,6 +1,8 @@
 ---
 title: "Web Scraping with Clojure - Scraping Hacker News"
-date: 2020-03-13
+date:
+  created: 2020-03-13
+  updated: 2020-03-13
 authors:
   - practicalli
 categories:

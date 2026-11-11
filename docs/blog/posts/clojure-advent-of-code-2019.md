@@ -1,6 +1,8 @@
 ---
 title: "Clojure Advent Of Code - a fun way to learn"
-date: 2019-12-02
+date:
+  created: 2019-12-02
+  updated: 2019-12-02
 authors:
   - practicalli
 categories:

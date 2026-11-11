@@ -1,6 +1,8 @@
 ---
 title: "Build and run Clojure with Multi-stage Dockerfile"
-date: 2022-10-30
+date:
+  created: 2022-10-30
+  updated: 2022-10-30
 authors:
   - practicalli
 categories:

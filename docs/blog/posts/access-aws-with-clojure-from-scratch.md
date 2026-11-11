@@ -1,6 +1,8 @@
 ---
 title: "Accessing AWS with Clojure from scratch - simple approach"
-date: 2023-05-17
+date:
+  created: 2023-05-17
+  updated: 2023-05-17
 topic: aws
 tags:  
   - aws

@@ -1,11 +1,13 @@
 ---
 title: "Advent Of Parens 2019 - feast on Clojure this holiday season"
-date: 2019-12-01
+date:
+  created: 2019-12-01
+  updated: 2019-12-01
 authors:
   - practicalli
 categories:
   - clojure
-tags:  
+tags:
   - clojure
   - advent-of-parens
 ---
@@ -113,9 +115,9 @@ If there are any topics or tips you need help with, please get in touch via the 
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

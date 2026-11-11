@@ -1,6 +1,8 @@
 ---
 title: "Expose Clojure Service using Ngrok"
-date: 2023-08-24
+date:
+  created: 2023-08-24
+  updated: 2023-08-24
 authors:
   - practicalli
 categories:

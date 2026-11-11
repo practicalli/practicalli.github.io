@@ -1,7 +1,9 @@
 ---
 draft: false 
 title: "Automate Cryogen Clojure blog with GitHub Actions"
-date: 2021-08-28
+date:
+  created: 2021-08-28
+  updated: 2021-08-28
 authors:
   - practicalli
 categories:

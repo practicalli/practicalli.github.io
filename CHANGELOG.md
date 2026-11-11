@@ -22,6 +22,7 @@
 
 ## Changed
 
+- docs(frontmatter): ✏️ update posts to created updated date structure
 - build(zensical): 🔧 practicalli tasks for zensical
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - refactor(footer): update link to mastodon social account

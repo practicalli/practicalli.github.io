@@ -1,7 +1,9 @@
 ---
 draft: false 
 title: "Build Emacs from source on Debian Linux"
-date: 2023-10-21
+date:
+  created: 2023-10-21
+  updated: 2023-10-21
 authors:
   - practicalli
 categories:

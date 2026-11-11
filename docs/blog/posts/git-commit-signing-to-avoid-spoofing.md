@@ -1,6 +1,8 @@
 ---
 title: "Safeguard against Git Commit Spoofing"
-date: 2024-01-20
+date:
+  created: 2024-01-20
+  updated: 2024-01-20
 authors:
   - practicalli
 categories:

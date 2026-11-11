@@ -1,6 +1,8 @@
 ---
 title: "Essential tooling for Clojure development"
-date: 2024-01-29
+date:
+  created: 2024-01-29
+  updated: 2024-01-29
 authors:
   - practicalli
 categories:
