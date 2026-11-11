@@ -18,6 +18,7 @@
 - dev: github issue templates
 - docs(intro): 📝 python style markdown tips for zensical websites
 - docs(intro): ✏️ update navigation keys information
+- build(zensical): 🔧 set rss path to `blog/posts`
 
 ## Changed
 
