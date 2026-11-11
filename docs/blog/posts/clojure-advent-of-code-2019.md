@@ -13,9 +13,13 @@ tags:
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-Advent of Code is the annual coding challenge with a festive theme.  Each day there is a new challenge in two parts, the first fairly easy the second a little more involved.  The challenges are an investment of your time to complete them all, although even trying just a few is enough to help you think in different ways.
+Advent of Code is the annual coding challenge with a festive theme. Each day there is a new challenge in two parts, the first fairly easy the second a little more involved.
 
-Every programming language requires regular practice to maintain your skills.  A full time developer role gives you lots of opportunities to practice every day, however, its often focused in around solving problems within a specific business domain, with little time to explore others.  The Advent of Code puts you in a different domain, so its great for extending your coding experiences.
+The challenges are an investment of your time to complete them all, although even trying just a few is enough to help you think in different ways.
+
+Every programming language requires regular practice to maintain your skills. A full time developer role gives you lots of opportunities to practice every day, however, its often focused in around solving problems within a specific business domain, with little time to explore others.
+
+The Advent of Code puts you in a different domain, so its great for extending your coding experiences.
 
 Solving challenges in a different language is another great way to extend your experiences, so here are some tips and examples for solving the advent of code in Clojure.
 
@@ -26,22 +30,24 @@ Solving challenges in a different language is another great way to extend your e
 
 ## Tips
 
-* Keep the solution as simple as possible.  Its very easy to over-complicate the solution and end up simply confusing yourself.
+- Keep the solution as simple as possible. Its easy to over-complicate the solution and end up simply confusing yourself.
 
-* Don't try and make the perfect solution.  Write something that works, this will give you a nice ego boost.  Then you can experiment with the code and see if you can improve your approach.
+- Don't try and make the perfect solution. Write something that works, this will give you a nice ego boost. Then you can experiment with the code and see if you can improve your approach.
 
-* Break down the problem into the simplest thing you can solve first.  Trying to solve a problem all at once will quickly have you going around in circles.
+- Break down the problem into the simplest thing you can solve first. Trying to solve a problem all at once will quickly have you going around in circles.
 
-* Keep all the code and make notes.  I use a a design journal in my projects to document my thinking process, capture decisions that worked and those that didn't work for this project.  The journal is a great way to cement learning from solving the challenge.
+- Keep all the code and make notes. I use a design journal in my projects to document my thinking process, capture decisions that worked and those that didn't work for this project. The journal is a great way to cement learning from solving the challenge.
 
-* Challenges are only accessible from their day of the month onwards.  There is a count-down clock displayed on the next challenge to open, so you know when it will be available.  Don't feel pressured to keep up with the challenges though, enjoy the experience and have fun, you will learn more that way.
+- Challenges are only accessible from their day of the month onward. There is a count-down clock displayed on the next challenge to open, so you know when it will be available. Don't feel pressured to keep up with the challenges though, enjoy the experience and have fun, you will learn more that way.
 
 ![Advent Of Code 2019 Day 1 challenge snippet](https://github.com/practicalli/graphic-design/blob/live/code-challenges/advent-of-code-2019-day1.png?raw=true)
 
 
 ## A previous example
 
-In the following video I walk through the first challenge of Advent of Code from 2018, trying out different solutions at increasing levels of abstraction.  With each level of abstraction it helps to think in a more functional way.
+In the following video I walk through the first challenge of Advent of Code from 2018, trying out different solutions at increasing levels of abstraction.
+
+With each level of abstraction it helps to think in a more functional way.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/opM7fU7IAV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -55,7 +61,7 @@ Create a directory that contains:
 - `src/practicalli/advent_of_clojure_code/day-01.clj` file
 
 
-Create a new Clojure file for each of the daily challenges.  It makes sense to keep both parts of each day in the same file.
+Create a new Clojure file for each of the daily challenges. It makes sense to keep both parts of each day in the same file.
 
 
 ## Useful Resources And Examples
@@ -71,9 +77,9 @@ Also take a look at the [#adventofcode channel in the Clojurians slack channel](
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

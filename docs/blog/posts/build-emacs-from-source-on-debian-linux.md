@@ -1,5 +1,4 @@
 ---
-draft: false 
 title: "Build Emacs from source on Debian Linux"
 date:
   created: 2023-10-21
@@ -12,11 +11,12 @@ tags:
   - debian
   - spacemacs
   - emacs
+draft: false
 ---
 
 ![Practicalli Emacs Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/emacs-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-Emacs 29 is the current stable release, adding major features: Eglot LSP client, Tree-Sitter language parser and `package.el` package install from Git repositories. 
+Emacs 29 is the current stable release, adding major features: Eglot LSP client, Tree-Sitter language parser and `package.el` package install from Git repositories.
 
 Building from source is a convenient way to try Emacs features in advance, especially useful for those maintaining or developing new tools on top of Emacs.
 
@@ -27,46 +27,46 @@ Building from source is a convenient way to try Emacs features in advance, espec
 
 ## Building steps for the impatient
 
-Open a terminal and switch to the adminstrator account
+Open a terminal and switch to the administrator account.
 
 ```shell
 su -
 ```
 
-Add debian packages to support building Emacs
+Add Debian packages to support building Emacs
 
 ```shell
 apt build-dep emacs && \
 apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-bin libtree-sitter-dev
 ```
 
-[Clone Emacs 29 source code](https://git.savannah.gnu.org/cgit/emacs.git), configure and build emacs and then install (in /usr/local/bin/)
+[Clone Emacs 29 source code](https://git.savannah.gnu.org/cgit/emacs.git), configure and build Emacs and then install (in `/usr/local/bin/`)
 
 ```shell
 git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29 && \
 cd emacs-29 && \
 export CC=/usr/bin/gcc-10 && \
-export CXX=/usr/bin/gcc-10 && \ 
+export CXX=/usr/bin/gcc-10 && \
 ./autogen.sh && \
 ./configure --with-native-compilation=aot && \
 make -j$(proc)  && \
 make install
 ```
 
-> Skip the `--branch` argument for the very latest commits to Emacs which will effectively become Emacs 30 some time in the next year or so
+> Skip the `--branch` argument for the latest commits to Emacs which will effectively become Emacs 30 some time in the next year or so
 
 Read the rest of the article for a detailed description of this workflow
 
 
 ## Prepare Debian
 
-Open a terminal and switch to the adminstrator account
+Open a terminal and switch to the administrator account
 
 ```shell
 su -
 ```
 
-Use the Debian package manager to install the build dependencies for the Emacs package. 
+Use the Debian package manager to install the build dependencies for the Emacs package.
 
 Debian installs the packages required to build Emacs, there will be many package to install if this is the first software is being built with GCC on the operating system.
 
@@ -74,9 +74,9 @@ Debian installs the packages required to build Emacs, there will be many package
 apt build-dep -y emacs
 ```
 
-> Using build-deps manages the set of packages required as Emacs evolves.
+> Using `build-deps` option manages the set of packages required as Emacs evolves.
 
-Install library packages to support the newest features of Emacs, e.g. native compilation of Emacs packages (`libgccjit`), fast JSON processing (`libjansson`) and tree-sitter support.  These features can significantly boost performance.
+Install library packages to support the newest features of Emacs, e.g. native compilation of Emacs packages (`libgccjit`), fast JSON processing (`libjansson`) and tree-sitter support. These features can significantly boost performance.
 
 ```shell
 sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev libtree-sitter-dev
@@ -110,19 +110,21 @@ export CC=/usr/bin/gcc-10 && export CXX=/usr/bin/gcc-10
 > If CC and CXX environment variables are not set, the configure script will not find important libraries and report errors such as: `configure: error: ELisp native compiler was requested, but libgccjit was not found.`
 
 
-Run the autogen script to create a configure script specific to your operating system.
+Run the `autogen.sh` script to create a configure script specific to your operating system.
 
 ```shell
 ./autogen.sh
 ```
 
-Run the configuration script with the native compilation flag, to compile Emacs native Elisp files during the Emacs compilation rather than when first running Emacs.  This script will check the operating system for tools and libraries needed to build Emacs on your operating system.
+Run the configuration script with the native compilation flag, to compile Emacs packages to native Elisp files during the Emacs compilation rather than when first running Emacs.
+
+This script will check the operating system for tools and libraries needed to build Emacs on your operating system.
 
 ```shell
 ./configure --with-native-compilation=aot
 ```
 
-Check the output of `./configure` was successful, see the end of this article for an example.  Ignore warnings about movemail if not using Emacs for local email management.
+Check the output of `./configure` was successful, see the end of this article for an example. Ignore warnings about movemail if not using Emacs for local email management.
 
 ??? HINT "List available Emacs build flags"
     `./configure --help` lists available flags. Generally features are enabled if the required libraries are installed on the operating system.
@@ -164,20 +166,21 @@ To install in a different location, pass the full path using the `--prefix` opti
 
 If the default `/usr/local` path was used to install Emacs, then the `emacs` and `emacsclient` binary files are already on the executable path
 
-In a terminal, run the emacs command
+In a terminal, run the `emacs` command
 
 ```shell
 emacs
 ```
 
 ??? HINT "Spacemacs installs packages for a version of Emacs"
-    Using a different version of Emacs with Spacemacs for the first time will download and compile all the pages in the Spacemacs configuration.  
+    Using a different version of Emacs with Spacemacs for the first time will download and compile all the pages in the Spacemacs configuration.
 
-When native compliation is enabled, many minutes are required to navitvely compile each and every Emacs package.
+When native compilation is enabled, many minutes are required to natively compile every Emacs package.
 
 Leave Emacs for a few minutes running until the CPU activity has subsided and then consider restarting Emacs to ensure the packages have been loaded in the correct order.
 
-> Expect to see lots of warning messages when installing more than 250 emacs packages.  Ignore these warnings until all packages have been installed.  If warnings still occur after restarting Emacs, then start investigating (or ask questions on #spacemacs channel in the Clojurians Slack community)
+> Expect to see lots of warning messages when installing more than 250 Emacs packages. Ignore these warnings until all packages have been installed.
+> If warnings still occur after restarting Emacs, then start investigating (or ask questions on #spacemacs channel in the Clojurians Slack community)
 
 
 ## Removing Emacs
@@ -193,7 +196,7 @@ make uninstall
 
 Typical output of  `./configure --with-native-compilation`
 
-Almost all configuration options should be yes, although there are a few legacy libraries or settings for other OSs that should be no.
+Almost all configuration options should be yes, although there are a few legacy libraries or settings for other OS's that should be no.
 
 ```
 Configured for 'x86_64-pc-linux-gnu'.
@@ -255,7 +258,7 @@ Configured for 'x86_64-pc-linux-gnu'.
 
 ## Emacs 29 configuration options
 
-Run configure with `--help` option to list the available compilation options.  Apart from `--with-native-compilation=aot` defaults are used when Practicalli compiles Emacs.
+Run configure with `--help` option to list the available compilation options. Apart from `--with-native-compilation=aot` defaults are used when Practicalli compiles Emacs.
 
 ```shell
 Optional Packages:
@@ -374,16 +377,16 @@ Optional Packages:
 
 ## References
 
-* [Emacs 28.1 whats new](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1) - a very detailed description of new features in Emacs 28.1
+* [Emacs 28.1 whats new](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1) - a detailed description of new features in Emacs 28.1
 * [Emacs Wiki - Building Emacs](https://www.emacswiki.org/emacs/BuildingEmacs) - base instructions for building Emacs
 * [Ubuntu Emacs LISP team PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) - nightly builds from the latest Emacs commits
 
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

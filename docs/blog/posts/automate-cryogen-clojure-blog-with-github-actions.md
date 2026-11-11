@@ -1,5 +1,5 @@
 ---
-draft: false 
+draft: false
 title: "Automate Cryogen Clojure blog with GitHub Actions"
 date:
   created: 2021-08-28
@@ -15,9 +15,11 @@ tags:
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/cryogen-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-[Practicalli uses Cryogen static site generator for its blog website](./clojure-powered-blogging-with-cryogen.md).  Cryogen is fast and simple to use thanks to the Clojure EDN file used for configuration.
+!!! INFO "Practicalli migrated to Zensical Static Site Generator in 2026"
 
-Cryogen documentation shows [how to publish a Cryogen blog to GitHub pages](https://cryogenweb.org/docs/deploying-to-github-pages.html) using Git command.  The deployment can be automated using GitHub actions, so that a new version of the site is deployed when Pull Requests are merged to the specified branch (or on direct commits to that branch).
+[Practicalli uses Cryogen static site generator for its blog website](./clojure-powered-blogging-with-cryogen.md). Cryogen is fast and simple to use thanks to the Clojure EDN file used for configuration.
+
+Cryogen documentation shows [how to publish a Cryogen blog to GitHub pages](https://cryogenweb.org/docs/deploying-to-github-pages.html) using Git command. The deployment can be automated using GitHub actions, so that a new version of the site is deployed when Pull Requests are merged to the specified branch (or on direct commits to that branch).
 
 <!-- more -->
 
@@ -27,7 +29,7 @@ This is a combination of GitHub actions, each doing a specific part of the autom
 
 The **publish** job runs on an Ubuntu docker image and the **Checkout** step performs a git checkout of the project into the docker image.
 
-**Prepare Java** step uses the [setup-java action](https://github.com/actions/setup-java) to add Java 11 to the docker image, using the Eclipse Foundation `temurin` image 
+**Prepare Java** step uses the [setup-java action](https://github.com/actions/setup-java) to add Java 11 to the docker image, using the Eclipse Foundation `temurin` image
 
 ??? INFO "OpenJDK manged by Eclipse Foundation"
     [OpenJDK / AdoptOpenJDK is now part of the Eclipse Foundation](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/)).
@@ -92,7 +94,9 @@ jobs:
 
 ## GitHub Action configuration with token
 
-If deploying to a different repository than the source, then add a token to either a [repository, account or organisation secret](https://docs.github.com/en/actions/reference/encrypted-secrets).  Use a [GitHub Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for the value of the token secret.
+If deploying to a different repository than the source, then add a token to either a [repository, account or organisation secret](https://docs.github.com/en/actions/reference/encrypted-secrets).
+
+Use a [GitHub Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for the value of the token secret.
 
 
 ```json
@@ -134,16 +138,16 @@ Add the following step in its place and add GitHub secrets to the Git Repository
 
 Once the `.github/workflows/cryogent-publish.yml` file is committed to the default branch of the repository, any commits to that branch or merged pull requests to that branch will trigger the workflow and publish a new version of the Cryogen static website.
 
-Consider adding linters and other GitHub Actions to check for potential issues with markdown and other aspects of the website, to avoid checking in content that may break the website.
+Consider adding lint tools via additional GitHub workflows to check for potential issues with markdown and other aspects of the website. These quality tools minimise manual checking the content.
 
 Setting up monitoring of the website is also recommended, using simple monitoring tools such as [StatusCake](https://www.statuscake.com/).
 
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

@@ -1,5 +1,5 @@
 ---
-title: A deeper understanding of Clojure CLI tools
+title: A deeper understanding of Clojure CLI
 authors:
   - practicalli
 date:
@@ -9,7 +9,6 @@ draft: false
 categories:
   - clojure-cli
 tags:
-  - tools-deps
   - clojure-cli
 draft: true
 ---
@@ -17,26 +16,35 @@ draft: true
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/clojure-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-CLI tools make Clojure very accessible and simple to install as they are a essentially a wrapper for running Clojure code using the `java` command and use additional libraries to manage dependencies, class paths, create projects and build java archive (jar) files.
+Clojure CLI is a simple and data driven tool for running Clojure projects and tools.
 
-Its quite common to use the `java` command to run your code in production, usually defined in a shell script.  Leiningen can be used to run your application in production too, however, because Leiningen creates 2 JVM instances (one for itself and one for the application), its more efficient to just use the `java` command.
+Library dependencies are defined using Maven style release or GitHub Repositories, balancing speed and stability in the development life-cycle.
 
-Leiningen does provides a very rich set of templates that speed up development with Clojure and has a multitude of plugins. Plugins provide a rich source of features but they are not very composable, especially compared to the Clojure language itself.
+The CLI is intentionally focused on these fundamental tasks. The CLI build library provide a programmatic approach to building Clojure assets, for example an Uberjar for deployment of a web service.
 
-Clojure CLI tools provide a minimal but elegant layer on top of the `java` command and enables libraries, configuration and code to compose together just like Clojure functions.  So we will continuing the exploration of Clojure CLI tools and dig a little deeper under the covers to understand how they work and how to configure projects to be very flexible, especially the different sources of code you can use .
+> Update: CLI REPL was released at the end of 2026 to provide a terminal REPL with nREPL support and built-in data inspector
 
-> Additional content can be found in [Using Clojure tools section of Practicalli Clojure](http://practical.li/clojure/clojure-cli/)
+Community tools extend the Clojure CLI capability, either by defining an alias or installing as a Clojure tool.
+
+
+The Clojure CLI provide a minimal but elegant layer on top of the `java` command and enables libraries, configuration and code to compose together just like Clojure functions.
+
+Lets dig a little deeper under the covers to understand how they work.
+
+> Additional content can be found in the [Clojure CLI section of Practicalli Clojure](http://practical.li/clojure/clojure-cli/){target=_blank}
 
 <!-- more -->
 
 
 ## Under the covers of CLojure CLI
 
-Using the command `lein new app classic` creates a simple project called `classic` containing some source code and test code.  We can use `lein repl` to give instant feedback on the evaluation of the code in our project.
+Using the command `lein new app classic` creates a simple project called `classic` containing some source code and test code. We can use `lein repl` to give instant feedback on the evaluation of the code in our project.
 
 This command also compiles our code to Java bytecode, so it can run on the JVM just like compiled Java or Scala code.
 
-`lein jar` and more commonly `lein uberjar` is used to package up our code into a single file.  These commands compile the Clojure code into classes when Ahead Of Time compilation is used.  Any namespaces with `(:gen-class)` directive included in compiled into a JVM bytecode class is `lein uberjar` creates a single file that contains our application and the Clojure library, so we can use with the java command line
+`lein jar` and more commonly `lein uberjar` is used to package up our code into a single file. These commands compile the Clojure code into classes when Ahead Of Time compilation is used.
+
+Any namespaces with `(:gen-class)` directive are compiled into a JVM bytecode class. `lein uberjar` creates a single file that contains the application and the Clojure library, which can be called via the `java` command
 
 `java -cp target/myproject-standalone.jar`
 
@@ -45,7 +53,7 @@ If I had created a library project, with `lein new classic`, then I would need t
 `java -cp target/myproject-standalone.jar clojure.main -m classic.core`
 
 
-It is also possible to run the compiled source code, however, we will also need to add Clojure as a dependency.  There is a copy of the Clojure library in my maven cache from previous projects I have worked on.
+It is also possible to run the compiled source code, however, we will also need to add Clojure as a dependency. There is a copy of the Clojure library in my maven cache from previous projects I have worked on.
 
 `java -cp target/uberjar/classes/:/home/jr0cket/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar classic.core`
 
@@ -54,7 +62,9 @@ If I just wanted to run a repl, I can call clojure.main as my namespace
 
 `java -cp /home/jr0cket/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar clojure.main`
 
-Already there are a few things to remember. As your project gets bigger then the command you use will get bigger and harder to manage safely, its often put into scripts but then there is no real validation that you got the script right, without some manual testing
+As your project gets bigger the command become harder to manage safely.
+
+The command is often used in a script to ensure repeatability.
 
 `java $JVM_OPTS -cp target/todo-list.jar clojure.main -m todo-list.core $PORT`
 
@@ -65,7 +75,7 @@ CLI tools project only requires a `deps.edn` file.
 
 `~/.clojure/deps.edn` is created the first time you run the `clojure` command.
 
-A default `deps.edn` file comes with the CLI tools install, e.g. `/usr/local/lib/clojure/deps.edn` on Linux.  This file contains a few basic options that are applied to all projects.
+A default `deps.edn` file comes with the CLI tools install, e.g. `/usr/local/lib/clojure/deps.edn` on Linux. This file contains a few basic options that are applied to all projects.
 
 `src` is set as the relative path to the source code
 
@@ -120,7 +130,7 @@ Maven central and Clojars are repositories containing Clojure Library Dependenci
 Dependencies from a Git repository are automatically downloaded and built, within a directory called `~/.gitlibs`.
 
 
-## Time for some Test Driven Development
+## Test Driven Development
 
 Create a new file in the `test` directory called `core_test.clj` that contains a test with two assertions.
 
@@ -138,10 +148,10 @@ The `clojure.test` namespace is included in the `org.clojure/clojure` dependency
            "Hello World!"))
 
     (is (= (simple/-main "Welcome to the Clojure CLI")
-           "Hello World! Welcome to the Clojure CLI"))))
+           "Hello World, welcome to the Clojure CLI"))))
 ```
 
-We run the failing tests with the following command
+Run the failing tests with the following command
 
 ```shell-session
 clojure -X:test
@@ -156,20 +166,22 @@ Full report at:
 /tmp/clojure-3370388766424088668.edn
 ```
 
-You can see that the first time we are using the test-runner the CLI tools download the source code from the Git repository.
+The first time the test-runner is run, the CLI tools download the source code from the Git repository.
 
-> NOTE: Using a Git commit provides just a stable dependency as Maven or other tool.  The only risk is if you are using a shared repository and a force commit is made that replaces the commit you have as dependency, but that will have a different hash value, so you will notice that kind of change when running your code.
+> NOTE: Using a Git SHA commit to specify a dependency can provide a stable dependency. Any future commit, even a  forced commit created different SHA hash value, preventing a future commit being run in error.
 
 
 ## And now some code
 
-Everything is working correctly and the tests are failing because we have not written the code that the test is using.  So write the application code and make the test pass and execute the test runner again.
+The tests are failing because we have not written the code that the test calls.
+
+Write the functions that are being tested so the test passes when executing the test runner again.
 
 ```clojure
 (ns practicalli.simple)
 
 (defn -main []
-  (println "Hello world!"))
+  (println "Hello world"))
 ```
 
 
@@ -199,20 +211,69 @@ This is used for a different build, e.g. `deploy` to
 
 ## Deployment
 
-We saw that Leiningen created a single file that we can use to deploy our application and call from the `java` command line.
+Clojure is packaged into a Java Archive (JAR) file, essentially a Zip file of the Clojure project.
 
-TODO: tools-build example
+To simplify deployment, the Clojure standard library is included in the JAR and referred to as an Uberjar.
+
+
+!!! EXAMPLE "Clojure Service Uberjar Build Tasks"
+```clojure title="build.edn"
+(defn clean
+  "Remove a directory
+  - `:path '\"directory-name\"'` for a specific directory
+  - `nil` (or no command line arguments) to delete `target` directory
+  `target` is the default directory for build artefacts
+  Checks that `.` and `/` directories are not deleted"
+  [directory]
+  (when
+   (not (contains? #{"." "/"} directory))
+   (build-api/delete {:path (or (:path directory) "target")})))
+
+(defn uberjar
+  "Create an archive containing Clojure and the build of the project
+  Merge command line configuration to the default project config"
+  [options]
+  (let [config (merge project-config options)
+        {:keys [class-directory main-namespace project-basis uberjar-file]} config]
+    (clean "target")
+    (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                         :target-dir class-directory})
+
+    (build-api/compile-clj {:basis     project-basis
+                            :class-dir class-directory
+                            :src-dirs  ["src"]})
+
+    (build-api/uber {:basis     project-basis
+                     :class-dir class-directory
+                     :main      main-namespace
+                     :uber-file uberjar-file})))
+```
+
+
+[Package Projects With Clojure CLI Build](https://practical.li/clojure/clojure-cli/projects/package/tools-build/){target=_blank .md-button}
 
 
 ## Running
 
-To run the generated jar file
+To run a generated jar file, clojure must be installed on the deployed server and available on the Java class path.
 
+```shell
 java -cp simple.jar clojure.main -m simple.core
+```
 
-> depstar does not do any ahead of time compilation (AOT) so your application may start up more slowly as the code first needs to be compiled into Java byte code.
+To run a generated Uberjar file, only the `java` command is needed.
 
-<https://github.com/clojure/clojure/commit/653b8465845a78ef7543e0a250078eea2d56b659>
+```shell
+java -jar service-uberjar.jar
+```
 
+---
 Thank you.
-[@jr0cket](https://twitter.com/jr0cket)
+
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
+
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
+[:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
+
+[:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}
+[:fontawesome-brands-twitter: @practical_li](https://twitter.com/practcial_li){target=_blank .md-button}

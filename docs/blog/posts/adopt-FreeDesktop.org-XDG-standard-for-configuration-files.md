@@ -21,7 +21,9 @@ The [:globe_with_meridians: FreeDesktop.org XDG basedir standard](https://www.fr
 
 Without the XDG standard, these files and directories are often mixed together and stored in the `$HOME`  of the users account, making it more challenging to backup or version control.
 
-Development tools such as NeoVim, Emacs, Clojure CLI  and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.  There are simple approaches to work-around the limitations of tools that don't conform.
+Development tools such as NeoVim, Emacs, Clojure CLI and Clojure LSP support the XDG specification, although some tools like Leiningen required a little help.
+
+There is a simple approach to work-around the limitations of those tools that don't conform.
 
 <!-- more -->
 
@@ -51,7 +53,7 @@ Each location contains application specific files within a directory of the same
 
  `XDG_CONFIG_DIRS` and `XDG_DATA_DIRS` can be used to define an ordered set of directories to search for their respective files, rather than just a single directory.
 
-> Environment variables must be set to an absolute path to be consider valid.  Values can include other environment variables, e.g. HOME, as long as the path resolves as absolute.
+> Environment variables must be set to an absolute path to be consider valid. Values can include other environment variables, e.g. HOME, as long as the path resolves as absolute.
 
 A detailed description is covered in [the freedesktop.org basedir specification](https://specifications.freedesktop.org/basedir-spec/latest/ar01s03.html){target=_blank}.
 
@@ -67,13 +69,15 @@ A detailed description is covered in [the freedesktop.org basedir specification]
 
 ## Configuring Linux / Unix operating system
 
-The XDG basedir specification is used by many Unix distributions, although the `XDG_CONFIG_HOME` is rarely set as it may break older applications.  Instead the OS uses the default locations in the specifications and expects applications to do the same.
+The XDG basedir specification is used by many Unix distributions, although the `XDG_CONFIG_HOME` is not always set as it could break legacy applications. Instead the OS uses the default locations in the specifications and expects applications to do the same.
 
 Some tools already use the default location of `XDG_CONFIG_HOME`. Most maintained tools will use the XDG locations if the environment variables are set.
 
 Defining `XDG_CONFIG_HOME` before installing development tools and applications helps ensure that the right locations are used.
 
-Existing configurations are easily migrated to the `XDG_CONFIG_HOME` directory, either all at once or application by application.  If the configuration is not found in `XDG_CONFIG_HOME` the application should look for the configuration in the `HOME` directory.
+Existing configurations are easily migrated to the `XDG_CONFIG_HOME` directory, either all at once or application by application.
+
+If a configuration is not found in `XDG_CONFIG_HOME` the application should look for the configuration in the `HOME` directory.
 
 
 ## Where to Set environment variables
@@ -97,13 +101,13 @@ For example, the `XDG_CONFIG_HOME` is defined for all applications and `SPACEMAC
     export XDG_STATE_HOME=$HOME/.local/state
     ```
 
-To apply these environment variables, logout of the desktop environment, then login again.  Now the environment variables are set.
+To apply these environment variables, logout of the desktop environment, then login again. Now the environment variables are set.
 
 To test before logout/login, in a terminal run the command `source ~/.profile` and the environment variables will be available in that terminal session.
 
 ### Command Line
 
-The shell and all command line tools will use environment variables in `~/.profile`.  Or they can be set in the respective resource files for the terminal shell to add environment variables
+The shell and all command line tools will use environment variables in `~/.profile`. Or they can be set in the respective resource files for the terminal shell to add environment variables
 
 * bash - use `~/.bashrc`
 * zsh - use `~/.zprofile` or `.zshenv`
@@ -130,7 +134,7 @@ Install prezto in the `XDG_CONFIG_HOME/zsh` directory.
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${XDG_CONFIG_HOME}/prezto"
     ```
 
-Prezto requires `~/.zshenv` to bootstrap the location of prezto configuration.  The `~/.zshenv` file can be a symbolic link to `XDG_CONFIG_HOME/zsh/.zshenv`
+Prezto requires `~/.zshenv` to bootstrap the location of prezto configuration. The `~/.zshenv` file can be a symbolic link to `XDG_CONFIG_HOME/zsh/.zshenv`
 
 Set the `XDG_CONFIG_HOME` location to `HOME/.config` for all applications if not set in `~/.profile`
 
@@ -146,7 +150,7 @@ Set the `ZDOTDIR` location so Zsh can find the Prezto configuration.
 Other application specific environment variables should be added to `.zshevn` file as well, e.g. `SPACEMACSDIR` for Spacemacs configuration.
 
 ??? HINT "Copy Prezto files that will be changed"
-    Once installed, any prezto configuration files that will be added can be copied from the `.zprezto/runcoms` directory to `XDG_CONFIG_HOME/zsh`, rather than linking as the documentation suggests. 
+    Once installed, any prezto configuration files that will be added can be copied from the `.zprezto/runcoms` directory to `XDG_CONFIG_HOME/zsh`, rather than linking as the documentation suggests.
 
     This approach minimises the need to merge changes when updating prezto.
 
@@ -157,7 +161,7 @@ Neovim supports the XDG basedir specification and will use `~/.config/nvim` dire
 
 All the packages installed, such as the excellent [Conjure](https://github.com/Olical/conjure){target=_blank} for Clojure development (and many other fun languages), will therefore be part of the `~/.config/neovim` configuration.
 
-Vim does not support the basedir.  However, when Neovim is installed as a .deb package it will be used for the vim command (set via `/etc/alternatives/vim`)
+Vim does not support the basedir. However, when Neovim is installed as a .deb package it will be used for the vim command (set via `/etc/alternatives/vim`)
 
 ??? "Practicalli Neovim book"
     [Practicalli Neovim](https://practical.li/neovim/){target=_blank} provides guides for setting up Neovim with Clojure, LSP, Treesitter and many other packages
@@ -181,7 +185,7 @@ Set `SPACEMACSDIR` to `XDG_CONFIG_HOME/spacemacs`
     export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
     ```
 
-Move the `.spacemacs` file to `XDG_CONFIG_HOME/spacemacs/init.el`.  Or if using `~/.spacemacs.d/` then move that directory to be the `XDG_CONFIG_HOME/spacemacs/` directory.
+Move the `.spacemacs` file to `XDG_CONFIG_HOME/spacemacs/init.el`. Or if using `~/.spacemacs.d/` then move that directory to be the `XDG_CONFIG_HOME/spacemacs/` directory.
 
 
 ## authinfo secure credentials
@@ -235,7 +239,7 @@ Add an excludes file to the Git config file containing the patterns used across 
 
 > The git ignore file should be defined with the full path so tools like projectile can find that ignore file.
 
-`XDG_CONFIG_HOME/git/template` is a common location for scripts and hooks that should be added to a newly created Git repository, in the `.git` directory.  The template location is set by `init.templatedir`
+`XDG_CONFIG_HOME/git/template` is a common location for scripts and hooks that should be added to a newly created Git repository, in the `.git` directory. The template location is set by `init.templatedir`
 
 !!! NOTE ""
     ```shell
@@ -262,7 +266,7 @@ Clojure CLI and Leiningen use the Maven configuration directory to store Jar fil
 
 Jar files from dependencies are considered non-essential (to the Clojure CLI tool) so should be written to the $XDG_CACHE_HOME location, typically `$HOME/.cache`
 
-Add the `:mvn/local-repo` top-level key in the user level deps.edn file to set a location for the Maven repository.  The value should be the full directory path.
+Add the `:mvn/local-repo` top-level key in the user level deps.edn file to set a location for the Maven repository. The value should be the full directory path.
 
 !!! NOTE ""
     ```clojure
@@ -271,12 +275,16 @@ Add the `:mvn/local-repo` top-level key in the user level deps.edn file to set a
 
 The `:mvn/local-repo` can also be used in a project deps.edn file or on the command line, i.e. `clojure -Sdeps '{:mvn/local-repo ".cache/temp-deps"}'` if the Maven dependencies should be kept separate from all other projects (this scenario is not common).
 
-The Maven `$HOME/.m2` directory also [contains several configuration files](https://maven.apache.org/configure.html){target=_blank}, `maven.config`, `jvm.config` and `extensions.xml`, so unfortunately conflates configuration files with data files.  Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.
+The Maven `$HOME/.m2` directory also [contains several configuration files](https://maven.apache.org/configure.html){target=_blank}, `maven.config`, `jvm.config` and `extensions.xml`, so unfortunately conflates configuration files with data files. Although Clojure CLI does not use these configuration files, it is useful to separate the jar files into a cache.
 
 
 ### Clojure Gitlibs
 
-Clojure CLI can used dependencies from Git repositories.  To do so, the repository is downloaded into a `$HOME/.gitlibs` directory, unless the `GITLIBS` environment variable is set.  As the `gitlibs` directory contains data for the application, then ideally this would be placed in `XDG_CACHE_HOME`, under a `clojure-gitlibs` directory
+Clojure CLI can used dependencies from Git repositories.
+
+The repository is downloaded into a `$HOME/.gitlibs` directory, (or `GITLIBS` environment variable if different).
+
+As the `gitlibs` directory contains data for the application, then ideally this would be placed in `XDG_CACHE_HOME`, under a `clojure-gitlibs` directory
 
 Set the `GITLIBS` environment variable to determine the location of the local cache directory used to clone dependencies that are Git repositories.
 
@@ -295,9 +303,9 @@ Optionally move the existing `$HOME/.gitlibs` to the Cache home.
 
 ## Clojure LSP
 
-`XDG_CONFIG_HOME/clojure-lsp` directory is used as the location for Clojure LSP configuration if `XDG_CONFIG_HOME` is set.  Otherwise, `$HOME/.clojure-lsp` is used as the configuration.
+`XDG_CONFIG_HOME/clojure-lsp` directory is used as the location for Clojure LSP configuration if `XDG_CONFIG_HOME` is set. Otherwise, `$HOME/.clojure-lsp` is used as the configuration.
 
-> If Clojure LSP was used for for a while, configuration may be in the deprecated `~/.lsp` directory.
+> If Clojure LSP had been used for many years, configuration may be in the deprecated `~/.lsp` directory.
 
 
 ## Intellij Idea and Cursive
@@ -357,9 +365,9 @@ Migrating is relatively quick and painless and applications can be migrated over
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

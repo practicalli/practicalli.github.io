@@ -2,7 +2,7 @@
 title: Advantages of writing documentation for code
 date:
   created: 2025-04-13
-  updated: 2025-04-13
+  updated: 2026-11-11
 authors:
   - practicalli
 categories:
@@ -13,11 +13,13 @@ draft: false
 ---
 
 
-Code that executes correctly and provides only limited value to the business can still be a huge maintenance burden.
+Code that executes correctly but provides only limited or no value to the business can become a huge maintenance burden.
 
-Code is very rarely written to include why is was added, what is the purpose of this code.
+Code is rarely written to describe why it was added. Can the team know for certain the purpose of each part of the code.
 
-Dismiss the value of adding documentation that describes the why of the code significantly increases the cost of maintaining and extending that code.  Skipping documentation adds to the engineering debt of any solution (even when the intention is to re-write that code).
+Dismiss the value of adding documentation that describes the why of the code significantly increases the cost of maintaining and extending that code.
+
+Skipping documentation adds to the engineering debt of any solution (even when the intention is to re-write that code).
 
 
 <!-- more -->
@@ -43,27 +45,69 @@ As well as making the code base more useful, creating documentation on a regular
 
 
 !!! WARNING "Overhead of poor or no documentation"
-    Figuring out someone else's code by itself adds a lot of overhead and that someone else can also be you a few months (or even weeks) ago.
+    Figuring out someone else's code by itself adds a lot of overhead. That someone else can also be you a few months (or even weeks).
 
 
 ## Typical excuses
 
-Most excuses not to write documentation really come from discomfort and even fear about a persons writing ability.  Ironically this is often quite a rational fear as writing good documentation is another skill to learn.
+Most excuses to avoid writing documentation come from discomfort or even fear about a persons writing ability. A rational fear as writing good documentation is a skill to learn.
 
-* dont have time  - documentation saves a huge amount of time overall
-* not paid to write docs - actually you are paid to create projects that other people can work on readily (without docs then people on-boarding to a project spend a lot more time reading the code - and probably end up rewriting it so they understand it)
+### Don't have time
 
-* documentation doesnt keep up with code changes - an extension to the dont have time excuse.  If the thoughts in a persons head are written down succinctly or a summary of changes to be done to code then is just as easy to update the docs when changing the code.  Actually updating the docs is a valuable way to ensure a person understands the changes they are going to make (saving time debugging a system or dealing with issues by lack of understanding)
+Documentation saves a huge amount of time over the life-time of a project. The team doesn't have the time to skip writing docs.
 
-* dont like tool x, its slow - a very poor excuse.  Notes can be written as text / markdown / org whist writing code and then pushed to what ever collaborative knowledge share tool is used.  Doc tools are like any other coding tools,
+Updating documentation before changing the code ensures you can express the goal of the code change about to be made.
 
-* I dont get paid enough - a systemic problem meaning a person feels significantly undervalued within the company, therefore it is likely that most of their work will be of just enough quality to work but relatively challenging to work with.
+Regularly writing documentation improves that skill and greatly reduces the time to write good docs and clean code.
 
-* code is the documentation - a mixture of insecurity about docs and/or lack of experience of software development overall.  They have not make the connection that documentation provides a way to quickly recall previous experiences and build a greater level of skills.
+
+### Not paid to write docs
+
+Actually engineers are paid to create projects that other people can readily work on.
+
+Without quality documentation, people on-boarding to a project spend a lot more time reading the code, interrupting the team with questions.
+
+Code that doesn't define its purpose increases the risk that working code will be rewritten so it can be understood.
+
+
+### Documentation isn't in sync with code
+
+An variant of the [I don't have time](#dont-have-time) excuse.
+
+Writing succinct notes or as a summary of changes make it easy to update the docs when changing the code.
+
+Actually updating the docs first is a valuable way to ensure a person understands the changes they are going to make. It saves time debugging a system or dealing with issues arising from lack of understanding.
+
+### Don't like tool x
+
+The documentation tool is too slow or confusing to use as the knowledge base, e.g. wiki or similar collaboration tool for higher level abstractions and specific guides.
+
+Notes can be written in the same editor used for writing code (e.g. using markdown, org format), then added to the collaborative knowledge share tool once completed.
+
+### Dont get paid enough
+
+A systemic problem meaning a person feels significantly undervalued within the company, with little motivation to deliver on all their duties.
+
+Their manager should work with this person to identify the root cause of their situation and define a plan so they feel valued and become motivated again.
+
+
+### code is the documentation
+
+This language demonstrates a disconnect from the values of working in a team. A common statement by those who are used to working in isolation and have not had the opportunity to build collaborative skills.
+
+Tends to come from insecurity writing docs or a lack of appreciation of working as a team (and wider software development concerns).
+
+Writing effective docs minimises the need to comb through large amounts of code, enabling changes to be made faster and with greater confidence.
+
+Writing high-level documentation is an effective way to ingrain concepts.
+
+Creating abstract descriptions of the overall software design provides a way to effectively communicate those designs to other team members
 
 
 !!! TIP "Practicing writing skills overcomes excuses"
-    When developers take on the challenge of learning the skill of writing good documentation, to the same extent they do writing code, then writing good quality code becomes far easier very quickly.  Then all of the common excuses become mute.
+    When developers take on the challenge of writing good documentation to the same extent they do writing code, then writing good quality documentation becomes natural.
+
+    All of the common excuses become mute points.
 
 
 ---

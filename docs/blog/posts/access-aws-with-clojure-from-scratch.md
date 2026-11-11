@@ -4,7 +4,7 @@ date:
   created: 2023-05-17
   updated: 2023-05-17
 topic: aws
-tags:  
+tags:
   - aws
   - clojure
   - cognitect-labs
@@ -12,16 +12,18 @@ tags:
 
 ![Practicalli AWS topic logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/aws-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-[:fontawesome-brands-github: Cognitect Labs AWS API](https://github.com/cognitect-labs/aws-api){target=_blank} is an excellent data driven Clojure library for interacting with AWS from code.  The project includes working code examples.
+[:fontawesome-brands-github: Cognitect Labs AWS API](https://github.com/cognitect-labs/aws-api){target=_blank} is an excellent data driven Clojure library for interacting with AWS from code. The project includes working code examples.
 
 The biggest challenge for those new to AWS is to configuring suitable AWS accounts, programmatic access and service permissions.
 
-This article starts with nothing and steps through the simplest and quickest AWS account and permission setup, using the [:globe_with_meridians: AWS Free Tier](https://aws.amazon.com/free/){target=_blank}.  
+This article starts with nothing and steps through the simplest and quickest AWS account and permission setup, using the [:globe_with_meridians: AWS Free Tier](https://aws.amazon.com/free/){target=_blank}.
 
 !!! INFO "Service quota limits"
     Each service has itos own quota limits and some services are only free for a period of time (free trials & 12 months free).
 
-The approach outlined is not intended for commercial work, only the bare essentials to start exploring what is possible with the Cognitect Labs library.  Or try [:globe_with_meridians: LocalStack if docker is installed locally](https://localstack.cloud/){target=_blank}.
+The approach outlined is not intended for commercial work, only the bare essentials to start exploring what is possible with the Cognitect Labs library.
+
+Alternatively, try [:globe_with_meridians: LocalStack if docker is installed locally](https://localstack.cloud/){target=_blank}.
 
 <!-- more -->
 
@@ -29,9 +31,9 @@ The approach outlined is not intended for commercial work, only the bare essenti
     Avoid approach for personal or company projects containing sensitive information
 
 ??? WARNING "Credit card required"
-    A working credit card is required to setup a root account and AWS will charge the card $1 to verify identity and that the card is legitimate.  This amount will be returned within 3-5 days.
+    A working credit card is required to setup a root account and AWS will charge the card $1 to verify identity and that the card is legitimate. This amount will be returned within 3-5 days.
 
-    Apart from the temporary charge, this approach should not incur any charges so long as the account stays within the free plan limits.  Recommend using a digital card that can be set to frozen when not explicitly used as a safety precaution.
+    Apart from the temporary charge, this approach should not incur any charges so long as the account stays within the free plan limits. Recommend using a digital card that can be set to frozen when not explicitly used as a safety precaution.
 
 
 ## Create Root account
@@ -44,7 +46,7 @@ Enter an email for the root account and a name for the AWS account
 
 ![AWS Sign up website](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage.png?raw=true)
 
-An email is sent to the address entered with a verification code.  Enter the code and select **Verify**
+An email is sent to the address entered with a verification code. Enter the code and select **Verify**
 
 ![AWS sign up website - verify code](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-confirm-verification-code.png?raw=true)
 
@@ -61,7 +63,7 @@ Complete contact information with your actual details (used when AWS confirms th
 
 ![AWS sign up website - contact details](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-contact-information.png?raw=true)
 
-Enter details of a valid credit/debit card.  AWS will charge $1 to the card, which will be returned in 3-5 days.
+Enter details of a valid credit/debit card. AWS will charge $1 to the card, which will be returned in 3-5 days.
 
 ![AWS sign up - billing information](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-billing-information.png?raw=true)
 
@@ -74,9 +76,9 @@ Select **Send SMS**
 ![AWS sign up website - select confirm identity method](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-confirm-identity.png?raw=true)
 
 
-Confirm identity pin number
+Confirm identity PIN
 
-4 digit code (dont use the 5 digit phone number by mistake)
+4 digit code (don't use the 5 digit phone number by mistake)
 
 ![AWS sign up website - confirm identity code](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-confirm-identity-code.png?raw=true)
 
@@ -96,7 +98,7 @@ Take a break from the form filling by stretching and taking some deep breaths.
 ![AWS sign up website - congratulations](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/aws-sign-up-webpage-congratulations.png?raw=true)
 
 !!! INFO "IAM Multi-Factor Authentication (MFA)"
-    Visit the IAM dashboard and add Multi-Factor authentication (MFA) to the root user account for additional security.  Practicalli uses the [Authy app](https://authy.com/){target=_blank} for Multi-Factor authentication
+    Visit the IAM dashboard and add Multi-Factor authentication (MFA) to the root user account for additional security. Practicalli uses the [Authy app](https://authy.com/){target=_blank} for Multi-Factor authentication
 
 
 ## IAM User for Code & CLI
@@ -241,7 +243,7 @@ Example creating an S3 bucket, adding a file and reading the contents of a file.
     (def data-bucket (aws/client {:api :s3}))
     ```
 
-Validate requests to the S3 service to report incorrect arguments (especially useful when starting out with the library).  Underlying this is a Clojure specification derived from the AWS specifications.
+Validate requests to the S3 service to report incorrect arguments (especially useful when starting out with the library). Underlying this is a Clojure specification derived from the AWS specifications.
 
 !!! EXAMPLE "Valicate S3 bucket requests"
     ```clojure
@@ -259,7 +261,7 @@ Credentials are required for this request, so its a useful test to ensure the AW
 
 As Cognitect Labs AWS API has a complete specification for each service, all the available operations for a specific service can be listed (even if the credentials are not working)
 
-List the S3 Service operations.  Note, this returns a big data structure, so I find it useful to look at it in a data inspector, e.g. Portal, Cider Inspector or Morse
+List the S3 Service operations. Note, this returns a big data structure, so I find it useful to look at it in a data inspector, e.g. Portal, Cider Inspector or Morse
 
 !!! EXAMPLE "List S3 service operations"
     ```clojure
@@ -273,7 +275,7 @@ Once the name of the operation is know, view the documentation to see how it is 
     (aws/doc data-bucket :CreateBucket)
     ```
 
-Portal provides an effective way to navigate 
+Portal provides an effective way to navigate
 
 ![Clojure Cognitect Labs AWS API - navigate AWS S3 Bucket operations in Portal - create bucket](https://github.com/practicalli/graphic-design/blob/live/cloud-services/aws/clojure-aws-api-s3-operations-create-bucket.png?raw=true)
 
@@ -284,7 +286,7 @@ Portal provides an effective way to navigate
 
 Single sign-on access can be used for engineers and command line access.
 
-The recommended approach is to use the AWS IAM Identity Center as a Single Sign-On (SSO) service.  The IAM Identity Center can manage users and accounts in its own directory, useful for personal AWS accounts (and probably brand new startups too). The IAM Identity Center can use qn external identity provider instead, e.g. Okta, Google Workspace, Active Directory, etc.
+The recommended approach is to use the AWS IAM Identity Center as a Single Sign-On (SSO) service. The IAM Identity Center can manage users and accounts in its own directory, useful for personal AWS accounts (and probably brand new startups too). The IAM Identity Center can use qn external identity provider instead, e.g. Okta, Google Workspace, Active Directory, etc.
 
 An AWS Organisation is required to enable IAM Identity Center. It can take up to 24 hours for AWS to create an organisation if one does not already exist for the AWS account.
 
@@ -298,20 +300,20 @@ This is only the start of using AWS from Clojure and almost all the work was to 
 There are lots of services to explore on AWS and with a working account and credentials and the excellent Cognitect Labs AWS API library it should be relatively straight forward (fingers crossed).
 
 !!! WARNING "Regularly review AWS usage"
-    Keep a considered eye on how much of AWS you are using.  
+    Keep a considered eye on how much of AWS you are using.
 
-    Even when using a "free plan", it is possible to incur costs, e.g. forgetting to switch services off and exceeding quotas.  
+    Even when using a "free plan", it is possible to incur costs, e.g. forgetting to switch services off and exceeding quotas.
 
-    Its not clear as yet if AWS will stop the service or simply send a bill.  
+    Its not clear as yet if AWS will stop the service or simply send a bill.
 
     Being aware of the AWS quotas allowed for a service is a valuable step to ensure you can remain within the free plan.
 
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}

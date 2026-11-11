@@ -15,9 +15,10 @@ draft: true
 
 Build a Clojure API service from the ground up using Clojure CLI and Practicalli Project Templates.
 
-Update: [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps/) has newer versions of this guide.  Take a look at the Status Monitor and Banking on Clojure projects
+Update: [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps/) has newer versions of this guide.
 
->
+Take a look at the Status Monitor and Banking on Clojure projects
+
 > This project will be used to build a web server that will serve our API, which we will build in future posts and [study group broadcasts](http://yt.vu/+practicalli).
 
 <!-- more -->
@@ -26,9 +27,7 @@ Update: [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-weba
 
 `:project/create` alias defined in [Practicalli Clojure CLI Config](https://practical.li/clojure/clojure-cli/practicalli-config/) uses the [deps-new]() tool to create projects and includes the [Practicalli Project Templates](https://practical.li/clojure/projects/) to create
 
-
 > A minimal Clojure could be made by manually [creating a few files and directories](https://practical.li/clojure/clojure-cli/projects/#create-minimal-project).
-
 
 In a terminal, create the project called `practicalli/simple-api-server`
 
@@ -64,87 +63,58 @@ clojure -T:project/create :template practicalli/minimal
 
 `deps.edn` contains the library dependencies for the project.  `:practicalli/minimal` contains the Clojure and [Mulog event log](https://github.com/BrunoBonacci/mulog) libraries.
 
-
 `deps.edn` defines two aliases (possibly a few more).
 
 * `:test` includes the `test.check` library and test code files under the `test` path.
 * `:runner` sets the main namespace to that of the test runner, calling the `-main` function in that namespace which then runs all the tests under the directory `test`.
 
-This creates a Clojure namespace (file) called `playground` in the `practicalli` domain.  The project contains the `clojure.core`, `test.check` and `test.runner` libraries by default.
+This creates a Clojure namespace (file) called `playground` in the `practicalli` domain. The project contains the `clojure.core`, `test.check` and `test.runner` libraries by default.
 
 ??? EXAMPLE "Project configuration"
+    ```clojure title="deps.edn"
+    {;; ---------------------------------------------------------
+     :paths
+     ["src" "resources"]
 
-```clojure title="deps.edn"
-{;; ---------------------------------------------------------
- :paths
- ["src" "resources"]
- ;; ---------------------------------------------------------
+     ;; ---------------------------------------------------------
+     :deps
+     {;; Application
+      org.clojure/clojure {:mvn/version "1.12.0"}
+      com.brunobonacci/mulog {:mvn/version "0.9.0"}}
 
- ;; ---------------------------------------------------------
- :deps
- {;; Application
-  org.clojure/clojure {:mvn/version "1.12.0"}
-  com.brunobonacci/mulog {:mvn/version "0.9.0"}}
- ;; ---------------------------------------------------------
+     ;; ---------------------------------------------------------
+     :aliases
+     {;; Clojure.main execution of application
+      :run/app {:main-opts ["-m" "practicalli.playground"]}
 
- ;; ---------------------------------------------------------
- :aliases
- {;; Clojure.main execution of application
-  :run/app
-  {:main-opts ["-m" "practicalli.playground"]}
+      ;; Clojure.exec execution of specified function
+      :run/greet
+      {:exec-fn practicalli.playground/greet
+       :exec-args {:name "Clojure"}}
 
-  ;; Clojure.exec execution of specified function
-  :run/greet
-  {:exec-fn practicalli.playground/greet
-   :exec-args {:name "Clojure"}}
+      ;; Add libraries and paths to support additional test tools
+      :test/env
+      {}
 
-  ;; Add libraries and paths to support additional test tools
-  :test/env
-  {}
+      ;; Test runner - local and CI
+      ;; call with :watch? true to start file watcher and re-run tests on saved changes
+      :test/run
+      {:extra-paths ["test"]
+       :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}
+                    org.clojure/test.check {:mvn/version "1.1.0"}}
+       :main-opts   ["-m" "kaocha.runner"]
+       :exec-fn kaocha.runner/exec-fn
+       :exec-args {:randomize? false
+                   :fail-fast? true}}
 
-  ;; Test runner - local and CI
-  ;; call with :watch? true to start file watcher and re-run tests on saved changes
-  :test/run
-  {:extra-paths ["test"]
-   :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
-   :main-opts   ["-m" "kaocha.runner"]
-   :exec-fn kaocha.runner/exec-fn
-   :exec-args {:randomize? false
-               :fail-fast? true}}
+      ;; tools.build `build.clj` built script
+      :build/task
+      {:replace-paths ["."]
+       :replace-deps  {io.github.clojure/tools.build {:mvn/version "0.10.3"}}
+       :ns-default    build}}}
+    ```
 
-  ;; tools.build `build.clj` built script
-  :build/task
-  {:replace-paths ["."]
-   :replace-deps  {io.github.clojure/tools.build {:mvn/version "0.10.3"}}
-   :ns-default    build}}}
- ;; ---------------------------------------------------------
-
-
-
-
- :aliases
- {:run-m {:main-opts ["-m" "practicalli.api-server"]}
-  :run-x {:ns-default practicalli.simple-api-server
-          :exec-fn greet
-          :exec-args {:name "Clojure"}}
-  :test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}}}
-  :runner
-  {:extra-deps {com.cognitect/test-runner
-                {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "b6b3193fcc42659d7e46ecd1884a228993441182"}}
-   :main-opts ["-m" "cognitect.test-runner"
-               "-d" "test"]}
-  :uberjar {:replace-deps {com.github.seancorfield/depstar
-{:mvn/version "2.0.211"}}
-            :exec-fn hf.depstar/uberjar
-            :exec-args {:aot true
-                        :jar "simple-api-server.jar"
-                        :main-class "practicalli.simple-api-server"
-                        :sync-pom true}}}}
-```
-
-The project created with [clj-new](https://github.com/seancorfield/clj-new#getting-started) contains all these files
+The project created with [deps-new](https://github.com/seancorfield/deps-new) contains all these files
 
 ![Clojure APIs - simple project](/images/clojure-simple-api-project-tree.png)
 
@@ -153,7 +123,9 @@ The project created with [clj-new](https://github.com/seancorfield/clj-new#getti
 
 To create our Clojure web server we are going to use the httpkit project which is based on the common ring design for web servers.
 
-Using httpkit it is easy to create a server and have functions to stop and start that server inside the REPL, all in a few lines of Clojure code.  Underneath is a powerful JVM server that has been tested to serve 600,000 concurrent HTTP request and supports many modes of operation (websockets, streaming, long polling).
+Using httpkit it is easy to create a server and have functions to stop and start that server inside the REPL, all in a few lines of Clojure code.
+
+Underneath is a powerful JVM server that has been tested to serve 600,000 concurrent HTTP request and supports many modes of operation (websockets, streaming, long polling).
 
 Routing will be done using the compojure library, which is a common approach in the Clojure community (although there are other projects).
 
@@ -185,7 +157,7 @@ Edit `simple-api-server.clj` file and change the `ns` definition
 > `:gen-class` allows us to run this namespace from the command line using the `java` command.
 
 
-### define an httpkit server
+### Define an httpkit server
 
 Define a function that starts a Jetty server, taking a port number as an argument
 
@@ -201,7 +173,7 @@ The Jetty server listens on the port for all http requests.  Each request is con
   (server/run-server handler {:port port}))
 ```
 
-> There are [several modes of operation](https://www.http-kit.org/server.html), simple HTTP server, async/websocket, HTTP streaming and long polling.  These modes can be configures as part of the `create-server` function.
+> There are [several modes of operation](https://www.http-kit.org/server.html), simple HTTP server, async/websocket, HTTP streaming and long polling. These modes can be configures as part of the `create-server` function.
 
 
 ### Add a handler
@@ -275,43 +247,43 @@ Finally we can call the `create-server` function to start our webserver on a par
 
 ## Testing our application
 
-`clojure.test` library is built into Clojure that provides a simple unit test framework and test runner.  As its part of Clojure, all we need to do is require the library in the namespaces where we write our tests.  There are [several other test libraries and test runners](https://gist.github.com/plexus/a816a942c01b0e7af1e9836205100337) too.
+`clojure.test` library is built into Clojure that provides a simple unit test framework and test runner. As its part of Clojure, all we need to do is require the library in the namespaces where we write our tests.
+
+There are [several other test libraries and test runners](https://gist.github.com/plexus/a816a942c01b0e7af1e9836205100337) too.
 
 For every namespace under `src` we wish to test, we create the same namespace under `test` directory and post-fix `-test` to the original name.  So in our project we have:
 
-* `src/practicalli/simple-api-server` containing our application functions
-* `test/practicalli/simple-api-server-test` containing our test functions
+- `src/practicalli/simple-api-server` containing our application functions
+- `test/practicalli/simple-api-server-test` containing our test functions
 
 `deftest` function is used to define a test that can contain one or more assertions as well as use any setup and tear-down functions.
 
 `is` function is used to define a single assertion, comparing a known value with the result of calling a function from the namespace under test.
 
+
 ### Requiring the namespace to be tested
 
-The clj-new app template already created a `test/simple-api-server-test.clj` file and required `clojure.test` and the namespace to be tested.
+The app template created a `test/simple-api-server-test.clj` file and required `clojure.test` and the namespace to be tested.
 
 Practicalli recommends changing the way the namespaces required.
 
-* use a meaningful and consistent alias for the namespace to be tested, i.e `SUT`.
+- use the name of the namespace being tested with `-test` added to the end.
+- refer specific functions from `clojure.test` within the namespace form. Avoid the indiscriminate `:refer :all` approach.
 
-* refer specific functions from `clojure.test` that are used to define your tests, rather than the indiscriminate `:refer :all`
-
-Edit `test/practicalli/simple-api-server-test.clj`  and update the `ns` definition to define the `SUT` alias for the namespace to be tested.
+Edit `test/practicalli/simple-api-server-test.clj`  and update the `ns` definition.
 
 ```clojure
 (ns practicalli.simple-api-server-test
   (:require [clojure.test :refer [deftest is testing]]
-            [practicalli.simple-api-server :as SUT]))
+            [practicalli.simple-api-server :as api-server]))
 ```
 
-> **`SUT`** is a commonly used alias meaning [System Under Test](https://en.wikipedia.org/wiki/System_under_test).  The alias was added rather than including all functions using `:refer :all`.
->
-> The alias makes it easy to see which functions are being called from the system under test and therefore provide an understanding of where they are being tested.
+> Using a namespace alias make it obvious which functions are being called from the namespace under test.
 
 
 ### Write a basic test
 
-One of the simplest tests we can write it to check the handler is returning a request.  Specifically we can test if we are returning a `200` status that confirms the http request was successful.
+One of the simplest tests we can write it to check the handler is returning a request. Specifically we can test if we are returning a `200` status that confirms the http request was successful.
 
 > [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) - Wikipedia
 
@@ -323,7 +295,9 @@ The assertion compares two values using the `=` function.
 
 The first value is `200`, the HTTP status that means `OK`.
 
-The second value is obtained by calling the `handler` function from `src/practicalli/simple-api-server` namespace.  The result of that call is a response map.  The `:status` keyword is used as a function call, taking the response map as an argument, returning the value associated with `:status` in the response map.
+The second value is obtained by calling the `handler` function from `src/practicalli/simple-api-server` namespace.  The result of that call is a response map.
+
+The `:status` keyword is used as a function call, taking the response map as an argument, returning the value associated with `:status` in the response map.
 
 ```clojure
 (deftest handler-test
@@ -340,16 +314,18 @@ In a terminal window, use the Clojure CLI tools to start the test runner and run
 clj -A:test:runner
 ```
 
-> **Spacemacs**
->
-> `SPC u , s i` to edit the prompt for cider-jack-in
->
-> add `-A:test` at the front of the command line, after `clj`, and press `RET`.  The REPL starts and includes the test path in the classpath and allows cider.test to be run from CIDER
->
-> `, t a` will now run all tests when the cursor is in any of the Clojure files.
->
-> Alternatively, define a .dir-locals.el file as set `:test` as the CLI global option for CIDER
-> `((clojure-mode . ((cider-clojure-cli-global-options . "-A:test"))))`
+??? TIP "Spacemacs: Edit Cider Jack-in command line"
+
+    `SPC u , s i` to edit the prompt for `cider-jack-in`
+
+    Add `:test/env` to the front of the command line alias list, after `clojure`. Press `RET` to run the edited command.
+
+    The REPL starts and includes the test path in the classpath and allows `cider.test` to be run from CIDER
+
+    `, t a` can now run all tests when the cursor is in any of the Clojure files.
+
+    Alternatively, define a `.dir-locals.el` file as set `:test/env` as the CLI global option for CIDER
+    `((clojure-mode . ((cider-clojure-cli-aliases . ":test/env"))))`
 
 
 ## Adding a function to stop the server
@@ -426,11 +402,11 @@ An updated `-main` function
 
 ### Conditionally using a port number
 
-The `-main` function uses the `& args` syntax for the argument.  This allows the `-main` function to be called with or without passing a value for the port.
+The `-main` function uses the `& args` syntax for the argument. This allows the `-main` function to be called with or without passing a value for the port.
 
-We can use the `or` function to use a port number if it is passed as an argument.  If no port number is passed, then a default port number is used.
+We can use the `or` function to use a port number if it is passed as an argument. If no port number is passed, then a default port number is used.
 
-If `(first args)` is called when no argument is passed, then it is effectively same as `(first [])`.  When evaluaed this returns `nil`.
+If `(first args)` is called when no argument is passed, then it is effectively same as `(first [])`. When evaluated this returns `nil`.
 
 
 ```clojure
@@ -447,10 +423,11 @@ If `(first args)` is called when no argument is passed, then it is effectively s
 
 ### Conditional arguments for server configuration
 
-Associative destructuring binds values from hash-maps to local symbols
-We can use default values if values are not passed as arguments
-& makes all arguments optional
-the `:or` map provides local symbols and their default values
+Using Associative Destructure the values from hash-map keys are bound to local symbols.
+
+We can use default values if values are not passed as arguments & makes all arguments optional
+
+The `:or` map provides local symbols and their default values
 
 ```clojure
 (defn optional-keys [& {:keys [port timeout]
@@ -458,7 +435,7 @@ the `:or` map provides local symbols and their default values
   (str "Port: " port ", timeout " timeout ))
 ```
 
-call the function without arguments and the defaults are used
+Call the function without arguments and the defaults are used
 
 ```clojure
 (optional-keys)
@@ -466,8 +443,9 @@ call the function without arguments and the defaults are used
 ```
 
 
-;; call with one argument, :port and 8888 are a single key-value pair,
-;; the argument is used and the missing argument uses the default value.
+Call the function with one argument, the key value pair of `:port 8888`.
+
+The argument is used and the missing argument uses the default value.
 
 ```clojure
 (optional-keys :port 8888)
@@ -476,7 +454,7 @@ call the function without arguments and the defaults are used
 
 ### Use associated destructuring for multiple arguments
 
-Using an `or` statement within the function call to `run-server` arguments is okay when you have a single argument.  However it gets quite complex if you have multiple arguments
+Using an `or` statement within the function call to `run-server` arguments is okay when you have a single argument. However it gets quite complex if you have multiple arguments
 
 Associate destructuring can be used with the arguments passed to the server, in the argument list of the function definition.
 
@@ -499,6 +477,7 @@ A single pair of `{}` is used to pattern match on key values pairs at the top le
 ```
 
 > The Httpkit server function includes an example of using [associative destructuring in the stop-server function](https://github.com/http-kit/http-kit/blob/master/src/org/httpkit/server.clj#L84) it returns and in the [server function argument list](https://github.com/http-kit/http-kit/blob/master/src/org/httpkit/server.clj#L34).
+
 
 ### Starting the server
 
@@ -529,7 +508,9 @@ The start and stop will look something like this.
 
 This should demonstrate how relatively simple it is to create a web server in Clojure that can handle 600,00 concurrent requests.
 
-This simple project can be extended to make the web server respond to different requests, based on the web address and type of the HTTP request (e.g. GET, POST).  As more features are added, tests should be written to ensure those features work correctly.
+This simple project can be extended to make the web server respond to different requests, based on the web address and type of the HTTP request (e.g. GET, POST).
+
+As more features are added, tests should be written to ensure those features work correctly.
 
 Adding specifications is a clean way to ensure a robust API service, checking the type of information being sent and received is of the correct form. `clojure.alpha.spec` and `pulmatic/schema` are two libraries that will provide this kind of checking.
 

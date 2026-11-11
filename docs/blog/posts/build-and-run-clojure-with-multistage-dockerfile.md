@@ -17,7 +17,7 @@ tags:
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/docker-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-Deployment of a Clojure service is very simple, requiring only an Uberjar (archive file containing the Clojure Project and Clojure run-time) and the Java Run-time Environment (JRE).
+Deployment of a Clojure service can be as simple as copying an Uberjar, an archive file containing the Clojure Project and Clojure, onto a server with the Java Run-time Environment (JRE).
 
 A Clojure service rarely works in isolation and although many services are access via a network connection (defined in Environment Variables), provisioning containers to build and run Clojure along with any other services can be valuable as complexity of the architecture grows.
 
@@ -29,7 +29,7 @@ A [Multi-stage `Dockerfile`](https://github.com/practicalli/clojure-app-template
 
 ## Multi-stage Dockerfile
 
-A multi-stage `Dockerfile` contains builder stage and a run-time stage (usually unnamed).  There may also be a common stage used by both bulder and run-time states.
+A multi-stage `Dockerfile` contains builder stage and a run-time stage (usually unnamed). There may also be a common stage used by both bulder and run-time states.
 
 The builder stage should be optimised for building the Clojure project, i.e. caching dependencies and layers, building only layers that change.
 
@@ -37,7 +37,7 @@ The run-time stage should be optimised for running the service efficiently and s
 
 The uberjar created by the builder image is copied over to the run-time image to keep that image as clean and small as possible (to minimise resource use).
 
-> [:fontawesome-brands-github: Example  Multi-stage `Dockerfile` for Clojure projects](https://github.com/practicalli/clojure-app-template/blob/main/Dockerfile) derived from the configuration currently used for commercial and open source work.  The example uses make targets, which are Clojure commands defined in the [example Makefile](https://github.com/practicalli/clojure-app-template/blob/main/Makefile)
+> [:fontawesome-brands-github: Example  Multi-stage `Dockerfile` for Clojure projects](https://github.com/practicalli/clojure-app-template/blob/main/Dockerfile) derived from the configuration currently used for commercial and open source work. The example uses make targets, which are Clojure commands defined in the [example Makefile](https://github.com/practicalli/clojure-app-template/blob/main/Makefile)
 
 
 ## Official Docker images
@@ -49,7 +49,7 @@ Docker Hub contains a large variety of images, using those tagged with **Docker 
 
 Ideally a base image should be used where both builder and run-time images share the same ancestor, this helps maintain consistency between build and run-time environments.
 
-The Eclipse OpenJDK image is used by the Clojure docker image, so they implicitly use the same base image without needed to be specified in the project `Dockerfile`.  The Eclipse OpenJDK image could be used as a base image in the `Dockerfile` but it would mean repeating (and maintaining) much the work done by the official Clojure image)
+The Eclipse OpenJDK image is used by the Clojure docker image, so they implicitly use the same base image without needed to be specified in the project `Dockerfile`. The Eclipse OpenJDK image could be used as a base image in the `Dockerfile` but it would mean repeating (and maintaining) much the work done by the official Clojure image)
 
 ??? INFO "Alternative Docker images"
 
@@ -64,7 +64,7 @@ The Eclipse OpenJDK image is used by the Clojure docker image, so they implicitl
 
 ## Clojure image as Builder stage
 
-Practicalli uses the latest Clojure CLI release and the latest Long Term Support (LTS) version of Eclipse Temurin (OpenJDK).  Alpine Linux is used to keep the image file size as small as possible, reducing local resource requirements (and image download time).
+Practicalli uses the latest Clojure CLI release and the latest Long Term Support (LTS) version of Eclipse Temurin (OpenJDK). Alpine Linux is used to keep the image file size as small as possible, reducing local resource requirements (and image download time).
 
 !!! EXAMPLE "Builder Image"
     ```dockerfile
@@ -89,7 +89,7 @@ Create directory for building the project code and set it as the working directo
 
 ### Cache Dependencies
 
-Clojure CLI is used to download dependencies for the project and any other tooling used during the build stage, e.g. test runners, packaging tools to create an uberjar.  Dependency download should only occur once, unless the `deps.edn` file changes.
+Clojure CLI is used to download dependencies for the project and any other tooling used during the build stage, e.g. test runners, packaging tools to create an uberjar. Dependency download should only occur once, unless the `deps.edn` file changes.
 
 Copy the `deps.edn` file to the build stage and use the `clojure -P` prepare (dry run) command to download the dependencies without running any Clojure code or tools.
 
@@ -138,7 +138,7 @@ Run the `tools.build` command to generate an Uberjar.
 
 ### Docker Ignore patterns
 
-`.dockerignore` file in the root of the project defines file and directory patterns that Docker will ignore with the COPY command.  Use `.dockerignore` to avoid copying files that are not required for the build
+`.dockerignore` file in the root of the project defines file and directory patterns that Docker will ignore with the COPY command. Use `.dockerignore` to avoid copying files that are not required for the build
 
 Keep the `.dockerignore` file simple by excluding all files with `*` pattern and then use the `!` character to explicitly add files and directories that should be copied
 
@@ -181,9 +181,9 @@ Run-time containers are often cached in a repository, e.g. AWS Container Reposit
 
 > Use `docker inspect` to view the metadata
 
-Optionally, add packages to support running the service or helping to debug issue in the container when it is running.  For example, add `dumb-init` to manage processes, `curl` and `jq` binaries for manual running of system integration testing scripts for API testing.
+Optionally, add packages to support running the service or helping to debug issue in the container when it is running. For example, add `dumb-init` to manage processes, `curl` and `jq` binaries for manual running of system integration testing scripts for API testing.
 
-`apk` is the package tool for Alpine Linux and `--no-cache` option ensures the install file is not part of the resulting image, saving resources.  Alpine Linux recommends setting versions to use any point release with the `~=` approximately equal version, so any same major.minor version of the package can be used.
+`apk` is the package tool for Alpine Linux and `--no-cache` option ensures the install file is not part of the resulting image, saving resources. Alpine Linux recommends setting versions to use any point release with the `~=` approximately equal version, so any same major.minor version of the package can be used.
 
 !!! EXAMPLE "Additional Alpine Packages"
     ```dockerfile
@@ -198,7 +198,11 @@ Optionally, add packages to support running the service or helping to debug issu
 
 ### Create Non-root group and user to run service securely
 
-Docker runs as root user by default and if a container is compromised the root permissions and could lead to a compromised system.  Add a user and group to the run-time image and create a directory to contain service archive, owned by the non-root user.  Then instruct docker that all future commands should run as the non-root user
+Docker runs as root user by default. If a container is compromised the root permissions and could lead to a compromised system.
+
+Add a non-root user and group to the run-time image. That user should own the directory that contain service archive.
+
+Instruct docker that all future commands should run as the non-root user
 
 !!! EXAMPLE "Non-root account creation"
     ```dockerfile
@@ -242,20 +246,23 @@ Define values for environment variables should they be required (usually for deb
 
 ### Optimising the container for Java Virtual Machine
 
-Clojure Uberjar runs on the Java Virtual Machine which is a highly optimised environment that rarely needs adjusting, unless there are noticeable performance or resource issue use.  The most likely option to set is the minimum and maximum heap sizes, i.e. `-XX:MinRAMPercentage` and `-XX:MaxRAMPercentage`.
+Clojure Uberjar runs on the Java Virtual Machine which is a highly optimised environment that rarely needs adjusting, unless there are noticeable performance or resource issue use.
 
-`java -XshowSettings -version` displays VM settings (vm), Property settings (property), Locale settings (locale), Operating System Metrics (system) and the version of the JVM used.  Add the category name to show only a specific group of settings, e.g. `java -XshowSettings:system -version`.
+The most likely option to set is the minimum and maximum heap sizes, i.e. `-XX:MinRAMPercentage` and `-XX:MaxRAMPercentage`.
+
+`java -XshowSettings -version` displays VM settings (vm), Property settings (property), Locale settings (locale), Operating System Metrics (system) and the version of the JVM used.
+
+Add the category name to show only a specific group of settings, e.g. `java -XshowSettings:system -version`.
 
 `JDK_JAVA_OPTIONS` can be used to tailor the operation of the Java Virtual Machine, although the benefits and constraints of options should be well understood before using them (especially in production).
 
-Example: show system settings on startup, force container mode and set memory heap maximum to 85% of host memory size.
-
 !!! EXAMPLE "Java Virtual Machine (JVM) options"
-```dockerfile
-ENV JDK_JAVA_OPTIONS "-XshowSettings:system -XX:+UseContainerSupport -XX:MaxRAMPercentage=85"
-```
+    show system settings on startup, force container mode and set memory heap maximum to 85% of host memory size.
+    ```dockerfile
+    ENV JDK_JAVA_OPTIONS "-XshowSettings:system -XX:+UseContainerSupport -XX:MaxRAMPercentage=85"
+    ```
 
-> Relative heap memory settings (`-XX:MaxRAMPercentage`) should be used for containers rather than the fixed value options (`-Xmx`) as the provisioning service for the container may control and change the resources available to a container on deployment (especially a Kubernettes system).
+> Relative heap memory settings (`-XX:MaxRAMPercentage`) should be used for containers rather than the fixed value options (`-Xmx`). A provisioning service for the container may control and change the resources available to that container on deployment (especially a Kubernettes system).
 
 Options that are most relevant to running Clojure & Java Virtual Machine in a container include:
 
@@ -283,9 +290,9 @@ e.g. expose port of HTTP Server that runs the Clojure service
 
 ### Command to run the service
 
-Finally define how to run the Clojure service in the container.  The `java` command is used with the `-jar` option to run the Clojure service from the Uberjar archive.
+Finally define how to run the Clojure service in the container.
 
-The `java` command will use arguments defined in `JDK_JAVA_OPTIONS` automatically.
+The `java` command is used with the `-jar` option to run the Clojure service from the Uberjar archive, using arguments defined in `JDK_JAVA_OPTIONS` automatically.
 
 ENTRYPOINT directive defines the command to run the service
 
@@ -299,7 +306,7 @@ ENTRYPOINT directive defines the command to run the service
 
     `jshell`is the default `ENTRYPOINT` for the Eclipse Temurin image, so `jshell` will run if an `ENTRYPOINT` of `CMD` directive is not included in the run-time stage of the `Dockerfile`.
 
-The `ENTRYPOINT` command runs as process id 1 (PID 1) inside the docker container.  In a Linux system PID 1 should respond to all TERM and SIGTERM signals.
+The `ENTRYPOINT` command runs as process id 1 (PID 1) inside the docker container. In a Linux system PID 1 should respond to all TERM and SIGTERM signals.
 
 [dump-init](https://github.com/Yelp/dumb-init) provides a simple process supervisor and init system, designed to run as PID 1 and manage all signals and child processes effectively.
 

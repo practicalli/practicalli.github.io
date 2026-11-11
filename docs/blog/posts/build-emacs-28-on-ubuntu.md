@@ -11,13 +11,17 @@ categories:
 
 ![Practicalli Clojure Logo](https://github.com/practicalli/graphic-design/blob/live/topic-images/emacs-logo-name.png?raw=true){align=right loading=lazy style="width:240px"}
 
-Emacs 28.1 is [a feature packed release](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1 "What is new in Emacs 28.1") and includes native compilation to significantly increase the speed of all Emacs software packages installed.  This is a very noticeable difference, especially when Emacs is at the center of your developer workflow.
+Emacs 28.1 is [a feature packed release](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1 "What is new in Emacs 28.1") and includes native compilation of packages to significantly increase the speed of all Emacs software packages installed.
+
+Native compilation provides a noticeable difference, especially when Emacs is at the center of your developer workflow.
 
 Ubuntu hasn't packaged Emacs 28.1 yet, although its *usually* straight forward to build Emacs yourself.
 
+> Edit: Emacs 30.2 is available in Ubuntu 26.10 (Stonking Stingray)
+
 <!-- more -->
 
-## A very brief summary
+## Summary
 
 ```
 sudo apt build-dep emacs && /
@@ -49,7 +53,7 @@ sudo apt build-dep -y emacs
 
 > The previous approach was to use `sudo apt-get install build-essential gcc git-core`. Using build-deps manages the set of packages required as Emacs evolves.
 
-Install some additional libraries to support the newest features of Emacs, native compilation of Emacs packages (`libgccjit`) and fast JSON processing (`libjansson`).  These really boost performance, so are important to add.
+Install some additional libraries to support the newest features of Emacs, native compilation of Emacs packages (`libgccjit`) and fast JSON processing (`libjansson`). These really boost performance, so are important to add.
 
 ```shell
 sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev
@@ -86,13 +90,13 @@ Run the autogen script to create a configure script specific to your operating s
 ./autogen.sh
 ```
 
-Run the configuration script with the native compilation flag.  This script will check the operating system for tools and libraries needed to build Emacs on your operating system.
+Run the configuration script with the native compilation flag. This script will check the operating system for tools and libraries needed to build Emacs on your operating system.
 
 ```
 ./configure --with-native-compilation
 ```
 
-Check the output of `./configure` was successful, see the end of this article for an example.  Ignore warnings about movemail if not using Emacs for local email management.
+Check the output of `./configure` was successful, see the end of this article for an example. Ignore warnings about movemail if not using Emacs for local email management.
 
 > `./configure --help` lists available flags. Generally features are enabled if the required libraries are installed on the operating system.
 > A noticeable exception is native compilation, as its a relatively new feature and not enabled by default.
@@ -106,7 +110,7 @@ Build Emacs using all the CPU's of your computer.  `-j` flag specifies the numbe
 make -j$(nproc)
 ```
 
-Run Emacs using the `-Q` option to check Emacs runs without using a users configuration file (e.g. without loading an `~/.emacs.d/ configuration)
+Run Emacs using the `-Q` option to check Emacs runs without using a users configuration file (e.g. without loading an `~/.emacs.d/` configuration)
 
 ```
 ./src/emacs -Q
@@ -138,11 +142,11 @@ In a terminal, run the emacs command
 emacs
 ```
 
-If using Emacs 28 with Spacemacs for the first time, all Spacemacs packages in your configuration will be downloaded and compiled.  This may take 5-15 minutes and Emacs may make full use of your CPU (spawning several emacs processes on multi-core computers)
+If using Emacs 28 with Spacemacs for the first time, all Spacemacs packages in your configuration will be downloaded and compiled. This may take 5-15 minutes and Emacs may make full use of your CPU (spawning several emacs processes on multi-core computers)
 
 Leave Emacs for a few minutes running until the CPU activity has subsided and then consider restarting Emacs to ensure the packages have been loaded in the correct order.
 
-> Expect to see lots of warning messages when installing more than 250 emacs packages.  Ignore these warnings until all packages have been installed.  If warnings still occur after restarting Emacs, then start investigating (or ask questions on #spacemacs channel in the Clojurians Slack community)
+> Expect to see lots of warning messages when installing more than 250 emacs packages. Ignore these warnings until all packages have been installed. If warnings still occur after restarting Emacs, then start investigating (or ask questions on #spacemacs channel in the Clojurians Slack community)
 
 
 ## Removing Emacs
@@ -216,7 +220,7 @@ Configured for 'x86_64-pc-linux-gnu'.
 
 ## References
 
-* [Emacs 28.1 whats new](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1) - a very detailed description of new features in Emacs 28.1
+* [Emacs 28.1 whats new](https://www.masteringemacs.org/article/whats-new-in-emacs-28-1) - a detailed description of new features in Emacs 28.1
 * [Emacs Wiki - Building Emacs](https://www.emacswiki.org/emacs/BuildingEmacs) - base instructions for building Emacs
 * [Ubuntu Emacs LISP team PPA](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa) - nightly builds from the latest Emacs commits
 
@@ -224,9 +228,9 @@ Configured for 'x86_64-pc-linux-gnu'.
 ---
 Thank you.
 
-[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button} 
+[:globe_with_meridians: Practical.li Website](https://practical.li){target=_blank .md-button}
 
-[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button} 
+[:fontawesome-brands-github: Practical.li GitHub Org](https://github.com/practicalli){target=_blank .md-button}
 [:fontawesome-brands-github: practicalli-johnny profile](https://github.com/practicalli-johnny){target=_blank .md-button}
 
 [:fontawesome-brands-mastodon: @practicalli_johnny](https://mastodon.social/@practicalli_johnny){target=_blank .md-button}
